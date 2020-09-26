@@ -1,3 +1,55 @@
 body {
-  background-color: red;
+  background-color: rgb(240, 240, 240);
+  margin: 0;
+}
+header {
+  text-align: center;
+  height: 50px;
+}
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.section-login-container {
+  width: 90%;
+  height: 300px;
+  display: block;
+  border-radius: 2%;
+  border: 0.1px solid rgb(209, 209, 209);
+  background-color: rgb(252, 241, 239);
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.section-login-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+.section-btn-login {
+  transition-duration: 0.6s;
+  width: 40%;
+  color: white;
+  font-weight: bold;
+  background-color: rgb(114, 20, 20);
+  border: 1px solid #eaf0a2;
+  font-size: 12px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  padding-bottom: 2px;
+}
+.section-btn-login:hover {
+  opacity: 80%;
+}
+
+.section-forget-my-password {
+  font-size: 12px;
 }
