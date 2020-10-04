@@ -8,6 +8,12 @@ a {
   text-decoration: none;
   list-style-type: none;
 }
+
+a,
+a:visited {
+  color: white;
+}
+
 body {
   background-color: rgb(240, 240, 240);
   margin: 0;
@@ -81,7 +87,9 @@ input {
   font-size: 10px;
   text-decoration: none;
 }
-
+.section-links a {
+  color: var(--background-color-marron);
+}
 @media (max-width: 500px) {
   section {
   }
