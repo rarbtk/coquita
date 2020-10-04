@@ -1,0 +1,24 @@
+{
+  "name": "proyecto-x",
+  "version": "1.0.0",
+  "description": "Este es el proyecto integrador del grupo 4 para Digital House",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lupeaugier/proyecto-x.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lupeaugier/proyecto-x/issues"
+  },
+  "homepage": "https://github.com/lupeaugier/proyecto-x#readme",
+  "dependencies": {
+    "express": "4.17.1",
+    "nodemon": "2.0.4"
+  }
+}
