@@ -4,18 +4,27 @@
   --background-color-marron: #6f2d2d;
   --bacground-color-rosado: #da8d95;
 }
+
 a {
   text-decoration: none;
   list-style-type: none;
 }
+
+a,
+a:visited {
+  color: white;
+}
+
 body {
   background-color: rgb(240, 240, 240);
   margin: 0;
 }
+
 header {
   text-align: center;
   height: 50px;
 }
+
 section {
   margin-top: 100px;
   display: flex;
@@ -59,6 +68,7 @@ input {
   justify-content: center;
   margin-top: 5px;
 }
+
 .section-btn-login {
   /* transition-duration: 0.6s; */
   width: 35%;
@@ -71,6 +81,7 @@ input {
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   padding-bottom: 2px;
 }
+
 .section-btn-login:hover {
   opacity: 80%;
 }
@@ -82,9 +93,13 @@ input {
   text-decoration: none;
 }
 
+.section-links a {
+  color: var(--background-color-marron);
+}
+
 @media (max-width: 500px) {
-  section {
-  }
+  section {}
+
   .section-login-container {
     width: 90%;
   }
