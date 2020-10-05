@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #8C4B3C;
+    height: 100px;
+
+}
+
+.banner {
+
+    background-color: #A06F4E;
+    height: 250px;
+    
+}
+
+.d-flexgrow{
+    flex-grow: 1;
+}
+
+.jc-space-bet {
+    justify-content: space-between;
+}
+
+.products {
+    background-color: lightgray;
+    height: 350px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.logo{
+    background-color: lightgreen;
+    padding: 5px;
+}
+
+.logo_principal {
+    width: 90px;
+    align-content: center;
+    background-color: lightgray;
+}
+.torta1 {
+    width: 250px;
+    padding: 20px;
+}
+
+.p {
+    text-align: center;
+}
+
+.promociones {
+    background-color: #DA8D95;
+}
+body {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.aboutme {
+    align-content: flex-start;
+    justify-content: center;
+    text-align: center;
+    height: 250px;
+    background-color: #f5deb3;
+}
+
+.photoab {
+    padding: 10px;
+    height: 300px;
+    width: auto;
+    margin-left: 150px;
+}
+.parrafoab{
+    margin-top: 40px;
+    color: #8C4B3C;
+    text-align: center;
+    align-items: center;
+}
+
