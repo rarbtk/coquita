@@ -7,6 +7,11 @@ app.get("/", function (req, res) {
   return res.sendFile(file);
 });
 
+app.get("/home", function (req, res) {
+  let file = path.resolve("home.html");
+  return res.sendFile(file);
+});
+
 app.get("/login", function (req, res) {
   let file = path.resolve("views/login.html");
   return res.sendFile(file);
