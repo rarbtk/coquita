@@ -13,7 +13,7 @@ header{
 .logo img{
     width: 180px;
     height: 180px;
-    margin-left: 20%;
+    margin-left: 40%;
     border-radius: 50%;
     position: relative;}
 
@@ -21,43 +21,140 @@ header{
 .barra{
     margin-top: auto;
     margin-bottom: auto;
-    font-size: 28px;
-    margin-right: 25%;
-    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    margin-right: 15%;
+    font-family: 'Fredoka One', cursive;
     font-weight: bold;}
 
-a{text-decoration: none; color:   #8C4B3C;}
+a{text-decoration: none;}
 
-.padding-15{ padding: 10%;}
+.color-marron{color:  #8C4B3C;}
+
+.padding-7{ padding: 7%;}
+.padding-5{padding: 5%;}
 
 .iconos{
-    margin-top: 120px;
-    color:#8C4B3C;
-    font-size: 20px;
+    margin-top: 110px;
+    font-size: 24px;
     margin-right: 10%;
     font-weight: bold;}
 
-.banner img{
-    display: block;
-    margin: auto;
-    margin-top: 20px;
+
+    /*carrito */ 
+
+.carrito{
     width: 80%;
-    height: 300px;}
+    height: 800px;
+    background-color: #f0ecec;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
 
-.contenedor-marron{
-    background-color:#8C4B3C ;
-    width: 50%;
-    height: 120px;
-    margin: auto;
-    border-radius: 10px;
-    position: relative;
-    bottom:10px;}
+.borde-marron{border: solid 1px #8C4B3C;}
 
-.barra-eventos a{
+
+.items{
+    width: 60%;
+    background-color: white;
+    height: 40%;
+    margin-left: 5%;
+    margin-top: 5%;}
+
+.imagenes-carrito{
+    width: 70px;
+    height: 70px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+}
+
+.nombre-items{
+    margin-top:auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+    font-family: 'Fredoka One', cursive;
+}
+
+.lista-caracteristicas{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+}
+
+.lista-caracteristicas li{
+    list-style:  none;
+}
+
+.coste-final{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 25%;
+    font-family: 'Fredoka One', cursive;
+}
+
+.productos-comprados{
+    flex-direction: column;}
+
+.total{
+    width: 23%;
+    height: 70%;
+    background-color: white;
+    margin-left: 55%;
+    position: absolute;
+    margin-top: 4%;
+    flex-direction: column;}
+
+.finalizar-compra{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+    font-family: 'Fredoka One', cursive;
+    font-size: 15px;}
+
+.icono-calendario{
+    text-align: center;
+    margin-top: 10%;
+    font-size: 120px;
+    margin-left: 10%;
+    margin-right: 10%;}
+
+.checkbos{
+    margin-left:10% ;
+    margin-top: 5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.checkbos input{
+    border-radius: 10%;
+}
+
+.total-apagar{
+    text-align: center;
+    margin-top: 10%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.total-grande{
+text-align: center;
+font-family: 'Roboto', sans-serif;
+}
+
+
+.boton-comprar{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+
+
+.boton-comprar input{
+    width: 150px;
+    background-color:#8C4B3C;
+    height: 50px;
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
     color: white;
-    padding: 20px;
-font-size: 20px;}
-
-.barra-eventos{
-    margin: auto;
+    border-color:#f0ecec;
 }
