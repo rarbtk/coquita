@@ -1,0 +1,117 @@
+a:hover{
+    color: crimson;
+}
+
+.iconos li{
+    float: right;
+    color:#5f260d;
+    margin-top: 70px;
+    list-style: none;
+    margin-left: 20px;
+    padding-right: 20px;
+    
+    
+    }
+
+i{
+    font-size: 20px;
+  
+    display: inline;
+    
+    
+}
+i:hover{
+    color: crimson;
+}
+
+.contenedor{
+    background-color: #5f260d;
+    
+    height: 200px;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f1ecec;
+    margin: auto;
+}
+
+.colum1{
+    width: 10%;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.colum1 a{
+    color: #f1ecec;
+    text-decoration: none;
+    
+}
+
+.colum1 li{
+    list-style: none;
+}
+
+.colum1 .row{
+    margin-top: ;
+    margin-bottom: 10px;
+    
+}
+
+.colum2{
+    width: 15%;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.colum2 .row2{
+    margin: 10px;
+    
+}
+
+.colum2 i{
+    font-size: 25px;
+    width: 35px;
+}
+
+.colum3{
+    width: 10%;
+    margin-top: 20px;
+    margin-left: 7%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.colum3 .row3{
+    margin-top: 10px;
+    
+}
+.colum3 a{
+   color: #f1ecec;
+}
+
+
+.colum4{
+    width: 30%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    font-family: 'Pacifico', cursive;
+
+}
+
+.colum4 #email{
+    background-color: #5f260d;
+    border-color: #f1ecec;
+    border-style: solid;
+    
+}
+
+
+
