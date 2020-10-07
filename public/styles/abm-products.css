@@ -68,7 +68,7 @@ body {
 header {
   background-color: #4a0c12;
   /* background-color: #8C4B3C; */
-  height: 18%;
+  /* height: 50%; */
 }
 
 header i {
@@ -78,8 +78,9 @@ header i {
 .menu-logo-container {
   height: 100%;
 }
+
 .logo {
-  width: 18%;
+  height: 70px;
   border-radius: 60%;
 }
 .icons {
