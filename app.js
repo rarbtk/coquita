@@ -8,7 +8,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/home", function (req, res) {
-  let file = path.resolve("home.html");
+  let file = path.resolve("views/home.html");
   return res.sendFile(file);
 });
 
