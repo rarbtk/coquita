@@ -1,0 +1,46 @@
+
+
+
+/* aaaaaaaaaaaaaa */ 
+
+*{padding: 0%; margin: 0%; box-sizing: border-box;}
+
+.dp-flex{display: flex;}
+
+header{
+    background-color:#f2eded;
+    height: 150px;
+    width: 100%;
+    justify-content:space-around;}
+
+
+
+.logo img{
+    width: 180px;
+    height: 180px;
+    margin-left: 40%;
+    border-radius: 50%;
+    position: relative;}
+
+
+.barra{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 22px;
+    margin-right: 15%;
+    font-family: 'Fredoka One', cursive;
+    font-weight: bold;}
+
+a{text-decoration: none;}
+
+.color-marron{color:  #8C4B3C;}
+
+.padding-7{ padding: 7%;}
+.padding-5{padding: 5%;}
+
+.iconos{
+    color: brown;
+    margin-top: 110px;
+    font-size: 24px;
+    margin-right: 10%;
+    font-weight: bold;}

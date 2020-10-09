@@ -13,13 +13,7 @@ a:hover{
     
     }
 
-i{
-    font-size: 20px;
-  
-    display: inline;
-    
-    
-}
+
 i:hover{
     color: crimson;
 }
@@ -88,6 +82,8 @@ i:hover{
 }
 
 .colum3 .row3{
+    font-size: 24px;
+    font-weight: bold;
     margin-top: 10px;
     
 }
@@ -110,8 +106,16 @@ i:hover{
     background-color: #5f260d;
     border-color: #f1ecec;
     border-style: solid;
+
     
 }
+
+footer{
+    margin-top: 20px;
+}
+
+
+
 
 
 
