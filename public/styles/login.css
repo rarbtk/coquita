@@ -95,6 +95,10 @@ input {
   text-decoration: none;
 }
 
+.remember-me {
+  font-size: 10px;
+}
+
 .section-links a {
   color: var(--background-color-marron);
 }
