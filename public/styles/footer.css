@@ -56,7 +56,7 @@ i:hover{
 }
 
 .colum2{
-    width: 15%;
+    width: 25%;
     margin-top: 20px;
     margin-left: 15%;
     margin-top: auto;
@@ -114,8 +114,27 @@ footer{
     margin-top: 20px;
 }
 
+@media (max-width:722px){
+    .colum1{
+        margin-left: 10%;
+        width: auto;
+    }
+.colum2 {
+    width: 24%;
+margin-left: 10%;
+font-size: 15px;}
+
+.colum3 {width: auto;
+margin-left: 5%;}
 
 
 
+.colum4 {display:;
+width: 21%;}
 
+}
 
+@media (max-width:661px){
+    .colum2{width: 30%;}
+    .colum4{display: none;}
+}

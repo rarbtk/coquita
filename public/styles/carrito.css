@@ -27,8 +27,8 @@
     margin-top: 5%;}
 
 .imagenes-carrito{
-    width: 70px;
-    height: 70px;
+    width: 12%;
+    height: 50%;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 5%;
@@ -54,7 +54,7 @@
 .coste-final{
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 25%;
+    margin-left: 10%;
     font-family: 'Fredoka One', cursive;
 }
 
@@ -63,7 +63,7 @@
 
 .total{
     width: 23%;
-    height: 70%;
+    height: auto;
     background-color: white;
     margin-left: 55%;
     position: absolute;
@@ -114,11 +114,34 @@ font-family: 'Roboto', sans-serif;
 
 
 .boton-comprar input{
-    width: 150px;
+    margin-left: -25%;
+    width: 150%;
     background-color:#8C4B3C;
     height: 50px;
     font-family: 'Pacifico', cursive;
     font-size: 24px;
     color: white;
     border-color:#f0ecec;
+}
+
+
+@media(max-width:650px){
+    .coste-final{margin-left: 0%;
+    font-size: 10px;}
+    .total-apagar{font-size: 10px;}
+
+    .boton-comprar{
+        width: 50%;
+    }
+    .lista-caracteristicas{
+        font-size: 10px;
+    }
+
+    .nombre-items{
+        font-size: 10px;
+    }
+
+    .icono-calendario{
+        font-size: 50px;
+    }
 }
