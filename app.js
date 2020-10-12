@@ -13,7 +13,7 @@ app.get("/index", function (req, res) {
 });
 
 app.get("/home", function (req, res) {
-  let file = path.resolve("home.html");
+  let file = path.resolve("views/home.html");
   return res.sendFile(file);
 });
 
@@ -27,10 +27,20 @@ app.get("/productCart", function (req, res) {
   return res.sendFile(file);
 });
 
+app.get("/carrito", function (req, res) {
+  let file = path.resolve("views/carrito.html");
+  return res.sendFile(file);
+});
+
 app.get("/productDetail", function (req, res) {
   let file = path.resolve("views/productDetail.html");
   return res.sendFile(file);
 });
+
+app.get("/productMain", function (req, res) {
+  let file = path.resolve("views/productMain.html");
+  return res.sendFile(file);
+}); 
 
 app.get("/register", function (req, res) {
   let file = path.resolve("views/register.html");

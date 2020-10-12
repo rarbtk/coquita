@@ -1,0 +1,160 @@
+.mr-top-10 {
+    margin-top: 10px;
+}
+
+.mr-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.mr-left-10 {
+    margin-left: 10px;
+}
+
+.mr-left-20 {
+    margin-left: 20px;
+}
+
+.mr-left-30 {
+    margin-left: 30px;
+}
+
+.mr-right-10 {
+    margin-right: 10px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-inline {
+    display: inline;
+}
+
+.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* end standard styles */
+
+body {
+    margin: 0;
+}
+
+/* hide menu options */
+
+#menu-mobile-options {
+    display: none;
+}
+
+/* show menu options with hover */
+
+
+
+header {
+    /* background-color: #4a0c12; */
+    background-color: #f2eded;
+    height: 50%;
+}
+
+.menu-logo-container {
+    height: 100%;
+}
+
+header i {
+    font-size: 20px;
+}
+
+.menu-logo-container {
+    height: 100%;
+}
+
+
+
+.logo {
+    height: 70px;
+    border-radius: 60%;
+}
+
+.icons {
+    color: brown;
+}
+
+.container {
+    width: 100%;
+    /* flex-flow: column wrap; */
+    /* justify-content: space-between; */
+}
+
+.user-bag-container {
+    width: 100%;
+    text-align: end;
+    padding-right: 20px;
+}
+
+.brown-color {
+    color: #8C4B3C;
+}
+
+/* desktop */
+@media(min-width:600px) {
+    .burger-menu {
+        display: none;
+    }
+
+    #menu-mobile-options {
+        display: none;
+    }
+
+    .menu-desktop-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .search-container {
+        /*hide mobile search*/
+        display: none;
+    }
+}
+
+
+/* Mobile */
+@media(max-width:600px) {
+
+    .menu-desktop-container {
+        /* hide menu */
+        display: none;
+    }
+
+    #menu-mobile-options {
+        display: none;
+    }
+
+    .search-container {
+        /*hide mobile search*/
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+
+
+}

@@ -4,6 +4,7 @@
   --background-color-marron: #6f2d2d;
   --bacground-color-rosado: #da8d95;
 }
+
 a {
   text-decoration: none;
   list-style-type: none;
@@ -15,22 +16,27 @@ a:visited {
 }
 
 body {
-  background-color: rgb(240, 240, 240);
+  /* background-color: rgb(240, 240, 240); */
   margin: 0;
 }
+
 header {
   text-align: center;
   height: 50px;
 }
+
 section {
-  margin-top: 100px;
+  /* width: 80%; */
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
 
 .section-login-container {
+  margin: auto;
   width: 30%;
-  height: 300px;
+  /* height: 300px; */
   display: block;
   border-radius: 2%;
   color: var(--background-color-marron);
@@ -65,6 +71,7 @@ input {
   justify-content: center;
   margin-top: 5px;
 }
+
 .section-btn-login {
   /* transition-duration: 0.6s; */
   width: 35%;
@@ -77,6 +84,7 @@ input {
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   padding-bottom: 2px;
 }
+
 .section-btn-login:hover {
   opacity: 80%;
 }
@@ -87,13 +95,19 @@ input {
   font-size: 10px;
   text-decoration: none;
 }
+
+.remember-me {
+  font-size: 10px;
+}
+
 .section-links a {
   color: var(--background-color-marron);
 }
-@media (max-width: 500px) {
-  section {
-  }
+
+@media (max-width: 600px) {
+  section {}
+
   .section-login-container {
-    width: 90%;
+    width: 80%;
   }
 }

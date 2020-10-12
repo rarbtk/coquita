@@ -1,80 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coquita | Login</title>
-    <!-- CSS Style -->
-    <link rel="stylesheet" href="styles/login.css" />
-    <!-- Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Fontawesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-  </head>
-  <body>
-    <section>
-      <div class="section-login-container">
-        <p class="section-login-title">Mi cuenta</p>
-        <div class="inputs">
-          <i class="fas fa-envelope section-input-icon"></i>
-          <input type="text" name="" id="" placeholder="Email" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coquita | Login</title>
+  <!-- CSS Style -->
+  <link rel="stylesheet" href="styles/login.css" />
+  <link rel="stylesheet" href="styles/header2.css" />
+  <link rel="stylesheet" href="styles/footer2.css" />
+  <!-- <link rel="stylesheet" href="styles/footer.css" /> -->
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="menu-logo-container align-items-center mr-left-20">
+      <a class="burger-menu mr-right-10">
+        <i class="fas fa-bars icons" onclick=showOptions()></i>
+      </a>
+      <a href="/" class="mr-right-10">
+        <img class="logo" src="/img/coquita_logo.png" alt="">
+      </a>
+
+      <div class="container d-flex">
+
+        <!-- search for mobile -->
+        <div class="search-container">
+          <a href="">
+            <i class="icons fas fa-search search-icon"></i>
+          </a>
         </div>
-        <div class="inputs">
-          <i class="fas fa-key section-input-icon"></i>
-          <input
-            type="password"
-            name=""
-            id=""
-            placeholder="Contraseña"
-            class="section-input"
-          />
+        <!-- end search for mobile -->
+
+        <!-- menu for desktop -->
+        <div class="menu-desktop-container">
+          <div class="mr-left-10 mr-right-10">
+            <a href="/">HOME</a>
+          </div>
+
+          <div class="mr-left-10 mr-right-10">
+            <a href="/productos">PRODUCTOS</a>
+          </div>
+
+          <div class="mr-left-10 mr-right-10">
+            <a href="/productMain">GALERIA</a>
+          </div>
+
+          <div class="mr-left-10 mr-right-10">
+            <a href="/faq">FAQ</a>
+          </div>
+
+          <div class="mr-left-10 mr-right-10">
+            <a href="" class="color-marron">CONTACTO</a>
+          </div>
         </div>
-        <div class="login">
-          <p class="section-btn-login"><a href="/">Ingresar</a></p>
-        </div>
-        <div class="section-links">
-          <a href="/forget-my-password">Olvidé mi contraseña</a>
-        </div>
-        <div class="section-links">
-          <a href="/register">No estoy registrado</a>
+        <!-- end menu for desktop -->
+
+        <div class="user-bag-container">
+          <a href="" class="mr-right-10">
+            <i class="far fa-user user-icon icons"></i>
+          </a>
+          <a href="/carrito" class="mr-right-10">
+            <i class="fas fa-shopping-bag icons"></i>
+          </a>
+          <span class="bold icons">0</span>
         </div>
       </div>
-    </section>
-    <!-- <footer>
-      <div class="footer-nav-menu">
-        <ul>
-          <li>Home</li>
-          <li>Productos</li>
-          <li>Galeria</li>
-          <li>FAQ</li>
-          <li>Contacto</li>
-        </ul>
+
+      <!-- <div class="icon-user-cart d-flex justify-content-end">
+                
+                
+            </div> -->
+
+    </div>
+    <!-- menu for mobile -->
+    <div id="menu-mobile-options">
+      <div>
+        <a class="brown-color" href="/">HOME</a>
       </div>
-      <div class="footer-contact">
-        <ul>
-          <li>Donde estamos</li>
-          <li>Nuestro whatsapp</li>
-          <li>Nuestro teléfono</li>
-          <li>Nuestro mail</li>
-        </ul>
+
+      <div>
+        <a class="brown-color" href="/productos">PRODUCTOS</a>
       </div>
-      <div class="footer-social-media">
-        <ul>
-          <li>Facebook</li>
-          <li>Twitter</li>
-          <li>Instagram</li>
-        </ul>
+
+      <div>
+        <a class="brown-color" href="/productMain">GALERIA</a>
       </div>
-      <div class="footer-newsletters">
-        <input type="text" name="" id="" placeholder="tu-email@aqui" />
-        <button type="submit">OK</button>
+
+      <div>
+        <a class="brown-color" href="/faq">FAQ</a>
       </div>
-    </footer> -->
-  </body>
+
+      <div>
+        <a class="brown-color" href="/contac">CONTACTO</a>
+      </div>
+    </div>
+    <!-- end menu for mobile -->
+  </header>
+
+
+  <section>
+    <div class="section-login-container">
+      <p class="section-login-title">Mi cuenta</p>
+      <div class="inputs">
+        <i class="fas fa-envelope section-input-icon"></i>
+        <input type="text" name="" id="" placeholder="Email" />
+      </div>
+      <div class="inputs">
+        <i class="fas fa-key section-input-icon"></i>
+        <input type="password" name="" id="" placeholder="Contraseña" class="section-input" />
+      </div>
+      <div class="inputs">
+        <input type="checkbox" name="remember-me" id="" placeholder="Recordar usuario y contraseña"
+          class="section-input" />
+        <label class="remember-me" for="">Recordar usuario y contraseña</label>
+      </div>
+      <div class="login">
+        <p class="section-btn-login"><a href="/">Ingresar</a></p>
+      </div>
+      <div class="section-links">
+        <a href="/forget-my-password">Olvidé mi contraseña</a>
+      </div>
+      <div class="section-links">
+        <a href="/register">No estoy registrado</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- <footer>
+    <div class="contenedor">
+      <div class="colum">
+        <b>
+          <div class="row"><label for=""><a href="">Home</a> </label></div>
+          <div class="row"><label for=""><a href="">Productos</a> </label> </div>
+          <div class="row"><label for=""><a href="">Galeria </a></label></div>
+          <div class="row"><label for=""><a href="">FAQ</a></label></div>
+          <div class="row"><label><a href="">Contacto</a></label></div>
+        </b>
+      </div>
+
+      <div class="contact">
+        <div class="row2"><i class="fas fa-map-marker-alt"></i> Donde estamos</i></div>
+        <div class="row2"><a
+            href="https://api.whatsapp.com/send?phone=1536360666&text=Hola, deseo informacion de los productos"><i
+              class="fab fa-whatsapp"></i>
+            1536360666</a></div>
+        <div class="row2"><i class="fas fa-phone-alt"></i> Nuestro telefono</div>
+        <div class="row2"><i class="fas fa-at"></i> coquita.pasteleria@gmail.com</div>
+
+      </div>
+
+      <div class="socialMedia">
+        <div class="row3"><a href="https://www.facebook.com/Pasteler%C3%ADa-Coquita-1074520626037177/"><i
+              class="fab fa-facebook-f"></i> </a> </div>
+        <div class="row3"><a href=""><i class="fab fa-twitter"></i></a></div>
+        <div class="row3"><a href="https://www.instagram.com/pasteleria_coquita/?hl=es-la"><i
+              class="fab fa-instagram"></i> </a></div>
+      </div>
+
+      <div class="newsletter">
+        <div>
+          <h3>Suscribete a nuestro newsletter</h3>
+        </div>
+        <label for="Email"></label>
+        <input type="email" id="email" name="email" placeholder="Email" />
+        <input type="submit" id="ok" name="ok" value="ok" class="mr-left-10 mr-top-10" />
+
+
+      </div>
+
+    </div>
+
+  </footer> -->
+
+  <!-- SCRIPT -->
+  <script>
+    function showOptions() {
+      console.log("test")
+      var x = document.getElementById("menu-mobile-options")
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none"
+      }
+    }
+  </script>
+</body>
+
 </html>

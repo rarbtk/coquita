@@ -13,25 +13,18 @@ a:hover{
     
     }
 
-i{
-    font-size: 20px;
-  
-    display: inline;
-    
-    
-}
+
 i:hover{
     color: crimson;
 }
 
 .contenedor{
     background-color: #5f260d;
-    
     height: 200px;
     width: 100%;
     display: flex;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto';
     color: #f1ecec;
     margin: auto;
 }
@@ -56,13 +49,13 @@ i:hover{
 }
 
 .colum1 .row{
-    margin-top: ;
+    
     margin-bottom: 10px;
     
 }
 
 .colum2{
-    width: 15%;
+    width: 25%;
     margin-top: 20px;
     margin-left: 15%;
     margin-top: auto;
@@ -88,6 +81,8 @@ i:hover{
 }
 
 .colum3 .row3{
+    font-size: 24px;
+    font-weight: bold;
     margin-top: 10px;
     
 }
@@ -110,8 +105,33 @@ i:hover{
     background-color: #5f260d;
     border-color: #f1ecec;
     border-style: solid;
+
     
 }
 
 
 
+@media (max-width:722px){
+    .colum1{
+        margin-left: 10%;
+        width: auto;
+    }
+.colum2 {
+    width: 24%;
+margin-left: 10%;
+font-size: 15px;}
+
+.colum3 {width: auto;
+margin-left: 5%;}
+
+
+
+.colum4 {
+width: 21%;}
+
+}
+
+@media (max-width:661px){
+    .colum2{width: 30%;}
+    .colum4{display: none;}
+}
