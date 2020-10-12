@@ -43,6 +43,8 @@ a{text-decoration: none; color:   #8C4B3C;}
     font-weight: bold;
 }
 
+
+/* Banner */
 .banner img{
     display: block;
     margin: auto;
@@ -188,7 +190,6 @@ a{text-decoration: none; color:   #8C4B3C;}
     width:20%;
     bottom: 250px;
     left: 300px;
-
 }
 
 .aboutme-3{
