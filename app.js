@@ -7,6 +7,11 @@ app.get("/", function (req, res) {
   return res.sendFile(file);
 });
 
+app.get("/index", function (req, res) {
+  let file = path.resolve("views/index.html");
+  return res.sendFile(file);
+});
+
 app.get("/home", function (req, res) {
   let file = path.resolve("views/home.html");
   return res.sendFile(file);
@@ -39,6 +44,10 @@ app.get("/productMain", function (req, res) {
 
 app.get("/register", function (req, res) {
   let file = path.resolve("views/register.html");
+  return res.sendFile(file);
+});
+app.get("/productos", function (req, res) {
+  let file = path.resolve("views/productos.html");
   return res.sendFile(file);
 });
 

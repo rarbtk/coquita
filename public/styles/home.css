@@ -1,84 +1,304 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
+*{padding: 0%; margin: 0%; box-sizing: border-box;}
 
-.header {
-    background-color: #8C4B3C;
-    height: 100px;
-
-}
-
-.banner {
-
-    background-color: #A06F4E;
-    height: 250px;
-    
-}
-
-.d-flexgrow{
-    flex-grow: 1;
+.dp-flex{display: flex;}
+.d-flex {
+    display: flex;
 }
 
 .jc-space-bet {
     justify-content: space-between;
 }
-
-.products {
-    background-color: lightgray;
-    height: 350px;
+header{
+    background-color:#f2eded;
+    height: 150px;
+    width: 100%;
+    justify-content:space-around;
 }
 
-.d-flex {
-    display: flex;
+.logo img{
+    width: 180px;
+    height: 180px;
+    margin-left: 20%;
+    border-radius: 50%;
+    position: relative;}
+
+
+.barra{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 28px;
+    margin-right: 25%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;}
+
+a{text-decoration: none; color:   #8C4B3C;}
+
+.padding-15{ padding: 10%;}
+
+.iconos{
+    margin-top: 120px;
+    color:#8C4B3C;
+    font-size: 20px;
+    margin-right: 10%;
+    font-weight: bold;
 }
 
-.logo{
-    background-color: lightgreen;
-    padding: 5px;
-}
 
-.logo_principal {
-    width: 90px;
+/* Banner */
+.banner img{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 70%;
+    height: 300px;
     align-content: center;
-    background-color: lightgray;
-}
-.torta1 {
-    width: 250px;
+    }
+
+.contenedor-marron{
+    background-color:#8C4B3C ;
+    width: 50%;
+    height: 150px;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    bottom:10px;
+    object-fit: cover;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 2px;
+    box-shadow: 5px 5px 5px 4px #804000;    
+    }
+
+
+.barra-eventos p{
+    color: white;
     padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 4px;
+    font-family: 'Pacifico', cursive;
+    
 }
 
-.p {
-    text-align: center;
+.barra-eventos{
+    margin: auto;
+    font-family: 'Pacifico', cursive;
+    padding-bottom: 4px;    
 }
+
+.img-prod{
+    width: 80px;
+    height: 75px;
+    justify-content: center;
+    
+}
+
+.torta1 {
+    width: 80px;
+    height: 80px;
+}
+
+.torta2 {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.torta3 {
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    }
+
+.ancho-33 {
+    width: 33%;
+}
+ /* Promociones */
 
 .promociones {
-    background-color: #DA8D95;
+    background-color: #f5deb3;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 70%;
+    align-content: center;
+    border: 1px solid lightgrey;
+    padding: 20px 10px; 
+    position: relative; 
+    }
+
+.nuestra-promo {
+    font-size: 25px;
+    color: #8C4B3C;
+    text-align: center;
+    font-weight: bold;
+    flex-direction: column;
+    margin-left: 40px;
+    width: 33%;
+    font-family: 'Fredoka One', cursive;
+          
 }
-body {
-    margin-left: 100px;
-    margin-right: 100px;
+.nuestra-promo-2 {
+    font-size: 16px;
+    color: #8C4B3C;
+    text-align: center;
+    font-weight: bold;
+    flex-direction: column;
+    font-family: 'Roboto';
+    margin: 10px;     
+    box-shadow: 10px 12px 5px #8C4B3C;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    width: 33%;
+        
 }
+
+.precio-promo {
+    font-family: 'Pacifico', cursive;
+    color: lightcoral;
+    font-size: 24px;
+
+}
+
+/* #### sobre mi */
+
 
 .aboutme {
     align-content: flex-start;
     justify-content: center;
     text-align: center;
-    height: 250px;
     background-color: #f5deb3;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 70%;
+    height: 350px;
+    align-content: center;
+    border: 1px solid lightgrey;
+    padding: 20px 10px;    
+    font-family: 'Pacifico', cursive;
+    position: relative;
+    z-index: 1;    
+}
+
+.aboutme-2 {
+    text-align: center;
+    background-color: #f5deb3;    
+    z-index: 2;
+    position: relative;    
+    border: 3px solid lightgrey;
+    box-shadow: 10px 5px 5px #8C4B3C;
+    height: 350px;
+    width:20%;
+    bottom: 250px;
+    left: 300px;
+}
+
+.aboutme-3{
+    height: 100px;
+    background-color: white;
 }
 
 .photoab {
     padding: 10px;
-    height: 300px;
-    width: auto;
-    margin-left: 150px;
+    height: 380px;
+    margin-left: 110px;
+    
 }
-.parrafoab{
+.parrafoab {
     margin-top: 40px;
     color: #8C4B3C;
     text-align: center;
     align-items: center;
+}
+
+
+/* Footer */
+
+
+.contenedor{
+    background-color: #5f260d;        
+    height: 200px;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f1ecec;
+    margin: auto;
+}
+
+.colum1{
+    width: 10%;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.colum1 a{
+    color: #f1ecec;
+    text-decoration: none;
+    
+}
+
+.colum1 li{
+    list-style: none;
+}
+
+.colum1 .row{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.colum2{
+    width: 15%;
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.colum2 .row2{
+    margin: 10px;
+    
+}
+
+.colum2 i{
+    font-size: 25px;
+    width: 35px;
+}
+
+.colum3{
+    width: 10%;
+    margin-top: 20px;
+    margin-left: 7%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.colum3 .row3{
+    margin-top: 10px;
+    
+}
+.colum3 a{
+   color: #f1ecec;
+}
+
+
+.colum4{
+    width: 30%;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    font-family: 'Pacifico', cursive;
+
+}
+
+.colum4 #email{
+    background-color: #5f260d;
+    border-color: #f1ecec;
+    border-style: solid;
+    
 }
 
