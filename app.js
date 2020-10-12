@@ -22,6 +22,11 @@ app.get("/productCart", function (req, res) {
   return res.sendFile(file);
 });
 
+app.get("/carrito", function (req, res) {
+  let file = path.resolve("views/carrito.html");
+  return res.sendFile(file);
+});
+
 app.get("/productDetail", function (req, res) {
   let file = path.resolve("views/productDetail.html");
   return res.sendFile(file);

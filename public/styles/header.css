@@ -9,15 +9,13 @@
 
 header{
     background-color:#f2eded;
-    height: 150px;
-    width: 100%;
+    height: auto;
+    width: auto;
     justify-content:space-around;}
 
-
-
 .logo img{
-    width: 180px;
-    height: 180px;
+    width: 80%;
+    height: 110%;
     margin-left: 40%;
     border-radius: 50%;
     position: relative;}
@@ -44,3 +42,23 @@ a{text-decoration: none;}
     font-size: 24px;
     margin-right: 10%;
     font-weight: bold;}
+  
+@media(max-width:700px){
+    
+    .barra{
+        margin-top: 10%;
+        font-size: 12px;
+    }
+
+    .logo img{
+       
+        position: absolute;
+        width: 40px;
+        height: 40px;
+    }
+
+    .iconos{
+        font-size: 15px;
+        margin-top: 20%;
+    }
+}
