@@ -27,6 +27,11 @@ app.get("/productDetail", function (req, res) {
   return res.sendFile(file);
 });
 
+app.get("/productMain", function (req, res) {
+  let file = path.resolve("views/productMain.html");
+  return res.sendFile(file);
+}); 
+
 app.get("/register", function (req, res) {
   let file = path.resolve("views/register.html");
   return res.sendFile(file);
