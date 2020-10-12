@@ -19,20 +19,47 @@
 <body>
   <header>
     <div class="menu-logo-container align-items-center mr-left-20">
-      <a href="" class="mr-right-10">
-        <i class=" fas fa-bars"></i>
+      <a class="burger-menu mr-right-10">
+        <i class="fas fa-bars icons" onclick=showOptions()></i>
       </a>
       <a href="/" class="mr-right-10">
         <img class="logo" src="/img/coquita_logo.png" alt="">
       </a>
 
       <div class="container d-flex">
+
+        <!-- search for mobile -->
         <div class="search-container">
           <a href="">
             <i class="icons fas fa-search search-icon"></i>
           </a>
-
         </div>
+        <!-- end search for mobile -->
+
+        <!-- menu for desktop -->
+        <div class="menu-desktop-container">
+          <div class="mr-left-10 mr-right-10">
+            <a href="/">HOME</a>
+          </div>
+
+          <div class="mr-left-10 mr-right-10">
+            <a href="/productos">PRODUCTOS</a>
+          </div>
+
+          <div class="mr-left-10 mr-right-10">
+            <a href="/productMain">GALERIA</a>
+          </div>
+
+          <div class="mr-left-10 mr-right-10">
+            <a href="/faq">FAQ</a>
+          </div>
+
+          <div class="mr-left-10 mr-right-10">
+            <a href="" class="color-marron">CONTACTO</a>
+          </div>
+        </div>
+        <!-- end menu for desktop -->
+
         <div class="user-bag-container">
           <a href="" class="mr-right-10">
             <i class="far fa-user user-icon icons"></i>
@@ -40,12 +67,8 @@
           <a href="/carrito" class="mr-right-10">
             <i class="fas fa-shopping-bag icons"></i>
           </a>
-
           <span class="bold icons">0</span>
         </div>
-
-
-
       </div>
 
       <!-- <div class="icon-user-cart d-flex justify-content-end">
@@ -54,9 +77,29 @@
             </div> -->
 
     </div>
+    <!-- menu for mobile -->
+    <div id="menu-mobile-options">
+      <div>
+        <a class="brown-color" href="/">HOME</a>
+      </div>
 
+      <div>
+        <a class="brown-color" href="/productos">PRODUCTOS</a>
+      </div>
+
+      <div>
+        <a class="brown-color" href="/productMain">GALERIA</a>
+      </div>
+
+      <div>
+        <a class="brown-color" href="/faq">FAQ</a>
+      </div>
+
+      <div>
+        <a class="brown-color" href="/contac">CONTACTO</a>
+      </div>
     </div>
-
+    <!-- end menu for mobile -->
   </header>
 
 
@@ -88,9 +131,9 @@
     </div>
   </section>
 
-  <footer>
+  <!-- <footer>
     <div class="contenedor">
-      <!-- <div class="colum">
+      <div class="colum">
         <b>
           <div class="row"><label for=""><a href="">Home</a> </label></div>
           <div class="row"><label for=""><a href="">Productos</a> </label> </div>
@@ -98,7 +141,7 @@
           <div class="row"><label for=""><a href="">FAQ</a></label></div>
           <div class="row"><label><a href="">Contacto</a></label></div>
         </b>
-      </div> -->
+      </div>
 
       <div class="contact">
         <div class="row2"><i class="fas fa-map-marker-alt"></i> Donde estamos</i></div>
@@ -132,7 +175,20 @@
 
     </div>
 
-  </footer>
+  </footer> -->
+
+  <!-- SCRIPT -->
+  <script>
+    function showOptions() {
+      console.log("test")
+      var x = document.getElementById("menu-mobile-options")
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none"
+      }
+    }
+  </script>
 </body>
 
 </html>

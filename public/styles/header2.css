@@ -57,6 +57,16 @@ body {
     margin: 0;
 }
 
+/* hide menu options */
+
+#menu-mobile-options {
+    display: none;
+}
+
+/* show menu options with hover */
+
+
+
 header {
     /* background-color: #4a0c12; */
     background-color: #f2eded;
@@ -98,6 +108,53 @@ header i {
     padding-right: 20px;
 }
 
-/* Mobile */
+.brown-color {
+    color: #8C4B3C;
+}
 
-@media(max-width:600px) {}
+/* desktop */
+@media(min-width:600px) {
+    .burger-menu {
+        display: none;
+    }
+
+    #menu-mobile-options {
+        display: none;
+    }
+
+    .menu-desktop-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .search-container {
+        /*hide mobile search*/
+        display: none;
+    }
+}
+
+
+/* Mobile */
+@media(max-width:600px) {
+
+    .menu-desktop-container {
+        /* hide menu */
+        display: none;
+    }
+
+    #menu-mobile-options {
+        display: none;
+    }
+
+    .search-container {
+        /*hide mobile search*/
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+
+
+}
