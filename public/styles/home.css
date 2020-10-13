@@ -8,17 +8,17 @@
 .jc-space-bet {
     justify-content: space-between;
 }
+
 header{
     background-color:#f2eded;
-    height: 150px;
-    width: 100%;
-    justify-content:space-around;
-}
+    height: auto;
+    width: auto;
+    justify-content:space-around;}
 
 .logo img{
-    width: 180px;
-    height: 180px;
-    margin-left: 20%;
+    width: 80%;
+    height: 110%;
+    margin-left: 40%;
     border-radius: 50%;
     position: relative;}
 
@@ -26,21 +26,45 @@ header{
 .barra{
     margin-top: auto;
     margin-bottom: auto;
-    font-size: 28px;
-    margin-right: 25%;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;}
+    font-size: 22px;
+    margin-right: 15%;
+    font-family: "Roboto";
+    font-weight: bold;
+    height: 60px;
+}
 
-a{text-decoration: none; color:   #8C4B3C;}
+a{text-decoration: none;}
 
-.padding-15{ padding: 10%;}
+.color-marron{color:  #8C4B3C;}
+
+.padding-7{ padding: 7%;}
+.padding-5{padding: 5%;}
 
 .iconos{
-    margin-top: 120px;
-    color:#8C4B3C;
-    font-size: 20px;
+    color: brown;
+    margin-top: 110px;
+    font-size: 24px;
     margin-right: 10%;
-    font-weight: bold;
+    font-weight: bold;}
+  
+@media(max-width:768px){
+    
+    .barra{
+        margin-top: 10%;
+        font-size: 12px;
+    }
+
+    .logo img{
+       
+        position: absolute;
+        width: 40px;
+        height: 40px;
+    }
+
+    .iconos{
+        font-size: 15px;
+        margin-top: 20%;
+    }
 }
 
 
