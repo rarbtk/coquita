@@ -111,7 +111,7 @@ i:hover{
 
 
 
-@media (max-width:700px){
+@media (max-width:768px){
     .colum1{
         margin-left: 10%;
         width: auto;
@@ -131,7 +131,12 @@ width: 21%;}
 
 }
 
-@media (max-width:661px){
+@media(max-width:661px){
     .colum2{width: 30%;}
     .colum4{display: none;}
+}
+
+@media(max-width:450){
+    .colum2{font-size: 13px;}
+
 }
