@@ -1,9 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 
-}
 
 body {
   background-color: #EEE0C9;
@@ -135,7 +130,7 @@ header {
 .fa-arrow-circle-down {
   color: #F3ECE9;
   background-color: #A06F4E;
-  align-self: flex-end;
+  align-self: center;
 }
 
 .carrito {
@@ -196,19 +191,28 @@ header {
   text-align: justify;
 }
 
-a {
-  text-decoration: none;
-}
-
-a.boton-carrito:hover {
-   color:#6F2D2D; 
-   text-decoration:none; 
-   cursor: pointer;  
-}
-
-a.icono-link:hover {
+.icono-link {
   color: #D37775;
 }
+
+.icono-link:hover {
+  color: #5C3A27;
+  cursor: pointer;
+}
+
+.boton-agregar {
+  color: #F3ECE9;
+}
+
+
+
+.boton-agregar:hover {
+  color: #5C3A27;
+  cursor: pointer;
+}
+
+
+/* ----- AGREGAR PRODUCTOS AL PEDIDO ------ */
 
 .dp-flex{
   display: flex;
@@ -303,4 +307,108 @@ text-align: center;}
   font-size: 22px;
   
 }
-  
+
+.icono-torta1 {
+  width: 60px;
+  height: 60px;
+} 
+
+.foto-torta {
+  width: 250px;
+  height: 250px;
+}
+
+/* ------ MEDIA QUERY ------*/
+
+@media(max-width:768px) {
+  .compra-producto {
+    flex-direction: column;
+    width: 89%;
+    margin: 5% 7%;
+    height: 660px;
+  }
+
+  .icono-torta1 {
+    width: 25px;
+    display: block;
+    margin-left: 26px;
+  } 
+
+  .texto-icono {
+    display: none;
+  }
+
+  .foto-torta {
+    width: 270px;
+    height: 270px;
+  }
+
+  .contenedor-torta {
+    box-shadow: 8px 6px 12px #642206;
+    margin: -36px 31px;
+    width: 270px;
+  }
+
+  .opciones {
+    margin-top: 27px;
+  }
+
+  .titulo-producto {
+    font-size: 25px;
+    width: 150%;
+    text-align: start;
+  }
+
+  .texto-precio {
+    margin-top: 30px;
+    flex-direction: column;
+  }
+
+  .seleccion {
+    width: 150%;
+    text-align: start;
+  }
+
+  .w-95 {
+    width: 202%;
+  }
+
+  .m-10 {
+    margin-right: 10%;
+  }
+
+  .precio {
+    margin-top: 0;
+    height: 60px;
+  }
+
+  .boton-comprar {
+    width: 88%;
+    padding-left: 56px;
+    margin-left: -24px;
+    margin-top: 10px;
+  }
+
+  .ingredientes {
+    margin-top: -7px;
+  }
+
+  .caja-ingredientes {
+    width: 670px;
+  }
+
+  .caja-especificaciones {
+    width: 670px;
+  }
+
+  .texto {
+    width: 45%;
+  }
+
+  .titulo {
+    width: 26%;
+  }
+
+
+
+}

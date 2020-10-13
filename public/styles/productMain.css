@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .cuerpo {
     background-color:#F0F0F0;
@@ -20,8 +16,10 @@
 
 }
 
-.products-icon {
-    font-size: 40px;
+.products-icons {
+
+    width: 80px;
+
 }
 
 .f-pacifico {
@@ -163,16 +161,109 @@
     color: #F3ECE9
 }
 
-@media(max-width:600px) {
-    .contenedor {
-        background-color: #5f260d;
-        /* height: 200px; */
-        width: 100%;
-        /* display: flex; */
-        box-sizing: border-box;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #f1ecec;
+.lista-paginas {
+    font-family: roboto;
+    font-size: 16px;
+
+    display: flex;
+
+
+    list-style-type: none;
+    justify-content: center;
+}
+
+.paginas {
+    font-family: roboto;
+    margin-bottom: 15px;
+
+}
+
+.m-5px {
+    margin-left: 15px;
+}
+
+.foto-torta {
+    width:250px;
+    height: 250px;
+}
+
+.color-link {
+    color: #F3ECE9;
+}
+
+.color-link:hover {
+    color: #5C3A27;
+    cursor: pointer;
+}
+
+.color-link2 {
+    color: #5C3A27;
+}
+
+.color-link2:hover {
+    color: #D37775;
+    cursor: pointer;
+}
+
+
+
+
+
+@media(max-width:768px) {
+    .products-menu {
+
+        flex-direction: column;  
+        align-items: flex-start;
+
+        
     }
+    .products-icons {
+        width: 30px;
+        margin-right: 25px;
+
+    }
+
+    .margin {
+        margin: 0 24%;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+    }
+
+    .one-line {
+        padding: 0;
+        width: 100%;
+    }
+
+    .detalle-productos {
+        max-width: 95%;
+        display: initial;
+        text-align: center;
+  
+
+    }
+
+    .foto-torta {
+        width: 290px;
+        height: 290px;
+        padding-top: 14px;
+
+    }
+
+    .precio-torta {
+        height: 41px;
+    }
+
+    .boton-comprar {
+        margin: 0% 16%;
+        margin-bottom: 7px;
+        padding: 0;
+    }
+}
+
+
+
 
 /* justify-content: flex-end flex-start center space-around space-between
 align-items: flex-end flex-start center baseline stretch
