@@ -79,7 +79,7 @@ a{text-decoration: none;}
     }
 
 .contenedor-marron{
-    background-color:#8C4B3C ;
+    background-color:#E8ABAA ;
     width: 50%;
     height: 150px;
     margin: auto;
@@ -89,14 +89,14 @@ a{text-decoration: none;}
     object-fit: cover;
     justify-content: space-around;
     text-align: center;
-    padding-top: 2px;
-    box-shadow: 5px 5px 5px 4px #804000;    
+    padding: 15px;
+    box-shadow: 2px 5px 7px #CBA3A2;  
     }
 
 
 .barra-eventos p{
-    color: white;
-    padding: 20px;
+    color: #F3ECE9;
+    padding: 10px 25px;
     font-size: 20px;
     text-align: center;
     padding-bottom: 4px;

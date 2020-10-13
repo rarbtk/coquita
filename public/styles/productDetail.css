@@ -375,6 +375,7 @@ text-align: center;}
 
   .m-10 {
     margin-right: 10%;
+    align-self: center;
   }
 
   .precio {
@@ -395,10 +396,12 @@ text-align: center;}
 
   .caja-ingredientes {
     width: 670px;
+    margin-left: -24px;
   }
 
   .caja-especificaciones {
     width: 670px;
+    margin-left: -24px;
   }
 
   .texto {
