@@ -10,9 +10,14 @@ a {
   list-style-type: none;
 }
 
-a,
+/* a,
 a:visited {
   color: white;
+} */
+
+/* set color to header menu options */
+header .menu-desktop-container div a {
+  color: brown;
 }
 
 body {
@@ -62,8 +67,9 @@ input {
 .section-input-icon {
   padding: 2px;
   margin: 0px;
-  color: white;
-  background-color: var(--background-color-marron);
+  border-color: var(--background-color-marron);
+  /* color: white; */
+  /* background-color: var(--background-color-marron); */
 }
 
 .login {
