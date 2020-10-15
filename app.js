@@ -1,71 +1,49 @@
-const express = require("express");
-const path = require("path");
-const app = express();
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
 
-app.get("/", function (req, res) {
-  let file = path.resolve("views/home.html");
-  return res.sendFile(file);
+var indexRouter = require("./routes/index");
+var loginRouter = require("./routes/login");
+var productMainRouter = require("./routes/productMain");
+var productCartRouter = require("./routes/productCart");
+var productDetailRouter = require("./routes/productDetail");
+
+var app = express();
+
+// view engine setup
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
+
+require("dotenv").config();
+
+app.use("/", indexRouter);
+app.use("/login", loginRouter);
+app.use("/productMain", productMainRouter);
+app.use("/productDetail", productDetailRouter);
+app.use("/productCart", productCartRouter);
+
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
 });
 
-app.get("/index", function (req, res) {
-  let file = path.resolve("views/index.html");
-  return res.sendFile(file);
+// error handler
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
 });
 
-app.get("/home", function (req, res) {
-  let file = path.resolve("views/home.html");
-  return res.sendFile(file);
-});
-
-app.get("/login", function (req, res) {
-  let file = path.resolve("views/login.html");
-  return res.sendFile(file);
-});
-
-app.get("/productCart", function (req, res) {
-  let file = path.resolve("views/productCart.html");
-  return res.sendFile(file);
-});
-
-app.get("/carrito", function (req, res) {
-  let file = path.resolve("views/carrito.html");
-  return res.sendFile(file);
-});
-
-app.get("/productDetail", function (req, res) {
-  let file = path.resolve("views/productDetail.html");
-  return res.sendFile(file);
-});
-
-app.get("/productMain", function (req, res) {
-  let file = path.resolve("views/productMain.html");
-  return res.sendFile(file);
-}); 
-
-app.get("/register", function (req, res) {
-  let file = path.resolve("views/register.html");
-  return res.sendFile(file);
-});
-app.get("/productos", function (req, res) {
-  let file = path.resolve("views/productos.html");
-  return res.sendFile(file);
-});
-
-app.get("/abm-products", function (req, res) {
-  let file = path.resolve("views/abm-products.html");
-  return res.sendFile(file);
-});
-
-app.get("*", function (req, res) {
-  if (req.url.includes(".")) {
-    let file = path.resolve("public" + req.url);
-    res.sendFile(file);
-  }
-  let images;
-});
-
-app.listen(3002, () => {
-  console.log("##############################");
-  console.log("Proyecto Coquita is running :)");
-  console.log("##############################");
-});
+module.exports = app;
