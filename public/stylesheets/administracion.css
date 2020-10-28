@@ -1,0 +1,116 @@
+.dp-flex{display: flex;}
+
+.direccion-flex{
+    justify-content: center;
+}
+.nuevo-producto{
+font-family: pacifico;
+color: #8C4B3C;
+width: 90%;
+height: 150px;
+border: solid  #8C4B3C 1px;
+margin-top: 2%; 
+margin-left: auto;
+margin-right: auto;
+background-color:#f2eded;}
+
+.codigo-producto{
+    font-size: 20px;
+    margin-right: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+.nombre-producto{
+    font-size: 20px;
+    margin-right: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+.agregar-producto{
+    font-size: 20px;
+    margin-right: 0%;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+
+/* Empieza La segunda division la mas grande */ 
+
+.activacion-productos{
+    color: #8C4B3C;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    height: 600px;
+    width: 90%;
+    border: solid 1px #8C4B3C;
+margin-bottom: 2%;}
+
+
+.cabecera{
+    font-family: pacifico;
+    color: #8C4B3C;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: space-evenly;
+    padding-right: 20%;
+}
+
+.acciones-nuevos-productos{
+    font-family: "Roboto";
+    background-color:#f2eded;
+    color: #8C4B3C;
+    border: solid 1px #8C4B3C;
+    width: 95%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    
+    
+    
+    
+    
+}
+
+/*
+.paddin10{
+    
+    padding-left: 8%;
+    padding-right: 8%;}
+*/
+.todos{
+    font-family: "Roboto";
+    margin-top: auto;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: auto;
+}
+
+.todos p{ 
+ margin-left: 15%;
+  margin-right: 5%;
+}
+
+.todos i{
+    font-size: 30px;
+    margin-left: 15%;
+    margin-right: 10%;
+}
+
+
+.todos input{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 3%;
+    width: 15%;
+    height: 10%;
+}
+
+
+

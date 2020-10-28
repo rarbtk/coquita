@@ -2,10 +2,134 @@
 <html lang="en">
 
 <%- include('partials/head', {title:"ADMINISTRACION DE PRODUCTOS"})%>
-
+<link rel="stylesheet" href="stylesheets/administracion.css">
 <body>
     <%- include('partials/header')%>
-    <h1>ADMINISTRACION</h1>
+
+<div class="nuevo-producto dp-flex direccion-flex">
+
+
+    <div class="codigo-producto">
+    <form action="" >
+        <label for="">Código</label>
+        <input type="number">
+    </div>
+        
+    
+    <div class="nombre-producto">
+    <form action="" >
+            <label for="">Nombre</label>
+            <input type="text">
+    </div>
+    
+    
+    <div class="agregar-producto">
+        <form action="" >
+           <label for="">Agregar</label>
+           <input type="submit" > 
+        </div>
+    </form>
+</div>
+
+<div class="activacion-productos">
+<div class="cabecera dp-flex">
+    <p>Código</p>
+    <p>Nombre</p>
+    <p>Descripcion</p>
+    <p>Precio</p>
+    <p>Estado</p>
+    <p>Imagen</p>
+
+
+</div>   
+
+
+<div class="acciones-nuevos-productos dp-flex">
+    
+
+<div class="todos dp-flex">
+    
+    <p class="paddin10">1540</p>
+    <p class="paddin10">ChocoTorta</p>
+    <p class="paddin10">Torta chocolate</p>
+    <p class="paddin10">1400$</p>
+    <p class="paddin10">Activa</p>
+    <i class="fas fa-image paddin10"></i>
+
+
+
+    <input type="submit" value="Editar">
+    <input type="submit" value="Deshabilitar">
+    <input type="submit" value="Eliminar">
+
+    
+   
+</div>
+
+
+</div>
+
+<div class="acciones-nuevos-productos dp-flex">
+    
+
+    <div class="todos dp-flex">
+        
+        <p class="paddin10">1540</p>
+        <p class="paddin10">ChocoTorta</p>
+        <p class="paddin10">Torta chocolate</p>
+        <p class="paddin10">1400$</p>
+        <p class="paddin10">Activa</p>
+        <i class="fas fa-image paddin10"></i>
+    
+    
+    
+        <input type="submit" value="Editar">
+        <input type="submit" value="Deshabilitar">
+        <input type="submit" value="Eliminar">
+    
+        
+       
+    </div>
+    
+    
+    </div>
+
+    <div class="acciones-nuevos-productos dp-flex">
+    
+
+        <div class="todos dp-flex">
+            
+            <p class="paddin10">1540</p>
+            <p class="paddin10">ChocoTorta</p>
+            <p class="paddin10">Torta chocolate</p>
+            <p class="paddin10">1400$</p>
+            <p class="paddin10">Activa</p>
+            <i class="fas fa-image paddin10"></i>
+        
+        
+        
+            <input type="submit" value="Editar">
+            <input type="submit" value="Deshabilitar">
+            <input type="submit" value="Eliminar">
+        
+            
+           
+        </div>
+        
+        
+        </div>
+        
+    
+        
+
+
+
+
+
+
+</div>
+
+<%- include('partials/footer') %>
 
 </body>
 

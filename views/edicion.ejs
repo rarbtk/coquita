@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title:"Edicion de Productos"})%>
+    <link rel="stylesheet" href="/stylesheets/edicion.css">
+<body>
+    <%- include('partials/header')%>
+
+<div class="contenedor-grande dp-flex">
+
+    <img src="/images/torta-avengers.png" alt="">
+
+<div class= "botones dp-flex"> 
+
+<div class="dp-flex espacio-botones">
+ <input type="text" placeholder="Nombre"> <input type="button" value="Enviar" class="boton-comprar"> 
+</div>
+
+<div class="dp-flex">
+    
+    <input type="number" name="Precio" placeholder="Precio"> <input type="button" value="Enviar" class="boton-comprar"> 
+   </div>
+
+<div class="dp-flex">
+    <input type="text" placeholder="Descripcion"> <input type="button" value="Enviar" class="boton-comprar"> 
+</div>
+
+<div class="dp-flex">
+    <input type="number" value="Codigo" placeholder="Codigo"> <input type="button" value="Enviar" class="boton-comprar"> 
+</div>
+
+<div class="margen-de-boton">
+    <input type="reset" value="Borrar Producto"class ="eliminar-producto">
+</div>
+
+</div>
+
+</div>
+<%- include('partials/footer') %>
+
+</body>
+</html>

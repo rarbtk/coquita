@@ -10,6 +10,7 @@ var productMainRouter = require("./routes/productMain");
 var adminRouter = require("./routes/adminRouter");
 var productCartRouter = require("./routes/productCart");
 var productDetailRouter = require("./routes/productDetail");
+var edicionRouter = require("./routes/edicionRouter");
 
 var app = express();
 
@@ -32,6 +33,8 @@ app.use("/editProduct", productMainRouter);
 app.use("/productMain", productMainRouter);
 app.use("/productDetail", productDetailRouter);
 app.use("/productCart", productCartRouter);
+app.use("/edicion", edicionRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
