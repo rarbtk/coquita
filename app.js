@@ -7,6 +7,7 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var userRouter = require("./routes/user");
 var productMainRouter = require("./routes/productMain");
+var adminRouter = require("./routes/adminRouter");
 var productCartRouter = require("./routes/productCart");
 var productDetailRouter = require("./routes/productDetail");
 
@@ -26,6 +27,8 @@ require("dotenv").config();
 
 app.use("/", indexRouter);
 app.use("/", userRouter);
+app.use("/administracion", adminRouter);
+app.use("/editProduct", productMainRouter);
 app.use("/productMain", productMainRouter);
 app.use("/productDetail", productDetailRouter);
 app.use("/productCart", productCartRouter);
