@@ -10,10 +10,12 @@ a {
   list-style-type: none;
 }
 
-a,
+
+ .color-blanco{color: white;}
+/*a,
 a:visited {
   color: white;
-}
+}*/
 
 body {
   background-color: rgb(240, 240, 240);
@@ -101,7 +103,7 @@ input {
 }
 
 @media (max-width: 500px) {
-  section {}
+  
 
   .section-login-container {
     width: 90%;
