@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<%- include('partials/head', {title: 'Detalle de productos'}) %>
+<%- include('../partials/head', {title: 'Detalle de productos'}) %>
 <link rel="stylesheet" href="/stylesheets/productDetail.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <link
@@ -10,10 +10,9 @@
   rel="stylesheet">
 
 <body>
-  <%- include('partials/header') %>
+  <%- include('../partials/header') %>
 
   <section>
-
     <article class="compra-producto">
       <div class="icono-torta">
         <a href="" class="icono-link">
@@ -23,18 +22,14 @@
       </div>
 
       <div class="contenedor-torta">
-        <img src="/images/torta-babyyoda.png" class="foto-torta">
+        <img src="/images/<%= product.image %> " class="foto-torta">
       </div>
 
       <div class="opciones">
         <div class="texto-precio">
           <div class="texto">
-
-
-            <p class="titulo-producto">Torta Baby Yoda</p>
-
+            <p class="titulo-producto"><%= product.name %> </p>
             <p class="seleccion">Selecciona tus opciones:</p>
-
             <div class="cant-personas w-95">
               <p class="preg-personas m-10">Cantidad de personas</p>
               <i class="fas fa-arrow-circle-down"></i>
@@ -97,11 +92,8 @@
 
   <div class="podes color-fondo">
     <h1 class="letra-fredoka">Podes agregar</h1>
-
     <div class="contenedor-imagenes dp-flex">
-
       <i class="fas fa-long-arrow-alt-left flechas margen-izquierda"></i>
-
       <div class="contenedor-postres">
         <a href="">
           <img src="/images/cupcake.svg" width="100px" height="100px" alt=""></a>
@@ -143,7 +135,7 @@
 
   </div>
 
-  <%- include('partials/footer') %>
+  <%- include('../partials/footer') %>
 </body>
 
 </html>

@@ -6,11 +6,7 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var userRouter = require("./routes/user");
-var productMainRouter = require("./routes/productMain");
-var adminRouter = require("./routes/adminRouter");
-var productCartRouter = require("./routes/productCart");
-var productDetailRouter = require("./routes/productDetail");
-var edicionRouter = require("./routes/edicionRouter");
+var productRouter = require("./routes/product");
 
 var app = express();
 
@@ -27,14 +23,8 @@ app.use(express.static(path.join(__dirname, "public")));
 require("dotenv").config();
 
 app.use("/", indexRouter);
+app.use("/product", productRouter);
 app.use("/", userRouter);
-app.use("/administracion", adminRouter);
-app.use("/editProduct", productMainRouter);
-app.use("/productMain", productMainRouter);
-app.use("/productDetail", productDetailRouter);
-app.use("/productCart", productCartRouter);
-app.use("/edicion", edicionRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

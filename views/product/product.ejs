@@ -1,42 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head',{title:'Productos Pasteleria Coquita'}) %>
+<%- include('../partials/head',{title:'Productos Pasteleria Coquita'}) %>
 
-<link rel="stylesheet" href="/stylesheets/productMain.css">
+<link rel="stylesheet" href="/stylesheets/product.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <link
     href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Pacifico&family=Roboto&display=swap"
     rel="stylesheet">
-<!-- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/productMain.css">
-    <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Pacifico&family=Roboto&display=swap"
-        rel="stylesheet">
-    <title>Productos Pasteleria Coquita</title>
-</head> -->
 
 <body class="cuerpo">
-    <%- include('partials/header') %>
+    <%- include('../partials/header') %>
 
     <main>
-
         <section class="products-menu">
             <article class="margin primer-item p-1">
-
                 <img src="/images/birthday-cake.svg" class="products-icons">
                 <a href="" class="color-link">
                     <p class="f-pacifico">Cumpleaños</p>
                 </a>
             </article>
-
             <article class="margin p-1">
-
                 <img src="/images/celebration.svg" class="products-icons">
                 <a href="" class="color-link">
                     <p class="f-pacifico">Eventos</p>
@@ -44,7 +28,6 @@
             </article>
 
             <article class="margin">
-
                 <img src="/images/cupcake.svg" class="products-icons">
                 <a href="" class="color-link">
                     <p class="f-pacifico two-lines">Pequeños gustos</p>
@@ -64,42 +47,37 @@
         <section class="buscador-torta">
             <div class="buscador">
                 <input type="search" class="input-buscador" placeholder="Buscador de tematica">
-
                 <a href=""><img src="/images/search.png" width="25px" height="25px" class="lupita"></a>
 
             </div>
         </section>
 
         <section class="detalle-productos">
+
+            <% products.forEach(product => { %>
             <article class="producto">
-
-                <img src="/images/torta-tik-tok.png" class="foto-torta">
+                <img src="/images/<%= product.image %> " class="foto-torta">
                 <p class="texto-torta">
-                    Torta Tik Tok
+                    <%= product.name %>
                 </p>
-
                 <p class="precio-torta">
-                    $ 3.500
+                    $ <%= product.price %>
                 </p>
-
                 <div class="boton-comprar">
-                    <a href="/productDetail">
+                    <a href="/product/<%= product.id %> ">
                         <p class="texto-comprar">
                             Comprar
                         </p>
                     </a>
                 </div>
-
-
             </article>
+            <% }); %>
 
-            <article class="producto">
-
+            <!-- <article class="producto">
                 <img src="/images/torta-babyyoda.png" class="foto-torta">
                 <p class="texto-torta">
                     Torta Baby Yoda
                 </p>
-
                 <p class="precio-torta">
                     $ 5.500
                 </p>
@@ -110,11 +88,9 @@
                         </p>
                     </a>
                 </div>
-
             </article>
 
             <article class="producto">
-
                 <img src="/images/torta-strangerthings.png" class="foto-torta">
                 <p class="texto-torta">
                     Torta Stranger Things
@@ -249,7 +225,7 @@
                 </div>
 
 
-            </article>
+            </article> -->
         </section>
 
         <div class="paginas">
@@ -267,7 +243,7 @@
     </main>
 
 
-    <%- include('partials/footer') %>
+    <%- include('../partials/footer') %>
 
 
 
