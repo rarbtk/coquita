@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head', {title:"Carrito de compras"}) %>
+<%- include('../partials/head', {title:"Register"}) %>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 <link rel="stylesheet" href="stylesheets/register.css">
 
 
 <body>
-  <%- include('partials/header') %>
+  <%- include('../partials/header') %>
   <section>
-    <div class="section-login-container">
-      <p class="section-login-title">Mi cuenta</p>
-      <div class="inputs">
-        <i class="fas fa-user section-input-icon"></i>
-        <input type="text" name="" id="" placeholder="Nombre y Apellido" />
-      </div>
-      <div class="inputs">
-        <i class="fas fa-calendar-alt section-input-icon"></i>
-        <input type="text" name="" id="" placeholder="Fecha de nacimiento" />
-      </div>
 
-      <div class="inputs">
-        <i class="fas fa-envelope section-input-icon"></i>
-        <input type="text" name="" id="" placeholder="Email" />
-      </div>
-      <div class="inputs">
-        <i class="fas fa-key section-input-icon"></i>
-        <input type="password" name="" id="" placeholder="Contraseña" class="section-input" />
-      </div>
-      <div class="inputs">
-        <i class="fas fa-key section-input-icon"></i>
-        <input type="password" name="" id="" placeholder="Confirmar contraseña" class="section-input" />
-      </div>
-      <div class="login">
-        <p class="section-btn-login"><a href="/" class="color-blanco">Crear cuenta</a></p>
-      </div>
-      <div class="section-links">
-        <a href="/login">Ya estoy registrado</a>
-      </div>
+    <div class="section-login-container">
+      <form action="/register" method="POST" id="register" enctype="application/x-www-form-urlencoded">
+        <p class="section-login-title">Mi cuenta</p>
+        <div class="inputs">
+          <i class="fas fa-envelope section-input-icon"></i>
+          <input type="text" name="email" id="" placeholder="Email" />
+        </div>
+        <div class="inputs">
+          <i class="fas fa-key section-input-icon"></i>
+          <input type="password" name="password" id="" placeholder="Contraseña" class="section-input" />
+        </div>
+        <div class="login">
+          <!-- <p class="section-btn-login"><a type="submit" class="color-blanco">Crear cuenta</a></p> -->
+          <input type="submit" value="Submit" form="register">
+        </div>
+        <div class="section-links">
+          <a href="/login">Ya estoy registrado</a>
+        </div>
+      </form>
     </div>
+
   </section>
 
-  <%- include('partials/footer') %>
+  <%- include('../partials/footer') %>
 </body>
 
 </html>
