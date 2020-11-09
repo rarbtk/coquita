@@ -9,8 +9,8 @@
 <body>
   <%- include('../partials/header') %>
   <section>
-
     <div class="section-login-container">
+
       <form action="/register" method="POST" id="register" enctype="application/x-www-form-urlencoded">
         <p class="section-login-title">Mi cuenta</p>
         <div class="inputs">
@@ -28,6 +28,16 @@
         <div class="section-links">
           <a href="/login">Ya estoy registrado</a>
         </div>
+        <!-- MOSTRAR ERRORES DEL FORM -->
+        <% if(typeof errors!='undefined'){ %>
+        <ul>
+          <% for (let i=0; i < errors.length; i++) { %>
+          <li style="color: red;">
+            <%= errors[i].msg %>
+          </li>
+          <% } %>
+        </ul>
+        <% } %>
       </form>
     </div>
 
