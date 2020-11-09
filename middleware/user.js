@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcrypt");
 const userFilePath = path.join(__dirname, "../data/users.json");
 
 const userMiddleware = {
@@ -9,7 +10,7 @@ const userMiddleware = {
     let newUser = {
       name: "",
       email: user.email,
-      password: user.password,
+      password: bcrypt.hashSync(user.password, 10),
       admin: false,
     };
     users.push(newUser);
