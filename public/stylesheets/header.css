@@ -2,65 +2,175 @@
 
 
 /* aaaaaaaaaaaaaa */ 
-
+@media(min-width:768px){ /*desktop*/
 *{padding: 0%; margin: 0%; box-sizing: border-box;}
 
 .dp-flex{display: flex;}
 
 header{
-    background-color:#f2eded;
-    height: auto;
-    width: auto;
+    background-color:#f2eded ;
     justify-content:space-around;}
 
 .logo img{
-    width: 80%;
-    height: 110%;
-    margin-left: 40%;
+    width: 55%;
+    height: 90%;
+    margin-left: 90%;
     border-radius: 50%;
     position: relative;}
 
+#menu{
+    display: none;}
 
 .barra{
-    margin-top: auto;
-    margin-bottom: auto;
     font-size: 22px;
     margin-right: 15%;
+    margin-bottom: 0%;
     font-family: "Roboto";
     font-weight: bold;
-    height: 60px;
-}
+    height: auto;
+    align-items: flex-end;
+    justify-content: space-between ;}
+
+.barra ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;}
+
+.barra a:nth-child(1){
+    margin-left: 30px;}
+
+.barra ul li:nth-child(5){
+    display: none;}
+.barra ul li:nth-child(6){
+    display: none;}
+.barra ul li:nth-child(7){
+    display: none;}
+
+.barra ul li {
+    margin-left: 70px;}
+
+
 
 a{text-decoration: none;}
 
-.color-marron{color:  #8C4B3C;}
 
-.padding-7{ padding: 7%;}
-.padding-5{padding: 5%;}
+.color-marron{color:  #8C4B3C;}
 
 .iconos{
     color: brown;
-    margin-top: 110px;
+    margin-top: 20px;
     font-size: 24px;
     margin-right: 10%;
-    font-weight: bold;}
-  
-@media(max-width:768px){
+    font-weight: bold;
+    align-items: flex-end;
+    justify-content: flex-end;}
+
+.iconos a{
+    margin-left: 20px;}
+
+.iconos li{
+    float: right;
+    color:#5f260d;
+    margin-top: 70px;
+    list-style: none;
+    margin-left: 20px;
+    padding-right: 20px;
+
+}
+
+}
+@media(max-width:768px){ /*mobile*/
+
+header{
+    background-color:#f2eded ;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 85px;
+    padding-top: 2px;}
     
-    .barra{
-        margin-top: 10%;
-        font-size: 12px;
+.logo{
+    flex-grow: 1;
+}
+
+.navegacion{
+    flex-grow: 1;
+}
+
+.iconos{
+    display: none;
+}
+
+.logo img{ 
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin-left: 40%;}
+
+/*BOTON HAMBURGUESA*/
+    /* En smartphone mostramos el botón */
+    #menu {
+        display: block;
+        width: 55px;
+        height: 55px;
+        font-size: 40px;
+        background-color: #f2eded;
+        border: none;
+        margin-left: -170px;
+        margin-top: 10px;
+
+    }
+    button#menu:focus + nav.barra {
+    /* Si es pulsado el boton, mostramos el nav.
+    Esto lo puedo hacer porque adquiere el foco. */
+        display: initial;
+        position: relative;
+        z-index: 5;
+        margin-left: 9px;
     }
 
-    .logo img{
-       
+    nav.barra ul {
+        display: flex;
+        list-style: none;
+        margin-top: 2px;
+        padding-top: 0px;
+    }
+
+    nav.barra ul li a {
+        display: block;
+        font-weight: bold;
+        width: 8em;
+        text-decoration: none;
+        padding: .3em 0;
+        text-align: left;
+        color: black;
+        background: #f2eded;
+        transition: 1s all;
+        font-size: 22px;
+        padding-left: 25px;
+    }
+
+    nav.barra ul li:nth-child(4){
+        border-bottom: 1px solid black;
+    }
+
+    nav.barra ul a:hover {
+        background: lightgray;
+    }
+
+    nav.barra {
+        display: none;
+    }
+    nav.barra ul {
+        flex-direction: column;
         position: absolute;
-        width: 40px;
-        height: 40px;
     }
 
-    .iconos{
-        font-size: 15px;
-        margin-top: 20%;
-    }
+/*FIN BOTON HAMBURGUESA*/
+
+.iconos{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
 }

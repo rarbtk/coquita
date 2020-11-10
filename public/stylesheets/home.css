@@ -9,29 +9,11 @@
     justify-content: space-between;
 }
 
-header{
-    background-color:#f2eded;
-    height: auto;
-    width: auto;
-    justify-content:space-around;}
-
-.logo img{
-    width: 80%;
-    height: 110%;
-    margin-left: 40%;
-    border-radius: 50%;
-    position: relative;}
 
 
-.barra{
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 22px;
-    margin-right: 15%;
-    font-family: "Roboto";
-    font-weight: bold;
-    height: 60px;
-}
+
+@media(min-width:768px){ /*desktop*/
+
 
 a{text-decoration: none;}
 
@@ -39,33 +21,8 @@ a{text-decoration: none;}
 
 .padding-7{ padding: 7%;}
 .padding-5{padding: 5%;}
-
-.iconos{
-    color: brown;
-    margin-top: 110px;
-    font-size: 24px;
-    margin-right: 10%;
-    font-weight: bold;}
   
-@media(max-width:768px){
-    
-    .barra{
-        margin-top: 10%;
-        font-size: 12px;
-    }
 
-    .logo img{
-       
-        position: absolute;
-        width: 40px;
-        height: 40px;
-    }
-
-    .iconos{
-        font-size: 15px;
-        margin-top: 20%;
-    }
-}
 
 
 /* Banner */
@@ -73,6 +30,7 @@ a{text-decoration: none;}
     display: block;
     margin: auto;
     margin-top: 20px;
+    margin-bottom: 10px;
     width: 70%;
     height: 300px;
     align-content: center;
@@ -82,9 +40,9 @@ a{text-decoration: none;}
     background-color:#E8ABAA ;
     width: 50%;
     height: 150px;
+    margin-top: 20px;
     margin: auto;
     border-radius: 10px;
-    position: relative;
     bottom:10px;
     object-fit: cover;
     justify-content: space-around;
@@ -192,7 +150,7 @@ a{text-decoration: none;}
     text-align: center;
     background-color: #f5deb3;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 1px;
     width: 70%;
     height: 350px;
     align-content: center;
@@ -203,28 +161,18 @@ a{text-decoration: none;}
     z-index: 1;    
 }
 
-.aboutme-2 {
+.aboutme h2{
+    margin-top: 40px;
+    color: #8C4B3C;
     text-align: center;
-    background-color: #f5deb3;    
-    z-index: 2;
-    position: relative;    
-    border: 3px solid lightgrey;
-    box-shadow: 10px 5px 5px #8C4B3C;
-    height: 350px;
-    width:20%;
-    bottom: 250px;
-    left: 300px;
-}
-
-.aboutme-3{
-    height: 100px;
-    background-color: white;
+    align-items: center;
+    padding: 20px;
 }
 
 .photoab {
     padding: 10px;
-    height: 380px;
-    margin-left: 110px;
+    height: 280px;
+    margin-left: 50px;
     
 }
 .parrafoab {
@@ -232,97 +180,158 @@ a{text-decoration: none;}
     color: #8C4B3C;
     text-align: center;
     align-items: center;
+    padding: 20px;
+}
+
 }
 
 
-/* Footer */
-
-
-.contenedor{
-    background-color: #5f260d;        
-    height: 200px;
-    width: 100%;
-    display: flex;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #f1ecec;
+@media(max-width:768px){ /*mobile*/
+    
+/* Banner */
+.banner img{
+    display: block;
     margin: auto;
+    margin-top: 2px;
+    width: 100%;
+    height: 300px;
+    align-content: center;
+    }
+
+.contenedor-marron{
+    background-color:#E8ABAA ;
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+    position: relative;
+    bottom:5px;
+    object-fit: cover;
+    text-align: center;
+    padding: 5px;
 }
 
-.colum1{
-    width: 10%;
-    margin-top: 20px;
-    margin-left: 15%;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-
-.colum1 a{
-    color: #f1ecec;
-    text-decoration: none;
-    
-}
-
-.colum1 li{
-    list-style: none;
-}
-
-.colum1 .row{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
-}
-
-.colum2{
-    width: 15%;
-    margin-top: 20px;
-    margin-left: 15%;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.colum2 .row2{
-    margin: 10px;
-    
-}
-
-.colum2 i{
-    font-size: 25px;
-    width: 35px;
-}
-
-.colum3{
-    width: 10%;
-    margin-top: 20px;
-    margin-left: 7%;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.colum3 .row3{
-    margin-top: 10px;
-    
-}
-.colum3 a{
-   color: #f1ecec;
-}
-
-
-.colum4{
-    width: 30%;
-    margin-top: auto;
-    margin-right: auto;
-    margin-bottom: auto;
-    margin-left: auto;
+.barra-eventos{
     font-family: 'Pacifico', cursive;
-
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.colum4 #email{
-    background-color: #5f260d;
-    border-color: #f1ecec;
-    border-style: solid;
+.barra-eventos article{
+    width: 45%;
+    padding: 2%;
+}
+
+.barra-eventos article p{
+    color: #F3ECE9;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 4px;
+    font-family: 'Pacifico', cursive;
+}
+
+.barra-eventos article a{
+    text-decoration: none;
+}
+
+.img-prod{
+    width: 80px;
+    height: 75px;
+    justify-content: center;
     
 }
 
+/* Promociones */
+
+.promociones {
+    background-color: #f5deb3;
+    width: 100%;
+    align-content: center;
+    border: 1px solid lightgrey;
+    padding: 10px 50px; 
+    position: relative; 
+    flex-direction: column;
+    }
+
+.nuestra-promo {
+    font-size: 25px;
+    color: #8C4B3C;
+    text-align: center;
+    font-weight: bold;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'Fredoka One', cursive;
+}
+
+.promociones .nuestra-promo img{
+    width: 50%;
+}
+
+.nuestra-promo-2 {
+    font-size: 16px;
+    color: #8C4B3C;
+    text-align: center;
+    font-weight: bold;
+    flex-direction: column;
+    font-family: 'Roboto';
+    margin-bottom: 20px; 
+    box-shadow: 10px 12px 5px #8C4B3C;
+    border: 1px solid lightgrey;
+    box-sizing: border-box;
+    width: 100%;    
+}
+
+.promociones .nuestra-promo-2 img{
+    width: 30%;
+    margin: 15px;
+}
+
+.precio-promo {
+    font-family: 'Pacifico', cursive;
+    color: lightcoral;
+    font-size: 24px;
+
+}
+
+/* #### sobre mi */
+
+
+.aboutme {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: #f5deb3;
+    margin-top: 1px;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    border: 1px solid lightgrey; 
+    font-family: 'Pacifico', cursive;
+    padding: 5%;
+}
+
+.aboutme h2{
+    order: 1;
+    color: #8C4B3C;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.photoab {
+    height: 60%;
+    width: 60%;
+    order: 5;
+}
+.parrafoab {
+    color: #8C4B3C;
+    order: 9;
+    width: 80%;
+    height: 100%;
+    margin-top: 5px;
+}
+
+
+
+}
