@@ -10,15 +10,18 @@
 
 
 <body>
-  <%- include('../partials/header') %>
+  <!-- <%- include('../partials/header') %> -->
 
   <section>
     <div class="section-login-container">
+      <div class="logo">
+        <img src="images/fotocoquita.jpg" alt="logo">
+      </div>
       <form action="/login" method="POST">
         <p class="section-login-title">Mi cuenta</p>
         <div class="inputs">
           <i class="fas fa-envelope section-input-icon"></i>
-          <input type="text" name="email" id="" placeholder="Email" />
+          <input type="text" name="email" id="" placeholder="Email" class="section-input" />
         </div>
         <div class="inputs">
           <i class="fas fa-key section-input-icon"></i>
@@ -42,7 +45,7 @@
     </div>
   </section>
 
-  <%- include('../partials/footer') %>
+  <!-- <%- include('../partials/footer') %> -->
 
 </body>
 
