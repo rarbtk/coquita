@@ -4,38 +4,39 @@
     <link rel="stylesheet" href="/stylesheets/edicion.css">
 <body>
     <%- include('partials/header')%>
+        <h1>Edición de productos</h1>
+    <div class="contenedor-grande dp-flex">
 
-<div class="contenedor-grande dp-flex">
+        <img src="/images/torta-avengers.png" alt="">
 
-    <img src="/images/torta-avengers.png" alt="">
+        <div class="formulario dp-flex">
+            <div class= "datos dp-flex"> 
 
-<div class= "botones dp-flex"> 
+                <div class="dp-flex espacio-botones">
+                    <input type="text" placeholder="Nombre" class="margen-tres">
+                </div>
 
-<div class="dp-flex espacio-botones">
- <input type="text" placeholder="Nombre" class="margen-tres"> <input type="button" value="Enviar" class="boton-comprar"> 
-</div>
+                <div class="dp-flex">
+                    <input type="number" name="Precio" placeholder="Precio" class="margen-tres"> 
+                </div>
 
-<div class="dp-flex">
-    
-    <input type="number" name="Precio" placeholder="Precio" class="margen-tres"> <input type="button" value="Enviar" class="boton-comprar"> 
-   </div>
+                <div class="dp-flex">
+                    <input type="text" placeholder="Descripción" class="margen-tres">
+                </div>
 
-<div class="dp-flex">
-    <input type="text" placeholder="Descripcion" class="margen-tres"> <input type="button" value="Enviar" class="boton-comprar"> 
-</div>
+                <div class="dp-flex">
+                    <input type="number" value="Codigo" placeholder="Código" class="margen-tres"> 
+                </div>
+            </div>
 
-<div class="dp-flex">
+            <div class="margen-de-boton dp-flex">
+                <button class="eliminar-producto" type="submit">Editar producto</button>
+                <button class="eliminar-producto" type="reset">Limpiar cambios</button>
+                <button class="eliminar-producto" type="reset">Eliminar producto</button>
+            </div>
+        </div>
 
-<input type="number" value="Codigo" placeholder="Codigo" class="margen-tres"> <input type="button" value="Enviar" class="boton-comprar"> 
-</div>
-
-<div class="margen-de-boton">
-    <input type="reset" value="Borrar Producto"class ="eliminar-producto">
-</div>
-
-</div>
-
-</div>
+    </div>
 <%- include('partials/footer') %>
 
 </body>

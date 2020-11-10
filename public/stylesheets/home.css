@@ -161,22 +161,12 @@ a{text-decoration: none;}
     z-index: 1;    
 }
 
-.aboutme-2 {
+.aboutme h2{
+    margin-top: 40px;
+    color: #8C4B3C;
     text-align: center;
-    background-color: #f5deb3;    
-    z-index: 2;
-    position: relative;    
-    border: 3px solid lightgrey;
-    box-shadow: 10px 5px 5px #8C4B3C;
-    height: 350px;
-    width:20%;
-    bottom: 250px;
-    left: 300px;
-}
-
-.aboutme-3{
-    height: 100px;
-    background-color: white;
+    align-items: center;
+    padding: 20px;
 }
 
 .photoab {
