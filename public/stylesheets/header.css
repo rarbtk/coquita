@@ -2,7 +2,7 @@
 
 
 /* aaaaaaaaaaaaaa */ 
-@media(min-width:768px){ /*desktop*/
+@media(min-width:760px){ /*desktop*/
 *{padding: 0%; margin: 0%; box-sizing: border-box;}
 
 .dp-flex{display: flex;}
@@ -39,11 +39,11 @@ header{
 .barra a:nth-child(1){
     margin-left: 30px;}
 
+.barra ul li:nth-child(4){
+    display: none;}
 .barra ul li:nth-child(5){
     display: none;}
 .barra ul li:nth-child(6){
-    display: none;}
-.barra ul li:nth-child(7){
     display: none;}
 
 .barra ul li {
