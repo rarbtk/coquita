@@ -14,7 +14,6 @@
 
 @media(min-width:768px){ /*desktop*/
 
-
 a{text-decoration: none;}
 
 .color-marron{color:  #8C4B3C;}
@@ -22,30 +21,27 @@ a{text-decoration: none;}
 .padding-7{ padding: 7%;}
 .padding-5{padding: 5%;}
   
-
-
-
 /* Banner */
 .banner img{
     display: block;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     width: 70%;
-    height: 300px;
+    height: 400px;
     align-content: center;
     }
 
 .contenedor-marron{
     background-color:#E8ABAA ;
-    width: 50%;
+    width: 70%;
     height: 150px;
     margin-top: 20px;
     margin: auto;
     border-radius: 10px;
     bottom:10px;
     object-fit: cover;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     padding: 15px;
     box-shadow: 2px 5px 7px #CBA3A2;  
@@ -65,14 +61,17 @@ a{text-decoration: none;}
 .barra-eventos{
     margin: auto;
     font-family: 'Pacifico', cursive;
-    padding-bottom: 4px;    
+    padding-bottom: 4px;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 20px;
+
 }
 
-.img-prod{
-    width: 80px;
-    height: 75px;
-    justify-content: center;
-    
+.barra-eventos .img-prod{
+    width: 60px;
+    height: 55px;
+
 }
 
 .torta1 {
@@ -187,14 +186,13 @@ a{text-decoration: none;}
 
 
 @media(max-width:768px){ /*mobile*/
-    
+
 /* Banner */
 .banner img{
     display: block;
     margin: auto;
     margin-top: 2px;
-    width: 100%;
-    height: 300px;
+    width: 45%;
     align-content: center;
     }
 
@@ -236,8 +234,8 @@ a{text-decoration: none;}
 }
 
 .img-prod{
-    width: 80px;
-    height: 75px;
+    width: 60px;
+    height: 55px;
     justify-content: center;
     
 }
@@ -265,7 +263,7 @@ a{text-decoration: none;}
 }
 
 .promociones .nuestra-promo img{
-    width: 50%;
+    width: 30%;
 }
 
 .nuestra-promo-2 {
@@ -283,7 +281,7 @@ a{text-decoration: none;}
 }
 
 .promociones .nuestra-promo-2 img{
-    width: 30%;
+    width: 15%;
     margin: 15px;
 }
 
