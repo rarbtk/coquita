@@ -1,14 +1,13 @@
-const userMiddleware = require("../middleware/user");
+const { user } = require("../models/user");
 let { check, validationResult, body } = require("express-validator");
 
 const userControllers = {
   storeUser: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      userMiddleware.storeUser(req.body);
+      user.storeUser(req.body);
       res.send("register success");
     } else {
-      console.log(errors);
       return res.render("user/register", { errors: errors.errors });
     }
   },

@@ -1,14 +1,14 @@
-const { productsMiddleware } = require("../middleware/products");
+const { product } = require("../models/products");
 
 const productsController = {
   products: (req, res) => {
-    let products = productsMiddleware.getProducts();
+    let products = product.getProducts();
     res.render("product/product", { products });
   },
 
   productDetail: (req, res) => {
     console.log(req.params.id);
-    let product = productsMiddleware.getProductById(req.params.id);
+    let product = product.getProductById(req.params.id);
     console.log(product);
     res.render("product/productDetail", { product: product[0] });
   },
