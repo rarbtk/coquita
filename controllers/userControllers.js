@@ -5,8 +5,14 @@ const userControllers = {
   storeUser: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      user.storeUser(req.body);
-      res.send("register success");
+      if (user.getUserByEmail(req.body.email)) {
+        return res.render("user/register", {
+          errors: [{ msg: "La cuenta/email ya existe en la DB " }],
+        });
+      } else {
+        user.storeUser(req.body);
+        res.send("register OK");
+      }
     } else {
       return res.render("user/register", { errors: errors.errors });
     }
