@@ -8,22 +8,25 @@
 
 <body>
   <%- include('../partials/header') %>
-  <section>
-    <div class="section-login-container">
+  <section class="section-login-container">
 
       <form action="/register" method="POST" id="register" enctype="application/x-www-form-urlencoded">
-        <p class="section-login-title">Mi cuenta</p>
+        <p class="section-login-title">Crea tu cuenta</p>
         <div class="inputs">
-          <i class="fas fa-envelope section-input-icon"></i>
-          <input type="text" name="email" id="" placeholder="Email" />
+          <label for="email">Email</label>
+          <input type="text" name="email" id="" placeholder="" />
         </div>
         <div class="inputs">
-          <i class="fas fa-key section-input-icon"></i>
-          <input type="password" name="password" id="" placeholder="Contraseña" class="section-input" />
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="" placeholder="" class="section-input" />
+        </div>
+        <div class="inputs">
+          <label for="password">Repetí la contraseña</label>
+          <input type="password" name="password2" id="" placeholder="" class="section-input" />
         </div>
         <div class="login">
           <!-- <p class="section-btn-login"><a type="submit" class="color-blanco">Crear cuenta</a></p> -->
-          <input type="submit" value="Submit" form="register">
+          <button type="submit" form="register">Registrarme</button>
         </div>
         <div class="section-links">
           <a href="/login">Ya estoy registrado</a>
@@ -33,13 +36,13 @@
         <ul>
           <% for (let i=0; i < errors.length; i++) { %>
           <li style="color: red;">
-            <%= errors[i].msg %>
+            <i class="fas fa-exclamation-circle"></i><%= errors[i].msg %>
           </li>
           <% } %>
         </ul>
         <% } %>
       </form>
-    </div>
+
 
   </section>
 

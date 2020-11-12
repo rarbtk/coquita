@@ -20,21 +20,21 @@ a{text-decoration: none;}
 
 .padding-7{ padding: 7%;}
 .padding-5{padding: 5%;}
-  
+
 /* Banner */
 .banner img{
     display: block;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 70%;
+    width: 90%;
     height: 400px;
     align-content: center;
     }
 
 .contenedor-marron{
     background-color:#E8ABAA ;
-    width: 70%;
+    width: 90%;
     height: 150px;
     margin-top: 20px;
     margin: auto;
@@ -100,7 +100,7 @@ a{text-decoration: none;}
     background-color: #f5deb3;
     margin: 0 auto;
     margin-top: 20px;
-    width: 70%;
+    width: 90%;
     align-content: center;
     border: 1px solid lightgrey;
     padding: 20px 10px; 
@@ -150,7 +150,7 @@ a{text-decoration: none;}
     background-color: #f5deb3;
     margin: 0 auto;
     margin-top: 1px;
-    width: 70%;
+    width: 90%;
     height: 350px;
     align-content: center;
     border: 1px solid lightgrey;
@@ -192,7 +192,8 @@ a{text-decoration: none;}
     display: block;
     margin: auto;
     margin-top: 2px;
-    width: 45%;
+    width: 100%;
+    height: 300px;
     align-content: center;
     }
 
