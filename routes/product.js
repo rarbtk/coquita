@@ -13,9 +13,13 @@ router.get("/create", function (req, res, next) {
 //get product detail by id
 router.get("/:id", productsController.productDetail);
 
-//Edit producto
+/*Edit producto
 router.get("/edit/:id", function (req, res, next) {
   res.render("product/productEdit");
-});
+});*/
+
+//Edit producto
+//se tiene que escribir en el url product/productEdit/y cualquier id
+router.get("/productEdit/:id", productsController.productEdition);
 
 module.exports = router;

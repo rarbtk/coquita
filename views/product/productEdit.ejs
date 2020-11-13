@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head', {title:"Edicion de Productos"})%>
+    <%- include('../partials/head', {title:"Edicion de Productos"})%>
     <link rel="stylesheet" href="/stylesheets/edicion.css">
 <body>
-    <%- include('partials/header')%>
+    <%- include('../partials/header')%>
         <h1>Edición de productos</h1>
     <div class="contenedor-grande dp-flex">
 
-        <img src="/images/torta-avengers.png" alt="">
+        <img src="/images/<%-product.image%>" alt="">
 
         <div class="formulario dp-flex">
             <div class= "datos dp-flex"> 
@@ -37,7 +37,7 @@
         </div>
 
     </div>
-<%- include('partials/footer') %>
+<%- include('../partials/footer') %>
 
 </body>
 </html>

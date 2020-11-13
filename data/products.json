@@ -48,11 +48,11 @@
     "image": "torta-cerveza.png"
   },
   {
-    "name": "mesi",
-    "price": "1800",
-    "detail": "foto de messi",
+    "name": "ricardo",
+    "price": "2000",
+    "detail": "torta chocola",
     "category": "torta",
-    "id": 7,
-    "image":"tortamessi.png"
+    "id": 7
   }
+  
 ]
