@@ -1,6 +1,28 @@
 let products = require("../data/products.json");
 let fs = require("fs")
+let multer = require("multer")
+let path = require("path")
 
+
+
+var config= multer.diskStorage({
+
+destination : (req, file, cb) =>{
+
+    cb(null, "public/images")
+
+
+
+},
+
+filename : (req, file, cb) =>{
+
+    cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
+}
+
+})
+
+var upload = multer({storage : config})
 
 const createController = {
     create : (req,res) =>{
@@ -20,6 +42,7 @@ const createController = {
 
 
     }),
+
     //volver a convertir el array en string
     content = JSON.stringify(content);
     //escribir en la base de datos json;
@@ -27,7 +50,7 @@ const createController = {
 
 
 
-   
+   console.log(req.file)
     res.send("todo bien")
     },
 };

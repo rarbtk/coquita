@@ -9,7 +9,7 @@
     <div class="contenedor-grande">
 
         
-        <form action="/creation" method="POST">
+        <form action="/creation" method="POST" enctype="multipart/form-data"> 
         <div class="formulario">
             <div class= "datos"> 
 
@@ -29,11 +29,13 @@
                     <input type="text" name="category" placeholder="Categoria" class="margen-tres"> 
                 </div>
             </div>
+            
 
             <div class="margen-de-boton dp-flex">
                 <button class="guardar-producto">Guardar</button>
                 <button class="guardar-producto" type="reset">Limpiar</button>
-                <button class="guardar-producto" type="">Agregar Img</button>
+                <input type="file" name="image" class="guardar-producto"> 
+                
                 
             </div>
         </div>
