@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head',{title:'Creacion'}) %>
+
+    <link rel="stylesheet" href="/stylesheets/creacion.css">
+<body>
+    <h1>Creacion de producto
+    </h1>
+    <div class="contenedor-grande">
+
+        
+        <form action="/creation" method="POST">
+        <div class="formulario">
+            <div class= "datos"> 
+
+                <div>
+                    <input type="text" name="name" placeholder="Nombre" class="margen-tres">
+                </div>
+
+                <div class>
+                    <input type="number" name="price" placeholder="Precio" class="margen-tres"> 
+                </div>
+
+                <div class>
+                    <input type="text" name="detail" placeholder="Descripcion" class="margen-tres">
+                </div>
+
+                <div >
+                    <input type="text" name="category" placeholder="Categoria" class="margen-tres"> 
+                </div>
+            </div>
+
+            <div class="margen-de-boton dp-flex">
+                <button class="guardar-producto">Guardar</button>
+                <button class="guardar-producto" type="reset">Limpiar</button>
+                <button class="guardar-producto" type="">Agregar Img</button>
+                
+            </div>
+        </div>
+    </form>
+    </div>
+
+
+
+</body>
+<%- include('../partials/footer') %>
+
+</html>
