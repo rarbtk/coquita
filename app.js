@@ -33,11 +33,11 @@ app.use("/", indexRouter);
 app.use("/product", productRouter);
 app.use("/", userRouter);
 app.use("/", cartRouter);
-app.use("/creation",productCreation);
+app.use("/creation", productCreation);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  next(createError(404));
+  res.status(404).render("not-found");
 });
 
 // error handler
