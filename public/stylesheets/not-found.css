@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+}
+
+a {
+    display: block;
+    color: red
+}
+
+body .container .not-found {
+    width: 100%;
+}
+
+body .container a {
+    text-align: center
+}
