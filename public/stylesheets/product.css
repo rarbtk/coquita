@@ -65,28 +65,7 @@
     height: 100px;
 }
 
-.buscador {
-    display: flex;
-    justify-content: center;
-    border: 1px solid black;
-    background-color: white;
-    font-family: roboto;
-    font-weight: bold;
-    font-size: 12px;
-    width: 280px;
-    height: 35px;
 
-}
-
-.input-buscador {
-    border: none;
-    margin-left: 5px;
-    font-size: 14px;
-    width: 200px;
-    font-family: montserrat;
-    text-align: center;
-
-}
 
 .buscador-torta {
     display: flex;
@@ -94,16 +73,41 @@
     margin-top: 20px;
 }
 
-.lupita {
-    padding: 1.5%;
+.buscador {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    background-color: white;
+    width: 400px;
+    height: 35px;
 
-    border: 1px solid #5C3A27;
-    margin-top: 3.5px;
-    background-color: #F3ECE9;
+}
+
+.input-buscador {
+    border: none;
+    font-size: 14px;
+    width: 350px;
+    font-family: montserrat;
+    text-align: left;
+    padding-left:  12px;
+}
+
+.input-buscador:focus {
+    border: none;
+}
+
+.buscador-torta .button-search{ 
+    position: relative;
+    color: grey;
+    font-size: 20px;
+    background-color: white;
+    border: none;
+    height: 30px;
+    margin-right: 13px;
 }
 
 .detalle-productos {
-    max-width: 70%;
+    max-width: 90%;
     margin: 0 auto;
     padding: 10px 30px 30px 30px;
 
@@ -113,6 +117,7 @@
 
 
 }
+
 
 .producto {
 

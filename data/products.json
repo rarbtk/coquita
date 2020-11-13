@@ -46,5 +46,21 @@
         "category": "Tortas",
         "detail": "Torta Cerveza premium 8/10 Personas",
         "image": "torta-cerveza.png"
+    },
+    {
+        "id": 7,
+        "name": "Torta Mario Bros",
+        "price": 440,
+        "category": "Tortas",
+        "detail": "Torta Mario Bros premium 8/10 Personas",
+        "image": "torta-mariobros.png"
+    },
+    {
+        "id": 8,
+        "name": "Torta Dragon Ball",
+        "price": 440,
+        "category": "Tortas",
+        "detail": "Torta Goku premium 8/10 Personas",
+        "image": "torta-dragon-ball.png"
     }
 ]
