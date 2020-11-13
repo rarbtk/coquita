@@ -46,13 +46,5 @@
     "category": "Tortas",
     "detail": "Torta Cerveza premium 8/10 Personas",
     "image": "torta-cerveza.png"
-  },
-  {
-    "name": "ricardo",
-    "price": "2000",
-    "detail": "torta chocola",
-    "category": "torta",
-    "id": 7
   }
-  
 ]
