@@ -1,6 +1,6 @@
 const { product } = require("../models/products");
 
-let products = require("../data/products.json");
+let productos = require("../data/products.json");
 let fs = require("fs")
 
 let path = require("path")
@@ -40,21 +40,21 @@ const productsController = {
     //convertir el string en array json
     //products = JSON.parse(content)
     //agregar al array el producto nuevo
-    products.push({
+    productos.push({
         ...req.body, 
         
         image: req.files[0].filename,
         
-        id : products[products.length-1].id+1
+        id : productos[productos.length-1].id+1
 
 
     }),
 
     
     //volver a convertir el array en string
-    products = JSON.stringify(products);
+    productos = JSON.stringify(productos);
     //escribir en la base de datos json;
-    fs.writeFileSync("./data/products.json",products)
+    fs.writeFileSync("./data/products.json",productos)
 
 
 

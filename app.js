@@ -36,7 +36,7 @@ app.use("/", cartRouter);
 
 
 
-app.use("/creation", productCreation);
+
 
 
 // catch 404 and forward to error handler
