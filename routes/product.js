@@ -22,18 +22,12 @@ var config = multer.diskStorage({
 
 var upload = multer({ storage: config });
 
-router.get("/creation", productsController.create);
-
-router.post("/creation", upload.any(), productsController.store);
-
-//
+// Create product routes
+router.get("/create", productsController.create);
+router.post("/create", upload.any(), productsController.store);
 
 /* GET all peoducts */
 router.get("/", productsController.products);
-
-router.get("/create", function (req, res, next) {
-  res.render("product/create");
-});
 
 //get product detail by id
 router.get("/:id", productsController.productDetail);
@@ -42,5 +36,8 @@ router.get("/:id", productsController.productDetail);
 //se tiene que escribir en el url product/productEdit/y cualquier id
 router.get("/edit/:id", productsController.productEdition);
 router.put("/edit/:id", upload.any(), productsController.update);
+
+// Delete product
+router.delete("/delete/:id", productsController.delete);
 
 module.exports = router;

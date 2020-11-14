@@ -1,4 +1,7 @@
-const products = require("../data/products.json");
+const fs = require("fs");
+const pathOfProducts = "./data/products.json";
+let products = JSON.parse(fs.readFileSync(pathOfProducts, "utf-8"));
+//const products = require("../data/products.json");
 
 const product = {
   getProducts: (category) => {
@@ -10,6 +13,9 @@ const product = {
       return id == item.id;
     });
     return product;
+  },
+  updateJsonProducts: (productsJson) => {
+    fs.writeFileSync(pathOfProducts, JSON.stringify(productsJson));
   },
 };
 

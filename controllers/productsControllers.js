@@ -1,8 +1,6 @@
 const { Product } = require("../models/products");
-
-let productos = require("../data/products.json");
+//let productos = require("../data/products.json");
 let fs = require("fs");
-
 let path = require("path");
 
 const productsController = {
@@ -22,21 +20,22 @@ const productsController = {
   },
 
   create: (req, res) => {
-    res.render("../views/product/create");
+    res.render("product/create");
   },
 
   store: (req, res) => {
+    let productos = Product.getProducts();
     productos.push({
       ...req.body,
       image: req.files[0].filename,
       id: productos[productos.length - 1].id + 1,
-    }),
-      fs.writeFileSync("./data/products.json", JSON.stringify(productos));
-
-    let products = Product.getProducts();
+    });
+    Product.updateJsonProducts(productos);
     res.redirect("/");
   },
   update: (req, res) => {
+    let productos = Product.getProducts();
+
     for (let x = 0; x < productos.length; x++) {
       if (productos[x].id == req.params.id) {
         console.log("**************************************");
@@ -48,7 +47,21 @@ const productsController = {
         productos[x].image = req.files[0].filename;
       }
     }
-    fs.writeFileSync("./data/products.json", JSON.stringify(productos));
+    Product.updateJsonProducts(productos);
+    res.render("product/product.ejs", { products: productos });
+  },
+  delete: (req, res) => {
+    let productos = Product.getProducts();
+    console.log(productos);
+    for (let x = 0; x < productos.length; x++) {
+      if (productos[x].id == req.params.id) {
+        console.log("product found. Removing item ", productos[x]);
+        productos.splice(x);
+        console.log("items luego de borrar 1: ", productos);
+      }
+    }
+
+    Product.updateJsonProducts(productos);
     res.render("product/product.ejs", { products: productos });
   },
 };
