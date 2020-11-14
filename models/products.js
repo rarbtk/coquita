@@ -6,10 +6,9 @@ const product = {
   },
 
   getProductById: (id) => {
-    let product = products.filter(function (item) {
+    let product = products.find(function (item) {
       return id == item.id;
     });
-    console.log("FOUND" + product);
     return product;
   },
 };

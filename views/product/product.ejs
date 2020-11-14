@@ -11,7 +11,7 @@
 
 <body class="cuerpo">
     <div id="main">
-    <%- include('../partials/header') %>
+        <%- include('../partials/header') %>
 
 
         <section class="products-menu dp-flex">
@@ -57,20 +57,25 @@
 
             <% products.forEach(product => { %>
             <article class="producto">
-                <img src="/images/<%= product.image %> " class="foto-torta">
-                <p class="texto-torta">
-                    <%= product.name %>
-                </p>
-                <p class="precio-torta">
-                    $ <%= product.price %>
-                </p>
-                <div class="boton-comprar">
-                    <a href="/product/<%= product.id %> ">
-                        <p class="texto-comprar">
-                            Comprar
-                        </p>
-                    </a>
-                </div>
+                <a href="/product/
+                <%= product.id %> ">
+
+
+                    <img src="/images/<%= product.image %> " class="foto-torta">
+                    <p class="texto-torta">
+                        <%= product.name %>
+                    </p>
+                    <p class="precio-torta">
+                        $ <%= product.price %>
+                    </p>
+                    <div class="boton-comprar">
+                        <a href="/product/<%= product.id %> ">
+                            <p class="texto-comprar">
+                                Comprar
+                            </p>
+                        </a>
+                    </div>
+                </a>
             </article>
             <% }); %>
 
@@ -246,7 +251,7 @@
 
     <%- include('../partials/footer') %>
 
-</div>
+    </div>
 
 </body>
 

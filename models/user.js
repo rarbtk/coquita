@@ -8,10 +8,13 @@ const user = {
     let users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
     let newUser = {
-      name: "",
+      id: "",
+      firstName: "",
+      lastName: "",
+      category: "",
       email: user.email,
       password: bcrypt.hashSync(user.password, 10),
-      admin: false,
+      image: "/avatars/default-avatar-male.png",
     };
     users.push(newUser);
     fs.writeFileSync(userFilePath, JSON.stringify(users));
@@ -22,7 +25,6 @@ const user = {
     let user = users.find(function (item) {
       return item.email == email;
     });
-    console.log("USER: ", user);
     return user;
   },
 };

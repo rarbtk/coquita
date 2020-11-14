@@ -1,14 +1,9 @@
 const { product } = require("../models/products");
 
 let productos = require("../data/products.json");
-let fs = require("fs")
+let fs = require("fs");
 
-let path = require("path")
-
-
-  
-  
-
+let path = require("path");
 
 const productsController = {
   products: (req, res) => {
@@ -22,49 +17,27 @@ const productsController = {
     console.log(product);
     res.render("product/productDetail", { product: products });
   },
-  
-  productEdition:(req,res)=>{
-    let products = product.getProductById(req.params.id);
-    res.render("product/productEdit", { product: product[0] });
-    
+
+  productEdition: (req, res) => {
+    let productToEdit = product.getProductById(req.params.id);
+    res.render("product/productEdit", { product: productToEdit });
   },
-  
-    create : (req,res) =>{
-        res.render("../views/product/create");        
-    },
 
-    store: (req,res) =>{
-    //traemos el contenido json a una variable
-    //let content = fs.readFileSync("./data/products.json", {encoding: "utf-8"})
-    console.log(req.files)
-    //convertir el string en array json
-    //products = JSON.parse(content)
-    //agregar al array el producto nuevo
+  create: (req, res) => {
+    res.render("../views/product/create");
+  },
+
+  store: (req, res) => {
     productos.push({
-        ...req.body, 
-        
-        image: req.files[0].filename,
-        
-        id : productos[productos.length-1].id+1
-
-
+      ...req.body,
+      image: req.files[0].filename,
+      id: productos[productos.length - 1].id + 1,
     }),
+      fs.writeFileSync("./data/products.json", JSON.stringify(productos));
 
-    
-    //volver a convertir el array en string
-    productos = JSON.stringify(productos);
-    //escribir en la base de datos json;
-    fs.writeFileSync("./data/products.json",productos)
-
-
-
-   console.log(req.file)
-    res.send("todo bien")
-    }
-
-  
-
-
+    let products = product.getProducts();
+    res.redirect("/");
+  },
 };
 
 module.exports = productsController;

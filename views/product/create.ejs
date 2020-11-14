@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head',{title:'Creacion'}) %>
+<%- include('../partials/head',{title:'Creacion'}) %>
 
-    <link rel="stylesheet" href="/stylesheets/creacion.css">
+<link rel="stylesheet" href="/stylesheets/creacion.css">
+
 <body>
+    <%- include('../partials/header') %>
     <h1>Creacion de producto
     </h1>
     <div class="contenedor-grande">
+        <form action="/product/creation" method="POST" enctype="multipart/form-data">
+            <div class="formulario">
+                <div class="datos">
 
-        
-        <form action="/product/creation" method="POST" enctype="multipart/form-data"> 
-        <div class="formulario">
-            <div class= "datos"> 
+                    <div>
+                        <input type="text" name="name" placeholder="Nombre" class="margen-tres">
+                    </div>
 
-                <div>
-                    <input type="text" name="name" placeholder="Nombre" class="margen-tres">
+                    <div class>
+                        <input type="number" name="price" placeholder="Precio" class="margen-tres">
+                    </div>
+
+                    <div class>
+                        <input type="text" name="detail" placeholder="Descripcion" class="margen-tres">
+                    </div>
+
+                    <div>
+                        <input type="text" name="category" placeholder="Categoria" class="margen-tres">
+                    </div>
+                    <div>
+                        <input type="file" name="image" class="margen-tres">
+                    </div>
                 </div>
 
-                <div class>
-                    <input type="number" name="price" placeholder="Precio" class="margen-tres"> 
-                </div>
 
-                <div class>
-                    <input type="text" name="detail" placeholder="Descripcion" class="margen-tres">
-                </div>
-
-                <div >
-                    <input type="text" name="category" placeholder="Categoria" class="margen-tres"> 
+                <div class="margen-de-boton dp-flex">
+                    <button class="guardar-producto">Guardar</button>
+                    <button class="guardar-producto" type="reset">Limpiar</button>
                 </div>
             </div>
-            
-
-            <div class="margen-de-boton dp-flex">
-                <button class="guardar-producto">Guardar</button>
-                <button class="guardar-producto" type="reset">Limpiar</button>
-                <input type="file" name="image" class="guardar-producto"> 
-                
-                
-            </div>
-        </div>
-    </form>
+        </form>
     </div>
 
 

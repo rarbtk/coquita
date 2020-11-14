@@ -18,7 +18,17 @@ const userControllers = {
     }
   },
   login: (req, res) => {
-    res.send("login :)");
+    const email = req.body.email;
+    const pass = req.body.password;
+    const user_found = user.getUserByEmail(email);
+    if (user_found) {
+      console.log("USUARIO ENCONTRADO: ", user_found);
+    } else {
+      console.log("USUARIO NO ENCONTRADO: ", user_found);
+      return res.render("user/register", {
+        errors: [{ msg: "La cuenta/email es inexistente " }],
+      });
+    }
   },
 };
 
