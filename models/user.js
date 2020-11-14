@@ -20,7 +20,6 @@ const user = {
     fs.writeFileSync(userFilePath, JSON.stringify(users));
   },
   getUserByEmail: (email) => {
-    console.log("executing getUserByEmail method");
     let users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
     let user = users.find(function (item) {
       return item.email == email;

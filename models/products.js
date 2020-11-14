@@ -13,4 +13,4 @@ const product = {
   },
 };
 
-module.exports = { product };
+module.exports = { Product: product };

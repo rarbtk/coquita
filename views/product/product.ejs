@@ -57,10 +57,7 @@
 
             <% products.forEach(product => { %>
             <article class="producto">
-                <a href="/product/
-                <%= product.id %> ">
-
-
+                <a href="/product/<%= product.id %> ">
                     <img src="/images/<%= product.image %> " class="foto-torta">
                     <p class="texto-torta">
                         <%= product.name %>
@@ -78,160 +75,6 @@
                 </a>
             </article>
             <% }); %>
-
-            <!-- <article class="producto">
-                <img src="/images/torta-babyyoda.png" class="foto-torta">
-                <p class="texto-torta">
-                    Torta Baby Yoda
-                </p>
-                <p class="precio-torta">
-                    $ 5.500
-                </p>
-                <div class="boton-comprar">
-                    <a href="/productDetail">
-                        <p class="texto-comprar">
-                            Comprar
-                        </p>
-                    </a>
-                </div>
-            </article>
-
-            <article class="producto">
-                <img src="/images/torta-strangerthings.png" class="foto-torta">
-                <p class="texto-torta">
-                    Torta Stranger Things
-                </p>
-
-                <p class="precio-torta">
-                    $ 3.500
-                </p>
-                <div class="boton-comprar">
-                    <a href="/productDetail">
-                        <p class="texto-comprar">Comprar</p>
-                    </a>
-                </div>
-
-
-            </article>
-
-            <article class="producto">
-                <img src="/images/torta-cerveza.png" class="foto-torta">
-                <p class="texto-torta">
-                    Torta Cerveza
-                </p>
-
-                <p class="precio-torta">
-                    $ 4.500
-                </p>
-                <div class="boton-comprar">
-                    <a href="/productDetail">
-                        <p class="texto-comprar">
-                            Comprar
-                        </p>
-                    </a>
-                </div>
-
-
-            </article>
-
-            <article class="producto">
-                <img src="/images/torta-caja.png" class="foto-torta">
-                <p class="texto-torta">
-                    Torta Caja Delivery
-                </p>
-
-                <p class="precio-torta">
-                    $ 3.500
-                </p>
-                <div class="boton-comprar">
-                    <a href="/productDetail">
-                        <p class="texto-comprar">
-                            Comprar
-                        </p>
-                    </a>
-                </div>
-
-
-            </article>
-
-            <article class="producto">
-                <img src="/images/torta-chanel.png" class="foto-torta">
-                <p class="texto-torta">
-                    Torta Chanel
-                </p>
-
-                <p class="precio-torta">
-                    $ 3.500
-                </p>
-                <div class="boton-comprar">
-                    <a href="/productDetail">
-                        <p class="texto-comprar">
-                            Comprar
-                        </p>
-                    </a>
-                </div>
-
-            </article>
-
-            <article class="producto">
-                <img src="/images/torta-3-osos.png" class="foto-torta">
-                <p class="texto-torta">
-                    Torta Tres Osos
-                </p>
-
-                <p class="precio-torta">
-                    $ 3.500
-                </p>
-                <div class="boton-comprar">
-                    <a href="/productDetail">
-                        <p class="texto-comprar">
-                            Comprar
-                        </p>
-                    </a>
-                </div>
-
-            </article>
-
-            <article class="producto">
-                <img src="/images/torta-avengers.png" class="foto-torta">
-                <p class="texto-torta">
-                    Torta Avengers
-                </p>
-
-                <p class="precio-torta">
-                    $ 5.500
-                </p>
-                <div class="boton-comprar">
-                    <a href="/productDetail">
-                        <p class="texto-comprar">
-                            Comprar
-                        </p>
-                    </a>
-                </div>
-
-
-            </article>
-
-
-            <article class="producto">
-                <img src="/images/torta-baby-shark.png" class="foto-torta">
-                <p class="texto-torta">
-                    Torta Baby Shark
-                </p>
-
-                <p class="precio-torta">
-                    $ 4.500
-                </p>
-                <div class="boton-comprar">
-                    <a href="/productDetail">
-                        <p class="texto-comprar">
-                            Comprar
-                        </p>
-                    </a>
-                </div>
-
-
-            </article> -->
         </section>
 
         <div class="paginas">
@@ -244,15 +87,11 @@
                 <li class="pag-prox m-5px"><a href="" class="color-link2">Proxima pagina</a></li>
             </ul>
         </div>
-
-
     </div>
-
 
     <%- include('../partials/footer') %>
 
     </div>
-
 </body>
 
 </html>

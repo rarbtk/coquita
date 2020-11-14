@@ -7,36 +7,38 @@
     <%- include('../partials/header')%>
     <h1>Edición de producto: Product ID # <%= product.id %> </h1>
     <div class="contenedor-grande dp-flex">
-
         <img src="/images/<%= product.image %>" alt="click para cambiar la imagen" onclick="imgUpload">
-
         <div class="formulario dp-flex">
-            <div class="datos dp-flex">
+            <form action="/product/edit/<%= product.id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="datos dp-flex">
 
-                <div class="dp-flex espacio-botones">
-                    <input type="text" placeholder="Nombre" class="margen-tres" value="<%= product.name %> ">
+                    <div class="dp-flex espacio-botones">
+                        <input type="text" name="name" placeholder="Nombre" class="margen-tres"
+                            value="<%= product.name %> ">
+                    </div>
+                    <div class="dp-flex">
+                        <input type="number" name="price" placeholder="Precio" class="margen-tres"
+                            value="<%= product.price %>">
+                    </div>
+                    <div class=" dp-flex">
+                        <input type="text" name="detail" placeholder="Descripción" class="margen-tres"
+                            value="<%= product.detail %>">
+                    </div>
+                    <div>
+                        <input type="text" name="category" placeholder="Categoria" class="margen-tres"
+                            value="<%= product.category %>">
+                    </div>
+                    <div class=" dp-flex">
+                        <input type="file" name="image">
+                    </div>
+
                 </div>
-
-                <div class="dp-flex">
-                    <input type="number" name="Precio" placeholder="Precio" class="margen-tres"
-                        value="<%= product.price %>">
+                <div class="margen-de-boton dp-flex">
+                    <button class="eliminar-producto" type="submit">Guardar producto</button>
+                    <button class="eliminar-producto" type="reset">Eliminar producto</button>
                 </div>
-
-                <div class=" dp-flex">
-                    <input type="text" placeholder="Descripción" class="margen-tres" value="<%= product.detail %>">
-                </div>
-                <div>
-                    <input type="file" id="imgUpload"></input>
-                </div>
-
-            </div>
-
-            <div class="margen-de-boton dp-flex">
-                <button class="eliminar-producto" type="submit">Guardar producto</button>
-                <button class="eliminar-producto" type="reset">Eliminar producto</button>
-            </div>
+            </form>
         </div>
-
     </div>
     <%- include('../partials/footer') %>
 

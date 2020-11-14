@@ -9,6 +9,7 @@ let path = require("path");
 var config = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "public/images");
+    console.log(file);
   },
 
   filename: (req, file, cb) => {
@@ -40,5 +41,6 @@ router.get("/:id", productsController.productDetail);
 //Edit producto
 //se tiene que escribir en el url product/productEdit/y cualquier id
 router.get("/edit/:id", productsController.productEdition);
+router.put("/edit/:id", upload.any(), productsController.update);
 
 module.exports = router;

@@ -22,9 +22,10 @@ const userControllers = {
     const pass = req.body.password;
     const user_found = user.getUserByEmail(email);
     if (user_found) {
-      console.log("USUARIO ENCONTRADO: ", user_found);
+      //console.log("USUARIO ENCONTRADO: ", user_found);
+      // Codear aqui login!!!
     } else {
-      console.log("USUARIO NO ENCONTRADO: ", user_found);
+      // retornar error
       return res.render("user/register", {
         errors: [{ msg: "La cuenta/email es inexistente " }],
       });
