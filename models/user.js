@@ -28,4 +28,4 @@ const user = {
   },
 };
 
-module.exports = { user };
+module.exports = { User: user };
