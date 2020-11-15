@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const productsController = require("../controllers/productsControllers.js");
 const products = require("../data/products.json");
+const authMiddleware = require("../middleware/authMiddleware");
 let multer = require("multer");
 let path = require("path");
 
@@ -23,7 +24,7 @@ var config = multer.diskStorage({
 var upload = multer({ storage: config });
 
 // Create product routes
-router.get("/create", productsController.create);
+router.get("/create", authMiddleware, productsController.create);
 router.post("/create", upload.any(), productsController.store);
 
 /* GET all peoducts */

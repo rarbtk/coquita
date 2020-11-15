@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const userControllers = require("../controllers/userControllers");
 let { check, validationResult, body } = require("express-validator");
+const authMiddleware = require("../middleware/authMiddleware");
 
 /* USER LOGIN. */
 router.get("/login", function (req, res, next) {
@@ -11,7 +12,7 @@ router.get("/login", function (req, res, next) {
 router.post("/login", userControllers.login);
 
 // USER REGISTER FORM
-router.get("/register", function (req, res, next) {
+router.get("/register", authMiddleware, function (req, res, next) {
   res.render("user/register");
 });
 // STORE USER REGISTRATION
@@ -25,5 +26,13 @@ router.post(
   ],
   userControllers.storeUser
 );
+//show session
+router.get("/sessions", function (req, res) {
+  if (req.session.user) {
+    res.send("Sessions: " + req.session.user);
+  } else {
+    res.send("Sessions: 0");
+  }
+});
 
 module.exports = router;
