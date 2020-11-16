@@ -2,7 +2,7 @@
 <html lang="en">
 
 <%- include('../partials/head', {title: 'Home'}) %>
-<link rel="stylesheet" href="stylesheets/login.css" />
+<link rel="stylesheet" href="../stylesheets/login.css" />
 <!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 <!-- Fontawesome -->
@@ -14,7 +14,7 @@
 
   <section class="section-login-container">
 
-    <form action="/login" method="POST">
+    <form action="/user/login" method="POST">
       <p class="section-login-title">Mi cuenta</p>
       <div class="inputs">
         <label for="email">Email</label>
@@ -35,7 +35,7 @@
         <a href="/forget-my-password">Olvidé mi contraseña</a>
       </div>
       <div class="section-links">
-        <a href="/register">No estoy registrado</a>
+        <a href="/user/register">No estoy registrado</a>
       </div>
       <!-- MOSTRAR ERRORES DEL FORM -->
       <% if(typeof errors!='undefined'){ %>
