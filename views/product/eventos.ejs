@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head',{title:'Productos Pasteleria Coquita'}) %>
+
+<link rel="stylesheet" href="/stylesheets/product.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Pacifico&family=Roboto&display=swap"
+    rel="stylesheet">
+
+<body class="cuerpo">
+    <div id="main">
+        <%- include('../partials/header') %>
+
+
+        <section class="products-menu dp-flex">
+            <article class="margin primer-item p-1">
+                <img src="/images/birthday-cake.svg" class="products-icons">
+                <a href="" class="color-link">
+                    <p class="f-pacifico">Cumpleaños</p>
+                </a>
+            </article>
+            <article class="margin p-1">
+                <img src="/images/celebration.svg" class="products-icons">
+                <a href="" class="color-link">
+                    <p class="f-pacifico">Eventos</p>
+                </a>
+            </article>
+
+            <article class="margin">
+                <img src="/images/cupcake.svg" class="products-icons">
+                <a href="" class="color-link">
+                    <p class="f-pacifico two-lines">Pequeños gustos</p>
+                </a>
+            </article>
+
+            <article class="margin">
+
+                <img src="/images/apple-pie.svg" class="products-icons">
+                <a href="" class="color-link">
+                    <p class="f-pacifico one-line">Las de siempre</p>
+                </a>
+            </article>
+
+        </section>
+
+        <section class="buscador-torta">
+            <div class="buscador">
+                <input type="search" class="input-buscador" placeholder="Buscador de tematica">
+                <button class="button-search"><i class="fas fa-search"></i></button>
+
+            </div>
+        </section>
+
+        <section class="detalle-productos">
+
+            <% products.forEach(product => { %>
+                <% if (product.category == "Eventos"){ %>
+                    <% console.log(product.id) %>
+           <article class="producto">
+                <a href="/product/<%= product.id %> ">
+                    <img src="/images/<%= product.image %> " class="foto-torta">
+                    <p class="texto-torta">
+                        <%= product.name %>
+                    </p>
+                    <p class="precio-torta">
+                        $ <%= product.price %>
+                    </p>
+                    <div class="boton-comprar">
+                        <a href="/product/<%= product.id %> ">
+                            <p class="texto-comprar">
+                                Comprar
+                            </p>
+                        </a>
+                    </div>
+                </a>
+            </article>
+            <% } %>
+            <% }); %>
+        </section>
+
+        <div class="paginas">
+            <ul class="lista-paginas">
+                <li class="pag-1 m-5px"><a href="" class="color-link2">1</a></li>
+                <li class="pag-2 m-5px"><a href="" class="color-link2">2</a></li>
+                <li class="pag-3 m-5px"><a href="" class="color-link2">3</a></li>
+                <li class="pag-4 m-5px"><a href="" class="color-link2">4</a></li>
+                <li class="pag-5 m-5px"><a href="" class="color-link2">5</a></li>
+                <li class="pag-prox m-5px"><a href="" class="color-link2">Proxima pagina</a></li>
+            </ul>
+        </div>
+
+
+    <%- include('../partials/footer') %>
+</div>
+</body>
+
+</html>
