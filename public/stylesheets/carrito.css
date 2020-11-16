@@ -1,8 +1,7 @@
 *{padding: 0%; margin: 0%; box-sizing: border-box;  margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'roboto', sans-serif;
-    font-size: 17px;}
+    font-family: 'roboto', sans-serif;}
 
 .dp-flex{display: flex;}
 
@@ -11,7 +10,7 @@
     /*carrito */ 
 
 .carrito{
-    width: 90%;
+    width: 80%;
     background-color: #f0ecec;
     margin-top: 1%;
     margin-bottom: 1%;

@@ -36,8 +36,8 @@ require("dotenv").config();
 
 app.use("/", indexRouter);
 app.use("/product", productRouter);
-app.use("/", userRouter);
-app.use("/", cartRouter);
+app.use("/user", userRouter);
+app.use("/cart", cartRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -4,12 +4,6 @@ body {
   background-color: #EEE0C9;
 }
 
-header {
-  height: 100px;
-  text-align: center;
-  background-color:#F0F0F0;
-}
-
 .compra-producto {
   display: flex;
   background-color: #F1F0E8;
