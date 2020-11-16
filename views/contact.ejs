@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head') %>
-<link rel="stylesheet" href="stylesheet/contact.css">
+<%- include('partials/head', {title:'Productos Pasteleria Coquita'}) %>
+<link rel="stylesheet" href="/stylesheets/contact.css">
 
 <body>
 <div class="main">
-    <%- include('partials/header') %>
 
+  <%- include('partials/header') %>
+          <h1>Contactanos!</h1>
     <div class="container">
         <section class="section-login-container">
 
             <form action="" method="POST">
-              <p class="section-login-title">Contactanos</p>
+              <p class="section-login-title">Dejanos tu comentario o pregunta</p>
               <div class="inputs">
-                <label for="email">Email</label>
+                <label for="email">Tu Email</label><br>
                 <input type="text" name="email" id="" class="section-input">
               </div>
               <div class="inputs">
-                <label for="Nombre">Tu nombre</label>
+                <label for="Nombre">Tu nombre</label><br>
                 <input type="text" name="nombre" id="" class="section-input">
               </div>
-              <div class="remember">
-                <input type="checkbox" name="rememberMe" id="" placeholder="Recordar usuario y contraseña" class="check">
-                <label class="remember-me" for="">Recordar usuario y contraseña</label>
+              <div class="inputs">
+                <label for="">¿Qué te gustaría saber?</label><br>
+                <textarea name="preguntas" id="" cols="40" rows="10"></textarea>
+                
               </div>
               <div class="login">
-                <button type="submit">Ingresar</button>
-              </div>
-              <div class="section-links">
-                <a href="/forget-my-password">Olvidé mi contraseña</a>
-              </div>
-              <div class="section-links">
-                <a href="/user/register">No estoy registrado</a>
+                <button type="submit">Enviar</button>
               </div>
             </form>
+          </section>
+
+          <section class="section-login-container column">
+            <p class="section-login-title">O visitanos en nuestras redes sociales</p>
+            <div>
+              <a href=""><img src="images/insta.png" alt="">instagram.com/coquita</a><br>
+              <a href=""><img src="images/face.png" alt="">facebook.com/coquita</a><br>
+              <a href=""><img src="images/wapp.png" alt="">Envianos un whatsapp</a>
             </div>
           </section>
-        <div>
+
 
         </div>
     </div>
