@@ -24,7 +24,7 @@ var config = multer.diskStorage({
 var upload = multer({ storage: config });
 
 // Create product routes
-router.get("/create", authMiddleware, productsController.create);
+router.get("/create", productsController.create);
 router.post("/create", upload.any(), productsController.store);
 
 /* GET all peoducts */

@@ -12,7 +12,7 @@ router.get("/login", function (req, res, next) {
 router.post("/login", userControllers.login);
 
 // USER REGISTER FORM
-router.get("/register", authMiddleware, function (req, res, next) {
+router.get("/register", function (req, res, next) {
   res.render("user/register");
 });
 // STORE USER REGISTRATION

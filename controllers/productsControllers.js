@@ -31,7 +31,7 @@ const productsController = {
       id: productos[productos.length - 1].id + 1,
     });
     Product.updateJsonProducts(productos);
-    res.redirect("/");
+    res.redirect("/product");
   },
   update: (req, res) => {
     let productos = Product.getProducts();
