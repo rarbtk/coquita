@@ -1,4 +1,8 @@
-*{padding: 0%; margin: 0%; box-sizing: border-box;}
+*{padding: 0%; margin: 0%; box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;}
 
 body{
     background-color: #EEE0C9;
@@ -7,16 +11,10 @@ body{
 .dp-flex{display: flex;}
 
 h1{
-    font-size: 25px;
-    color: #8C4B3C;
-    text-align: center;
-    font-weight: bold;
-    flex-direction: column;
-    margin-left: 40px;
-    width: 33%;
-    font-family: 'Fredoka One', cursive;
-    margin-top: 20px;
-    margin-left: 35%;
+    margin-top: 10px;
+    margin-left: 43%;
+    font-family: "Rotobo";
+    color: #6f2d2d;;
 }
 
 
@@ -72,7 +70,7 @@ margin: 0;
     font-size: 16px;}
 
 .boton-comprar {
-    font-family: pacifico;
+    font-family:'roboto', sans-serif;;
     font-size: 20px;
     display: flex;
     color: #F3ECE9;;
@@ -101,7 +99,7 @@ margin: 0;
 
 .guardar-producto{
     box-shadow: 2px 5px 7px #CBA3A2;
-    font-family: pacifico;
+    font-family:'roboto', sans-serif;;
     color: #F3ECE9;;
     font-size: 15px;
     background-color: #CBA3A2; 
@@ -176,7 +174,7 @@ margin: 0;
     font-size: 16px;}
 
 .boton-comprar {
-    font-family: pacifico;
+    font-family: 'roboto', sans-serif;;
     font-size: 20px;
     display: flex;
     color: #F3ECE9;;
@@ -203,7 +201,7 @@ margin: 0;
 
 .guardar-producto{
 
-    font-family: pacifico;
+    font-family: 'roboto', sans-serif;;
     color: #F3ECE9;;
     font-size: 15px;
     background-color: #CBA3A2; 

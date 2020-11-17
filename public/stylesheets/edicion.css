@@ -7,16 +7,10 @@ body{
 .dp-flex{display: flex;}
 
 h1{
-    font-size: 25px;
-    color: #8C4B3C;
-    text-align: center;
-    font-weight: bold;
-    flex-direction: column;
-    margin-left: 40px;
-    width: 33%;
-    font-family: 'Fredoka One', cursive;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 35%;
+    font-family: 'roboto', sans-serif;
+    color: #6f2d2d;;
 }
 .contenedor-grande{
     margin-left: auto;
@@ -67,7 +61,7 @@ margin: 0;
     font-size: 16px;}
 
 .boton-comprar {
-    font-family: pacifico;
+    font-family: 'roboto', sans-serif;;
     font-size: 20px;
     display: flex;
     color: #F3ECE9;;
@@ -86,19 +80,20 @@ margin: 0;
 
 .margen-de-boton{
 
-    margin-left: 10%;
+    margin-left: 25%;
 }
 
 
 .eliminar-producto{
     box-shadow: 2px 5px 7px #CBA3A2;
-    font-family: pacifico;
-    color: #F3ECE9;;
+    font-family: 'roboto', sans-serif;
+    color: #F3ECE9;
     font-size: 15px;
     background-color: #CBA3A2; 
     height: 50px;
-    width: 120px;
+    width: 220px;
     margin-left: 4px;
+    margin-top: 20px;
 }
 
 .margen-tres{margin: 3%;}
@@ -143,6 +138,10 @@ h1{
     width: 100%;
     align-items: center;
 }
+
+.datos button{
+    margin-left: 20%;
+}
 .datos{
     flex-direction: column;
     margin-top: auto;
@@ -166,7 +165,7 @@ margin: 0;
     font-size: 16px;}
 
 .boton-comprar {
-    font-family: pacifico;
+    font-family: 'roboto', sans-serif;;
     font-size: 20px;
     display: flex;
     color: #F3ECE9;;
@@ -192,7 +191,7 @@ margin: 0;
 
 .eliminar-producto{
 
-    font-family: pacifico;
+    font-family: 'roboto', sans-serif;;
     color: #F3ECE9;;
     font-size: 15px;
     background-color: #CBA3A2; 
