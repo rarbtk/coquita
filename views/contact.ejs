@@ -5,49 +5,49 @@
 <link rel="stylesheet" href="/stylesheets/contact.css">
 
 <body>
-<div class="main">
+  <div class="main">
 
-  <%- include('partials/header') %>
-          <h1>Contactanos!</h1>
+    <%- include('partials/header',{currentUser}) %>
+    <h1>Contactanos!</h1>
     <div class="container">
-        <section class="section-login-container">
+      <section class="section-login-container">
 
-            <form action="" method="POST">
-              <p class="section-login-title">Dejanos tu comentario o pregunta</p>
-              <div class="inputs">
-                <label for="email">Tu Email</label><br>
-                <input type="text" name="email" id="" class="section-input">
-              </div>
-              <div class="inputs">
-                <label for="Nombre">Tu nombre</label><br>
-                <input type="text" name="nombre" id="" class="section-input">
-              </div>
-              <div class="inputs">
-                <label for="">¿Qué te gustaría saber?</label><br>
-                <textarea name="preguntas" id="" cols="40" rows="10"></textarea>
-                
-              </div>
-              <div class="login">
-                <button type="submit">Enviar</button>
-              </div>
-            </form>
-          </section>
+        <form action="" method="POST">
+          <p class="section-login-title">Dejanos tu comentario o pregunta</p>
+          <div class="inputs">
+            <label for="email">Tu Email</label><br>
+            <input type="text" name="email" id="" class="section-input">
+          </div>
+          <div class="inputs">
+            <label for="Nombre">Tu nombre</label><br>
+            <input type="text" name="nombre" id="" class="section-input">
+          </div>
+          <div class="inputs">
+            <label for="">¿Qué te gustaría saber?</label><br>
+            <textarea name="preguntas" id="" cols="40" rows="10"></textarea>
 
-          <section class="section-login-container column">
-            <p class="section-login-title">O visitanos en nuestras redes sociales</p>
-            <div>
-              <a href=""><img src="images/insta.png" alt="">instagram.com/coquita</a><br>
-              <a href=""><img src="images/face.png" alt="">facebook.com/coquita</a><br>
-              <a href=""><img src="images/wapp.png" alt="">Envianos un whatsapp</a>
-            </div>
-          </section>
+          </div>
+          <div class="login">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </section>
 
-
+      <section class="section-login-container column">
+        <p class="section-login-title">O visitanos en nuestras redes sociales</p>
+        <div>
+          <a href=""><img src="images/insta.png" alt="">instagram.com/coquita</a><br>
+          <a href=""><img src="images/face.png" alt="">facebook.com/coquita</a><br>
+          <a href=""><img src="images/wapp.png" alt="">Envianos un whatsapp</a>
         </div>
-    </div>
+      </section>
 
-    <%- include('partials/footer') %>
-</div>
+
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+  </div>
 </body>
 
 </html>

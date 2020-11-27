@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="/stylesheets/header.css" />
 <header class="dp-flex">
-
   <div class="logo">
     <a href="/"><img src="/images/coquita_logo.png" alt="" /></a>
   </div>
@@ -13,14 +12,22 @@
         <li><a href="/product" class="color-marron">PRODUCTOS</a></li>
         <li><a href="contact" class="color-marron">CONTACTO</a></li>
 
+        <!--        
         <li><a href="/user/login"><i class="fas fa-user"></i> INGRESÁ </a></li>
+
+
         <li><a href="/cart/cart"><i class="fas fa-shopping-cart"></i> CARRITO </a></li>
-        <li><a href="logout"><i class="fas fa-sign-in-alt"></i> SALIR </a></li>
+
+  
+        <li><a href="logout"><i class="fas fa-sign-in-alt"></i> SALIR </a></li> -->
       </ul>
     </nav>
+    <% if(typeof(currentUser)!=='undefined'){ %>
+    <p><%= currentUser %></p>
+    <% } %>
   </div>
 
-  <span id="burger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <span id="burger" style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>
 
   <script>
     function openNav() {
@@ -32,14 +39,23 @@
     }
   </script>
 
-
-
   <div class="dp-flex iconos">
     <ul>
-      <li><a href="logout" class="color-marron"><i class="fas fa-sign-in-alt color-marron"></i></a></li>
-      <li><a href="/cart/cart"><i class="fas fa-shopping-cart color-marron"></i></a></li>
-      <li><a href="/user/login"><i class="fas fa-user color-marron"></i></a></li>
+      <% if (typeof(currentUser) !=='undefined'){ %>
+      <li>
+        <a href="/user/logout" class="color-marron"><i class="fas fa-sign-in-alt color-marron"></i>
+        </a>
+      </li>
+      <% } %>
+
+      <li>
+        <a href="/cart/cart"><i class="fas fa-shopping-cart color-marron"></i></a>
+      </li>
+      <% if(typeof(currentUser) ==='undefined'){ %>
+      <li>
+        <a href="/user/login"><i class="fas fa-user color-marron"></i></a>
+      </li>
+      <% } %>
     </ul>
   </div>
-
 </header>

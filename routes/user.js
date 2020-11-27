@@ -3,18 +3,23 @@ var router = express.Router();
 const userControllers = require("../controllers/userControllers");
 let { check, validationResult, body } = require("express-validator");
 const authMiddleware = require("../middleware/authMiddleware");
+const guestMiddleware = require("../middleware/guestMiddleware");
 
 /* USER LOGIN. */
-router.get("/login", function (req, res, next) {
+router.get("/login", guestMiddleware, function (req, res, next) {
   res.render("user/login");
+});
+
+//logout
+router.get("/logout", function (req, res) {
+  console.log("logout - destroy session");
+  res.clearCookie("rememberMe");
+  req.session.destroy();
+  res.redirect("/");
 });
 // post login
 router.post("/login", userControllers.login);
 
-// USER REGISTER FORM
-router.get("/register", function (req, res, next) {
-  res.render("user/register");
-});
 // STORE USER REGISTRATION
 router.post(
   "/register",
@@ -26,6 +31,12 @@ router.post(
   ],
   userControllers.storeUser
 );
+
+// USER REGISTER FORM
+router.get("/register", function (req, res, next) {
+  res.render("user/register");
+});
+
 //show session
 router.get("/sessions", function (req, res) {
   if (req.session.user) {

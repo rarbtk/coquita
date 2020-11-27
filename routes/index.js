@@ -4,12 +4,14 @@ const products = require("../data/products.json");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { products });
+  res.render("index", { products, currentUser: req.session.user });
 });
 
 router.get("/contact", function (req, res, next) {
-  res.render("contact", {title: 'Coquita - Contacto'});
+  res.render("contact", {
+    title: "Coquita - Contacto",
+    currentUser: req.session.user,
+  });
 });
-
 
 module.exports = router;

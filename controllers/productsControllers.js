@@ -6,7 +6,7 @@ let path = require("path");
 const productsController = {
   products: (req, res) => {
     let products = Product.getProducts();
-    res.render("product/product", { products });
+    res.render("product/product", { products, currentUser: req.session.user });
   },
 
   productDetail: (req, res) => {

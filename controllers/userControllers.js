@@ -33,7 +33,7 @@ const userControllers = {
         }
         console.log("***********************");
         console.log("Session: ", req.session.user);
-        res.render("index");
+        res.render("index", { currentUser: req.session.user });
       } else {
         //Incorrect password
         return res.render("user/login", {

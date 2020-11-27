@@ -11,7 +11,7 @@
 
 <body class="cuerpo">
     <div id="main">
-        <%- include('../partials/header') %>
+        <%- include('../partials/header',{currentUser}) %>
 
 
         <section class="products-menu dp-flex">
@@ -89,8 +89,8 @@
         </div>
 
 
-    <%- include('../partials/footer') %>
-</div>
+        <%- include('../partials/footer') %>
+    </div>
 </body>
 
 </html>

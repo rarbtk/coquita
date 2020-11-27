@@ -35,7 +35,7 @@ router.get("/:id", productsController.productDetail);
 
 //Edit producto
 //se tiene que escribir en el url product/productEdit/y cualquier id
-router.get("/edit/:id", productsController.productEdition);
+router.get("/edit/:id", authMiddleware, productsController.productEdition);
 router.put("/edit/:id", upload.any(), productsController.update);
 
 // Delete product
