@@ -28,12 +28,16 @@ const userControllers = {
       if (bcrypt.compareSync(password, user_found.password)) {
         //password OK
         req.session.user = user_found.email;
+        req.session.category = user_found.category;
+        console.log("rememberCoquita")
         if (req.body.rememberMe != undefined) {
-          res.cookie("rememberMe", email, { maxAge: 1800000 }); // cookies 30 minutos
+          res.cookie("userMail", user_found.email, { maxAge: 1800000 }); // cookies 30 minutos
+          res.cookie("userCategory", user_found.category, { maxAge: 1800000 });
+          
         }
         console.log("***********************");
-        console.log("Session: ", req.session.user);
-        res.render("index", { currentUser: req.session.user });
+        console.log("Session: ", req.session.user, req.session.category);
+        res.redirect("/");
       } else {
         //Incorrect password
         return res.render("user/login", {

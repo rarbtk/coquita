@@ -13,7 +13,7 @@ router.get("/login", guestMiddleware, function (req, res, next) {
 //logout
 router.get("/logout", function (req, res) {
   console.log("logout - destroy session");
-  res.clearCookie("rememberMe");
+  res.clearCookie("userMail");
   req.session.destroy();
   res.redirect("/");
 });

@@ -11,20 +11,32 @@
         <li><a href="/" class="color-marron">HOME</a></li>
         <li><a href="/product" class="color-marron">PRODUCTOS</a></li>
         <li><a href="contact" class="color-marron">CONTACTO</a></li>
-
-        <!--        
-        <li><a href="/user/login"><i class="fas fa-user"></i> INGRESÁ </a></li>
-
-
-        <li><a href="/cart/cart"><i class="fas fa-shopping-cart"></i> CARRITO </a></li>
-
-  
-        <li><a href="logout"><i class="fas fa-sign-in-alt"></i> SALIR </a></li> -->
+        <% if (locals.category == "admin"){ %>
+          <li><a href="/administracion" class="color-marron">ADMINISTRACIÓN</a></li>
+        <% } %> 
+              
+        <% if (typeof(currentUser) !=='undefined'){ %>
+          <li>
+            <a href="/user/logout" class="color-marron"><i class="fas fa-sign-in-alt color-marron">LOGOUT</i>
+            </a>
+          </li>
+          <% } %>
+    
+          <li>
+            <a href="/cart/cart"><i class="fas fa-shopping-cart">CARRITO</i></a>
+          </li>
+          <% if(typeof(currentUser) ==='undefined'){ %>
+          <li>
+            <a href="/user/login"><i class="fas fa-user "></i>LOGIN</a>
+          </li>
+          <% } %>
       </ul>
     </nav>
-    <% if(typeof(currentUser)!=='undefined'){ %>
-    <p><%= currentUser %></p>
+    <% if(locals.usuario){ %>
+    <p><%= locals.usuario %></p>
+    <p><%= locals.category  %> </p>
     <% } %>
+
   </div>
 
   <span id="burger" style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span>

@@ -16,6 +16,7 @@ var indexRouter = require("./routes/index");
 var userRouter = require("./routes/user");
 var productRouter = require("./routes/product");
 var cartRouter = require("./routes/cart");
+var adminRouter = require("./routes/admin")
 
 var app = express();
 
@@ -33,11 +34,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 require("dotenv").config();
+app.use(function(req, res, next){
+  if(req.session.user){
+    res.locals.usuario = req.session.user;
+    res.locals.category = req.session.category
+  }
+  return next();
+
+})
 
 app.use("/", indexRouter);
 app.use("/product", productRouter);
 app.use("/user", userRouter);
 app.use("/cart", cartRouter);
+app.use("/administracion", adminRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
