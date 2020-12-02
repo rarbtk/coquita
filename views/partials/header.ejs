@@ -14,27 +14,23 @@
         <% if (locals.category == "admin"){ %>
           <li><a href="/administracion" class="color-marron">ADMINISTRACIÓN</a></li>
         <% } %> 
-              
-        <% if (typeof(currentUser) !=='undefined'){ %>
-          <li>
-            <a href="/user/logout" class="color-marron"><i class="fas fa-sign-in-alt color-marron">LOGOUT</i>
-            </a>
-          </li>
-          <% } %>
-    
-          <li>
-            <a href="/cart/cart"><i class="fas fa-shopping-cart">CARRITO</i></a>
-          </li>
-          <% if(typeof(currentUser) ==='undefined'){ %>
-          <li>
-            <a href="/user/login"><i class="fas fa-user "></i>LOGIN</a>
-          </li>
-          <% } %>
+        <!-- ESTOS ESTÁN OCULTOS EN CSS PARA NO MOSTRASE. PERTENECEN A LA SIDEBAR-->
+        <% if (locals.usuario){ %>
+          <li class="liLogout"><a href="/user/logout" class="color-marron">LOGOUT</a></li>
+        <% } %>
+        <% if(locals.usuario === undefined){ %>
+          <li class="liCart"><a href="/cart/cart">CARRITO</a></li>
+        <% } %>
+        <% if(locals.usuario === undefined){ %>
+          <li class="liLogin"><a href="/user/login">LOGIN</a></li>
+        <% } %>
       </ul>
     </nav>
+    <% console.log(locals.usuario) %>
     <% if(locals.usuario){ %>
     <p><%= locals.usuario %></p>
     <p><%= locals.category  %> </p>
+
     <% } %>
 
   </div>
@@ -53,17 +49,18 @@
 
   <div class="dp-flex iconos">
     <ul>
-      <% if (typeof(currentUser) !=='undefined'){ %>
+      <% if (locals.usuario){ %>
       <li>
         <a href="/user/logout" class="color-marron"><i class="fas fa-sign-in-alt color-marron"></i>
         </a>
       </li>
       <% } %>
-
+      <% if(locals.usuario == undefined && locals.category !='admin'){ %>
       <li>
         <a href="/cart/cart"><i class="fas fa-shopping-cart color-marron"></i></a>
       </li>
-      <% if(typeof(currentUser) ==='undefined'){ %>
+      <% } %>
+      <% if(locals.usuario == undefined){ %>
       <li>
         <a href="/user/login"><i class="fas fa-user color-marron"></i></a>
       </li>

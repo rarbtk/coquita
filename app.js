@@ -37,7 +37,7 @@ require("dotenv").config();
 app.use(function(req, res, next){
   if(req.session.user){
     res.locals.usuario = req.session.user;
-    res.locals.category = req.session.category
+    res.locals.category = req.session.category;
   }
   return next();
 
