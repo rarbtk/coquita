@@ -1,230 +1,273 @@
-.dp-flex{display: flex;}
+*{padding: 0%; margin: 0%; box-sizing: border-box;}
 
-.direccion-flex{
+.dp-flex{display: flex;}
+.cuerpo {
+    background-color: #F0F0F0;
+}
+
+@media(min-width:768px) {
+
+
+.detalle-productos {
+    width: 100%;
+    padding: 10px 30px 30px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
 }
-.nuevo-producto{
-font-family: pacifico;
-color: #8C4B3C;
-width: 90%;
-height: 150px;
-border: solid  #8C4B3C 1px;
-margin-top: 2%; 
-margin-left: auto;
-margin-right: auto;
-background-color:#f2eded;}
 
-.codigo-producto{
+h1{
     font-size: 20px;
-    margin-right: 15%;
-    margin-top: auto;
-    margin-bottom: auto;
-    
-}
-
-.nombre-producto{
-    font-size: 20px;
-    margin-right: 15%;
-    margin-top: auto;
-    margin-bottom: auto;
-    
-}
-.agregar-producto{
-    font-size: 20px;
-    margin-right: 0%;
-    margin-top: auto;
-    margin-bottom: auto;
-    
-}
-
-
-/* Empieza La segunda division la mas grande */ 
-
-.activacion-productos{
     color: #8C4B3C;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    height: 600px;
-    width: 90%;
-    border: solid 1px #8C4B3C;
-    margin-bottom: 2%;}
-
-
-.cabecera{
-    font-family: pacifico;
-    color: #8C4B3C;
-    text-align: left;
-    font-size: 20px;
+    text-align: center;
     font-weight: bold;
-    justify-content: space-evenly;
-    padding-right: 20%;
+    margin-left: 00px;
+    width: 100%;
+    font-family: 'Fredoka One', cursive;
+    margin-top: 20px;
 }
 
-.productos-individuales{
-margin-top: 3%;
-background-color:#f2eded;
-height: 10%;
-width: 98%;
-margin-left: auto;
-margin-right: auto;
-border: #8C4B3C solid 1px;
-justify-content: flex-start;
-padding-right: 20%;
-font-size: 20px;}
-
-.productos-individuales i{ font-size: 35px;
-margin-right: 1%;}
-
-.margenes-izquierda-derecha{margin-left: 8%;
-    margin-right: 2%;}
-
-.centrar-arriba-abajo{margin-top: auto; margin-bottom: auto;}
-
-
-
-.botones-agregar-borrar-nd{margin-left: 5%;
-display: flex;}
-
-
-@media (max-width: 1024px){
-    .margenes-izquierda-derecha{margin-left: 8%;
-        margin-right: 0%;}
+.producto {
+    width: 20%;
+    background-color: #F3ECE9;
+    border: 1px solid #642206;
+    padding: 1.5%;
+    box-shadow: 2px 5px 7px #5C3A27;
+    margin: 5px;
+    align-items: center;
+    justify-items: center;
 }
 
-@media (max-width: 768px){
-    .margenes-izquierda-derecha{margin-left: 6%;
-        margin-right: 0%;}
+.producto a{
+    align-items: center;
 }
 
-@media (max-width:425px){
-    .codigo-producto{
-        font-size: 15px;
-        margin-right: 0%;}
-      
-    .codigo-producto input{width: 50%;}
+.texto-torta {
+    font-family: roboto;
+    font-size: 20px;
+    text-align: center;
+    color: #5C3A27;
+    margin-top: 10px;
+}
 
-    .nombre-producto{
-        font-size: 15px;
-        margin-right: 0%;}
-      
-    .nombre-producto input{width: 50%;}
+.precio-torta {
+    font-family: "roboto";
+    font-size: 26px;
+    color: #D37775;
+    text-align: center;
 
-    .agregar-producto{
-        font-size: 15px;
-        margin-right: 0%;}
-      
-    .agregar-producto input{width: 80%;}
+}
+
+.cont-torta {
+    border: 1px solid #642206;
+    padding: 2%;
+
+}
+
+.boton-comprar {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    margin: 10% 15%;
+    background-color: #E8ABAA;
+    border-radius: 10px;
+    padding-top: 10px;
+    box-shadow: 2px 5px 7px #CBA3A2;
+
+}
+
+.texto-comprar {
+    font-family: roboto;
+    font-size: 20px;
+    color: #F3ECE9
+}
+
+.lista-paginas {
+    font-family: roboto;
+    font-size: 16px;
+
+    display: flex;
+
+
+    list-style-type: none;
+    justify-content: center;
+}
+
+.paginas {
+    font-family: roboto;
+    margin-bottom: 15px;
+
+}
+
+.m-5px {
+    margin-left: 15px;
+}
+
+.foto-torta {
+    width: 250px;
+    height: 250px;
+    margin-left: 4%;
+}
+
+.color-link {
+    color: #F3ECE9;
+}
+
+.color-link:hover {
+    color: #5C3A27;
+    cursor: pointer;
+}
+
+.color-link2 {
+    color: #5C3A27;
+}
+
+.color-link2:hover {
+    color: #D37775;
+    cursor: pointer;
+}
+
+}
+
+
+
+@media(max-width:768px) {
+
     
-    .cabecera{font-size: 15px;}
 
-    .productos-individuales{font-size: 11px;}
-
-    .productos-individuales i {font-size: 15px;}
-
-    .botones-agregar-borrar-nd{flex-direction: column;}
-    .botones-agregar-borrar-nd input{font-size:10px;
-    height: 15px;}
+.detalle-productos {
+    width: 100%;
+    padding: 10px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-@media (max-width:375px)
-{
-    .productos-individuales{font-size: 8px;}
-    .cabecera{font-size: 10px;}
-    
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-.acciones-nuevos-productos{
-    font-family: "Roboto";
-    background-color:#f2eded;
+h1{
+    font-size: 20px;
     color: #8C4B3C;
-    border: solid 1px #8C4B3C;
-    width: 95%;
-    height: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    
-    
-    
-    
-    
-}
-
-/*
-.paddin10{
-    
-    padding-left: 8%;
-    padding-right: 8%;}
-*/
-
-
-
-
-/*
-
-.todos{
-    font-family: "Roboto";
-    margin-top: auto;
-    font-size: 15px;
+    text-align: center;
     font-weight: bold;
-    margin-bottom: auto;
-}
-
-.todos p{ 
- margin-left: 15%;
-  margin-right: 5%;
-}
-
-.todos i{
-    font-size: 30px;
-    margin-left: 15%;
-    margin-right: 10%;
+    margin-left: 00px;
+    width: 100%;
+    font-family: 'Fredoka One', cursive;
+    margin-top: 20px;
 }
 
 
-.todos input{
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 3%;
-    width: 15%;
-    height: 10%;
+.producto {
+    width: 100%;
+    background-color: #F3ECE9;
+    border: 1px solid #642206;
+    padding: 1.5%;
+    box-shadow: 2px 5px 7px #5C3A27;
+    margin: 5px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-items: center;
+}
+
+.producto a{
+    align-items: center;
+}
+
+.texto-torta {
+    font-family: roboto;
+    font-size: 20px;
+    text-align: center;
+    color: #5C3A27;
+    margin-top: 10px;
+}
+
+.precio-torta {
+    font-family: "roboto";
+    font-size: 26px;
+    color: #D37775;
+    text-align: center;
+
+}
+
+.cont-torta {
+    border: 1px solid #642206;
+    padding: 2%;
+
+}
+
+.boton-comprar {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    margin: 4% 15%;
+    background-color: #E8ABAA;
+    border-radius: 10px;
+    padding-top: 10px;
+    box-shadow: 2px 5px 7px #CBA3A2;
+
+}
+
+.texto-comprar {
+    font-family: roboto;
+    font-size: 20px;
+    color: #F3ECE9
+}
+
+.lista-paginas {
+    font-family: roboto;
+    font-size: 16px;
+
+    display: flex;
+
+
+    list-style-type: none;
+    justify-content: center;
+}
+
+.paginas {
+    font-family: roboto;
+    margin-bottom: 15px;
+
+}
+
+.m-5px {
+    margin-left: 15px;
+}
+
+.foto-torta {
+    width: 250px;
+    height: 250px;
+    margin-left: 14%;
+}
+
+.color-link {
+    color: #F3ECE9;
+}
+
+.color-link:hover {
+    color: #5C3A27;
+    cursor: pointer;
+}
+
+.color-link2 {
+    color: #5C3A27;
+}
+
+.color-link2:hover {
+    color: #D37775;
+    cursor: pointer;
+}
+
 }
 
 
 
+
+/* justify-content: flex-end flex-start center space-around space-between
+align-items: flex-end flex-start center baseline stretch
+flex-direction: row row-reverse column column-reserve
+order: 1, 2, -1, 1 (items individuale)
+align-self: flex-end flex-start center baseline stretch
+flex-wrap: wrap nowrap wrap-reverse
+flex-flow: direction and wrap
+align-content: flex-end flex-start center baseline stretch  */

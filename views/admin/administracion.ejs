@@ -1,115 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {title:"ADMINISTRACION DE PRODUCTOS"})%>
-<link rel="stylesheet" href="stylesheets/administracion.css">
-<body>
-    <%- include('../partials/header')%>
+<%- include('../partials/head',{title:'Productos Pasteleria Coquita'}) %>
 
-<div class="nuevo-producto dp-flex direccion-flex">
+<link rel="stylesheet" href="/stylesheets/administracion.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Pacifico&family=Roboto&display=swap"
+    rel="stylesheet">
+
+<body class="cuerpo">
+    <div id="main">
+        <%- include('../partials/header') %>
+        <h1> ADMINISTRACIÓN DE PRODUCTOS</h1>
+        <section class="detalle-productos">
+
+            <% products.forEach(product => { %>
+            <article class="producto">
+                <a href="/product/<%= product.id %> ">
+                    <img src="/images/<%= product.image %> " class="foto-torta">
+                    <p class="texto-torta">
+                        <%= product.name %>
+                    </p>
+                    <p class="precio-torta">
+                        $ <%= product.price %>
+                    </p>
+                    <div class="boton-comprar">
+                        <a href="/product/edit/<%= product.id %> ">
+                            <p class="texto-comprar">
+                                Editar producto
+                            </p>
+                        </a>
+                    </div>
+                    <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
+                        <div class="margen-de-boton boton-comprar">
+                            <a href="<%= product.id %> ">
+                                <p class="texto-comprar">
+                                    Borrar producto
+                                </p>
+                        </div>
+                    </form>
+                </a>
+            </article>
+            <% }); %>
+        </section>
 
 
-    <div class="codigo-producto">
-    <form action="" >
-        <label for="">Código</label>
-        <input type="number">
+        <%- include('../partials/footer') %>
     </div>
-        
-    
-    <div class="nombre-producto">
-    <form action="" >
-            <label for="">Nombre</label>
-            <input type="text">
-    </div>
-    
-    
-    <div class="agregar-producto">
-        <form action="" >
-           <label for="">Agregar</label>
-           <input type="submit" > 
-        </div>
-    </form>
-</div>
-
-<div class="activacion-productos">
-<div class="cabecera dp-flex">
-    <p>Código</p>
-    <p>Nombre</p>
-    <p>Descripcion</p>
-    <p>Precio</p>
-    <p>Estado</p>
-    <p>Imagen</p>
-
-
-</div>   
-
-<div class="productos-individuales dp-flex ">
-    
-<p class="centrar-arriba-abajo margenes-izquierda-derecha">1540</p>
-<p class="centrar-arriba-abajo margenes-izquierda-derecha">ChocoTorta</p>
-<p class="centrar-arriba-abajo margenes-izquierda-derecha">Torta Galleta</p>
-<p class="centrar-arriba-abajo margenes-izquierda-derecha">250$</p>
-<p class="centrar-arriba-abajo margenes-izquierda-derecha">Activa</p>
-<p class="centrar-arriba-abajo margenes-izquierda-derecha"><i class="fas fa-image"></i></p>
-
-<div class="botones-agregar-borrar-nd">
-<input type="submit" value="Add" class="centrar-arriba-abajo margenes-izquierda-derecha">
-<input type="submit" value="Delete" class="centrar-arriba-abajo margenes-izquierda-derecha"> 
-<input type="submit" value="N/D" class="centrar-arriba-abajo margenes-izquierda-derecha">
-</div>
-
-</div>
-
-<div class="productos-individuales dp-flex ">
-    
-    <p class="centrar-arriba-abajo margenes-izquierda-derecha">1540</p>
-    <p class="centrar-arriba-abajo margenes-izquierda-derecha">ChocoTorta</p>
-    <p class="centrar-arriba-abajo margenes-izquierda-derecha">Torta Galleta</p>
-    <p class="centrar-arriba-abajo margenes-izquierda-derecha">250$</p>
-    <p class="centrar-arriba-abajo margenes-izquierda-derecha">Activa</p>
-    <p class="centrar-arriba-abajo margenes-izquierda-derecha"><i class="fas fa-image"></i></p>
-    
-    <div class="botones-agregar-borrar-nd">
-    <input type="submit" value="Add" class="centrar-arriba-abajo margenes-izquierda-derecha">
-    <input type="submit" value="Delete" class="centrar-arriba-abajo margenes-izquierda-derecha"> 
-    <input type="submit" value="N/D" class="centrar-arriba-abajo margenes-izquierda-derecha">
-    </div>
-    
-    </div>
-
-    <div class="productos-individuales dp-flex ">
-    
-        <p class="centrar-arriba-abajo margenes-izquierda-derecha">1540</p>
-        <p class="centrar-arriba-abajo margenes-izquierda-derecha">ChocoTorta</p>
-        <p class="centrar-arriba-abajo margenes-izquierda-derecha">Torta Galleta</p>
-        <p class="centrar-arriba-abajo margenes-izquierda-derecha">250$</p>
-        <p class="centrar-arriba-abajo margenes-izquierda-derecha">Activa</p>
-        <p class="centrar-arriba-abajo margenes-izquierda-derecha"><i class="fas fa-image"></i></p>
-        
-        <div class="botones-agregar-borrar-nd">
-        <input type="submit" value="Add" class="centrar-arriba-abajo margenes-izquierda-derecha">
-        <input type="submit" value="Delete" class="centrar-arriba-abajo margenes-izquierda-derecha"> 
-        <input type="submit" value="N/D" class="centrar-arriba-abajo margenes-izquierda-derecha">
-        </div>
-        
-        </div>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-<%- include('../partials/footer') %>
-
 </body>
 
 </html>
