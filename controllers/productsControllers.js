@@ -6,7 +6,7 @@ let path = require("path");
 const productsController = {
   products: (req, res) => {
     let products = Product.getProducts();
-    res.render("product/product", { products, currentUser: req.session.user });
+    res.render("product/product", { products });
   },
 
   productDetail: (req, res) => {
@@ -52,16 +52,7 @@ const productsController = {
   },
   delete: (req, res) => {
     let productos = Product.getProducts();
-    console.log(productos);
-    for (let x = 0; x < productos.length; x++) {
-      if (productos[x].id == req.params.id) {
-        console.log("product found. Removing item ", productos[x]);
-        productos.splice(x);
-        console.log("items luego de borrar 1: ", productos);
-      }
-    }
-
-    Product.updateJsonProducts(productos);
+    Product.removeProductAndUpdate(req.params.id);
     res.render("product/product.ejs", { products: productos });
   },
 };
