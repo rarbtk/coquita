@@ -14,6 +14,12 @@ const product = {
     });
     return product;
   },
+  removeProductAndUpdate: (id) => {
+    const newProducts = products.filter((item) => {
+      return item.id != id;
+    });
+    fs.writeFileSync(pathOfProducts, JSON.stringify(newProducts));
+  },
   updateJsonProducts: (productsJson) => {
     fs.writeFileSync(pathOfProducts, JSON.stringify(productsJson));
   },

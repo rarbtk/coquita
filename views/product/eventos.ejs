@@ -56,9 +56,8 @@
         <section class="detalle-productos">
 
             <% products.forEach(product => { %>
-                <% if (product.category == "Eventos"){ %>
-                    <% console.log(product.id) %>
-           <article class="producto">
+            <% if (product.category == "Eventos"){ %>
+            <article class="producto">
                 <a href="/product/<%= product.id %> ">
                     <img src="/images/<%= product.image %> " class="foto-torta">
                     <p class="texto-torta">
@@ -92,8 +91,8 @@
         </div>
 
 
-    <%- include('../partials/footer') %>
-</div>
+        <%- include('../partials/footer') %>
+    </div>
 </body>
 
 </html>
