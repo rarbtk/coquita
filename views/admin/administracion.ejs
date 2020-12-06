@@ -25,22 +25,23 @@
                     <p class="precio-torta">
                         $ <%= product.price %>
                     </p>
-                    <div class="boton-comprar">
-                        <a href="/product/edit/<%= product.id %> ">
-                            <p class="texto-comprar">
-                                Editar producto
-                            </p>
-                        </a>
-                    </div>
-                    <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
-                        <div class="margen-de-boton boton-comprar">
-                            <a href="<%= product.id %> ">
-                                <p class="texto-comprar">
-                                    Borrar producto
-                                </p>
-                        </div>
-                    </form>
                 </a>
+
+                <div class="boton-comprar">
+                    <a href="/product/edit/<%= product.id %> ">
+                        <p class="texto-comprar">
+                            Editar producto
+                        </p>
+                    </a>
+                </div>
+                <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
+                    <div class="margen-de-boton boton-comprar">
+                        <button type="submit">
+                            Borrar Producto
+                        </button>
+                    </div>
+                </form>
+
             </article>
             <% }); %>
         </section>
