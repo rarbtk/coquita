@@ -3,4 +3,7 @@ node_modules/
 docker-compose.yaml
 Dockerfile
 .gitignore
-anotaciones-lucho
+anotaciones-lucho.md
+carga_inicial.sql
+db_data
+modelo-de-datos.mwb

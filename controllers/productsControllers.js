@@ -1,12 +1,13 @@
-const { Product } = require("../models/products");
-//let productos = require("../data/products.json");
+//const { Product } = require("../models/products");
+let db = require("../database/models");
 let fs = require("fs");
 let path = require("path");
 
 const productsController = {
   products: (req, res) => {
-    let products = Product.getProducts();
-    res.render("product/product", { products });
+    db.Product.findAll().then(function (products) {
+      res.render("product/product", { products });
+    });
   },
 
   productDetail: (req, res) => {
@@ -24,13 +25,13 @@ const productsController = {
   },
 
   store: (req, res) => {
-    let productos = Product.getProducts();
-    productos.push({
-      ...req.body,
+    db.Product.create({
+      name: req.body.name,
+      price: req.body.price,
+      category_id: 1,
+      detail: req.body.detail,
       image: req.files[0].filename,
-      id: productos[productos.length - 1].id + 1,
     });
-    Product.updateJsonProducts(productos);
     res.redirect("/product");
   },
   update: (req, res) => {

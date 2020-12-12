@@ -19,16 +19,21 @@ Se realizara un e-commerce para un emprendimiento de reposteria para eventos. El
 - Ricardo Rodriguez
 - Daniel Leguizamon
 
-## Instalación
-
-https://github.com/lupeaugier/proyecto-x.git
-
 ### Herramientas
 
 - [Tablero de Trello](https://trello.com/b/xWeVaC6J/proyeto-x)
 
-### Links de referencias
+### DONE/TO-DO
 
-- https://www.instagram.com/pasteleria_coquita/?hl=es
-- http://www.laalvear.com.ar/
-- http://www.buenosairesbakery.com.ar/
+# DONE
+
+Se agregó sequelize
+Agregue el modelo de datos dentro del proyecto en la carpeta database/arquitectura-db/modelo-de-datos.mwb
+Se agrego el registro de usuarios y registra en la DB
+Una vez que se registra te deja en sesion + cookie y de deja logueado redireccionando al Login
+
+# TO-DO
+
+- Alta de productos -> agregar Combo que busque categorias en la DB(Ejemplo la categoria ID 1 "Tortas")
+- No existe una carga inicial de Mysql(yo la cargué a Mano).
+- Login usa el JSON aún

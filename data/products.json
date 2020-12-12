@@ -1,1 +1,42 @@
-[{"id":2,"name":"Torta Advengers","price":800,"category":"Tortas","detail":"Chocotorta premium 15 Personas","image":"torta-avengers.png"},{"id":3,"name":"Torta Baby shark","price":599,"category":"Tortas","detail":"Baby shark premium 10 Personas","image":"torta-baby-shark.png"},{"id":4,"name":"Torta torta-minecraft","price":999,"category":"Tortas","detail":"torta-minecraft premium 15 Personas","image":"torta-minecraft.png"},{"id":5,"name":"Torta Beatles","price":500,"category":"Tortas","detail":"Beatles premium 8/10 Personas","image":"torta-beatles.png"},{"name":"Mi super torta stranger things ","price":"488","detail":"Stranger thing cake","category":"Tortas","image":"image-1605622614671.png","id":7}]
+[
+    {
+        "id": 2,
+        "name": "Torta Advengers",
+        "price": 800,
+        "category": "Tortas",
+        "detail": "Chocotorta premium 15 Personas",
+        "image": "torta-avengers.png"
+    },
+    {
+        "id": 3,
+        "name": "Torta Baby shark",
+        "price": 599,
+        "category": "Tortas",
+        "detail": "Baby shark premium 10 Personas",
+        "image": "torta-baby-shark.png"
+    },
+    {
+        "id": 4,
+        "name": "Torta torta-minecraft",
+        "price": 999,
+        "category": "Tortas",
+        "detail": "torta-minecraft premium 15 Personas",
+        "image": "torta-minecraft.png"
+    },
+    {
+        "id": 5,
+        "name": "Torta Beatles",
+        "price": 500,
+        "category": "Tortas",
+        "detail": "Beatles premium 8/10 Personas",
+        "image": "torta-beatles.png"
+    },
+    {
+        "name": "Mi super torta stranger things ",
+        "price": "488",
+        "detail": "Stranger thing cake",
+        "category": "Tortas",
+        "image": "image-1605622614671.png",
+        "id": 7
+    }
+]

@@ -1,5 +1,5 @@
 const fs = require("fs");
-const pathOfProducts = "./data/products.json";
+let pathOfProducts = "./data/products.json";
 let products = JSON.parse(fs.readFileSync(pathOfProducts, "utf-8"));
 //const products = require("../data/products.json");
 
@@ -15,9 +15,16 @@ const product = {
     return product;
   },
   removeProductAndUpdate: (id) => {
-    const newProducts = products.filter((item) => {
-      return item.id != id;
+    let newProducts = products.indexOf((item) => {
+      products.splice(newProducts, item);
+      return newProducts;
     });
+
+    /*
+    function removeItemFromArr ( arr, item ) { var i = arr.indexOf( item ); arr.splice( i, 1 ); } 
+    */
+
+    console.log("NUEVOS PRODUCTOS", newProducts);
     fs.writeFileSync(pathOfProducts, JSON.stringify(newProducts));
   },
   updateJsonProducts: (productsJson) => {
