@@ -11,8 +11,13 @@ const productsController = {
   },
 
   productDetail: (req, res) => {
-    let products = Product.getProductById(req.params.id);
-    res.render("product/productDetail", { product: products });
+    //let products = Product.getProductById(req.params.id);
+    db.Product.findByPk(req.params.id).then((product) => {
+      if (product) {
+        return res.render("product/productDetail", { product: product });
+      }
+      return res.render("product/productDetail", {});
+    });
   },
 
   productEdition: (req, res) => {

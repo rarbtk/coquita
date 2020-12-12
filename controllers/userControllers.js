@@ -18,18 +18,23 @@ const userControllers = {
             errors: [{ msg: "La cuenta/email ya existe en la DB " }],
           });
         } else {
+          console.log("PASSWORD:" + req.body.password);
+          let hash = bcrypt.hashSync(req.body.password, 10);
+          console.log("*******************************");
+          console.log(hash);
+          console.log("*******************************");
           db.User.create({
             firstName: "",
             lastName: "",
             profile_id: 2,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
+            password: hash,
             image: "/images/avatar/default-avatar-male.png", //default avatar
           });
           req.session.user = req.body.email;
-          req.session.category = "customer";
+          req.session.profile = "customer";
           res.cookie("userMail", req.body.email, { maxAge: 1800000 }); // cookies 30 minutos
-          res.cookie("userCategory", "customer", { maxAge: 1800000 });
+          res.cookie("userProfile", "customer", { maxAge: 1800000 });
 
           res.redirect("/");
         }
@@ -41,34 +46,67 @@ const userControllers = {
   login: (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    const user_found = User.getUserByEmail(email);
-    if (user_found) {
-      console.log("USUARIO ENCONTRADO: ", user_found);
-      // Check password
-      if (bcrypt.compareSync(password, user_found.password)) {
-        //password OK
-        req.session.user = user_found.email;
-        req.session.category = user_found.category;
-        console.log("rememberCoquita");
-        if (req.body.rememberMe != undefined) {
-          res.cookie("userMail", user_found.email, { maxAge: 1800000 }); // cookies 30 minutos
-          res.cookie("userCategory", user_found.category, { maxAge: 1800000 });
+    db.User.findOne({ where: { email: req.body.email } }).then((user) => {
+      if (user) {
+        let pass = user.password;
+        console.log(user.password);
+        console.log(req.body.password);
+        console.log(bcrypt.compareSync(pass, req.body.password));
+        if (bcrypt.compareSync(user.password, req.body.password)) {
+          req.session.user = user.email;
+          req.session.profile = user.profile_id;
+          console.log("rememberCoquita");
+          if (req.body.rememberMe != undefined) {
+            res.cookie("userMail", user.email, { maxAge: 1800000 }); // cookies 30 minutos
+            res.cookie("userProfile", user.profile_id, {
+              maxAge: 1800000,
+            });
+          }
+          console.log("***********************");
+          console.log("Session: ", req.session.user, req.session.profile);
+          res.redirect("/");
+        } else {
+          //Incorrect password
+          return res.render("user/login", {
+            errors: [{ msg: "Verifica la password y intenta nuevamente" }],
+          });
         }
-        console.log("***********************");
-        console.log("Session: ", req.session.user, req.session.category);
-        res.redirect("/");
       } else {
-        //Incorrect password
+        // user not exist into database
         return res.render("user/login", {
-          errors: [{ msg: "Verifica la password y intenta nuevamente" }],
+          errors: [{ msg: "La cuenta/email es inexistente " }],
         });
       }
-    } else {
-      // retornar error
-      return res.render("user/login", {
-        errors: [{ msg: "La cuenta/email es inexistente " }],
-      });
-    }
+    });
+
+    // const user_found = User.getUserByEmail(email);
+    // if (user_found) {
+    //   console.log("USUARIO ENCONTRADO: ", user_found);
+    //   // Check password
+    //   if (bcrypt.compareSync(password, user_found.password)) {
+    //     //password OK
+    //     req.session.user = user_found.email;
+    //     req.session.category = user_found.category;
+    //     console.log("rememberCoquita");
+    //     if (req.body.rememberMe != undefined) {
+    //       res.cookie("userMail", user_found.email, { maxAge: 1800000 }); // cookies 30 minutos
+    //       res.cookie("userCategory", user_found.category, { maxAge: 1800000 });
+    //     }
+    //     console.log("***********************");
+    //     console.log("Session: ", req.session.user, req.session.category);
+    //     res.redirect("/");
+    //   } else {
+    //     //Incorrect password
+    //     return res.render("user/login", {
+    //       errors: [{ msg: "Verifica la password y intenta nuevamente" }],
+    //     });
+    //   }
+    // } else {
+    //   // retornar error
+    //   return res.render("user/login", {
+    //     errors: [{ msg: "La cuenta/email es inexistente " }],
+    //   });
+    // }
   },
 };
 
