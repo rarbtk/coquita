@@ -10,22 +10,10 @@ module.exports = function (sequelize, dataTypes) {
     name: {
       type: dataTypes.STRING,
     },
-    price: {
-      type: dataTypes.DECIMAL,
-    },
-    category_id: {
-      type: dataTypes.INTEGER,
-    },
-    detail: {
-      type: dataTypes.STRING,
-    },
-    image: {
-      type: dataTypes.STRING,
-    },
   };
 
   let config = {
-    tableName: "Categories",
+    tableName: "categories",
     timestamps: false,
   };
   let Category = sequelize.define(alias, cols, config);
