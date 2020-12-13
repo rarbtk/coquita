@@ -51,8 +51,8 @@ const userControllers = {
         let pass = user.password;
         console.log(user.password);
         console.log(req.body.password);
-        console.log(bcrypt.compareSync(pass, req.body.password));
-        if (bcrypt.compareSync(user.password, req.body.password)) {
+        console.log(bcrypt.compareSync(req.body.password, pass));
+        if (bcrypt.compareSync(req.body.password, user.password)) {
           req.session.user = user.email;
           req.session.profile = user.profile_id;
           console.log("rememberCoquita");
