@@ -14,22 +14,26 @@
                 <div class="datos">
 
                     <div>
-                        <input type="text" name="name" placeholder="Nombre" class="margen-tres">
+                        <input type="text" name="name" placeholder="Nombre" class="form-control margen-tres">
                     </div>
 
                     <div class>
-                        <input type="number" name="price" placeholder="Precio" class="margen-tres">
+                        <input type="number" name="price" placeholder="Precio" class="form-control margen-tres">
                     </div>
 
                     <div class>
-                        <input type="text" name="detail" placeholder="Descripcion" class="margen-tres">
+                        <input type="text" name="detail" placeholder="Descripcion" class="form-control margen-tres">
                     </div>
 
                     <div>
-                        <input type="text" name="category" placeholder="Categoria" class="margen-tres">
+                        <select class="form-control margen-tres" id="sel1">
+                            <% categories.forEach(category => { %>
+                            <option value=<%= category.id %>><%= category.name  %> </option>
+                            <% }); %>
+                        </select>
                     </div>
                     <div>
-                        <input type="file" name="image" class="margen-tres">
+                        <input type="file" name="image" class="margen-tres form-control">
                     </div>
                 </div>
 
