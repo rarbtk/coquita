@@ -1,9 +1,18 @@
-*{padding: 0%; margin: 0%; box-sizing: border-box;}
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
 
-.dp-flex{display: flex;}
+.dp-flex {
+    display: flex;
+}
+
 .cuerpo {
     background-color: #F0F0F0;
 }
+
+
 
 .products-menu {
     display: flex;
@@ -89,14 +98,14 @@
     width: 350px;
     font-family: montserrat;
     text-align: left;
-    padding-left:  12px;
+    padding-left: 12px;
 }
 
 .input-buscador:focus {
     border: none;
 }
 
-.buscador-torta .button-search{ 
+.buscador-torta .button-search {
     position: relative;
     color: grey;
     font-size: 20px;
@@ -117,6 +126,17 @@
 
 
 }
+
+/* eliminar underline / visited */
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+/*  */
 
 
 .producto {
@@ -225,7 +245,7 @@
         padding: 0px;
     }
 
-    .products-menu article{
+    .products-menu article {
         width: 50%;
         margin: 0px;
         flex-direction: column;
