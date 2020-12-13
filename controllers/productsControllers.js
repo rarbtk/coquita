@@ -21,12 +21,22 @@ const productsController = {
   },
 
   productEdition: (req, res) => {
-    let productToEdit = Product.getProductById(req.params.id);
-    res.render("product/productEdit", { product: productToEdit });
+    //let productToEdit = Product.getProductById(req.params.id);
+    db.Product.findByPk(req.params.id).then((product) => {
+      if (product) {
+        db.Category.findAll().then((categories) => {
+          if (categories) {
+            res.render("product/productEdit", { product, categories });
+          }
+        });
+      }
+    });
   },
 
   create: (req, res) => {
-    res.render("product/create");
+    db.Category.findAll().then((categories) => {
+      res.render("product/create", { categories });
+    });
   },
 
   store: (req, res) => {
