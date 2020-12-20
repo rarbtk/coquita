@@ -36,7 +36,7 @@ router.post(
 );
 
 // USER REGISTER FORM
-router.get("/register", function (req, res, next) {
+router.get("/register", guestMiddleware, function (req, res, next) {
   res.render("user/register");
 });
 
