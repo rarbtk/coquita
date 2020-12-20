@@ -45,6 +45,7 @@ Alta de productos -> agregar Combo que lea las categorias de la DB(Ejemplo la ca
 # TO-DO
 
 <pre>
+- Los listados se deben realizar con un limit para limitar por pagina
 - No existe una carga inicial de Mysql(yo la cargué a Mano).
 - Validar en register "Password" y "confirm Password" que sean iguales(Front JS)
 - Agregar modelo de datos dentro de sequelize para:
