@@ -6,8 +6,8 @@ function rememberMeMiddleware(req, res, next) {
       console.log("USUARIO ENCONTRADO: ", user_found);
       console.log("actualizo session por cookie");
       req.session.user = user_found.email; // pongo en session el usuario
-      req.session.category = user_found.category;
-      console.log("lalal" ,user_found.category)
+      req.session.profile = user_found.category;
+      console.log("lalal", user_found.category);
     }
   }
   next();

@@ -1,36 +1,52 @@
-const { Product } = require("../models/products");
-//let productos = require("../data/products.json");
+//const { Product } = require("../models/products");
+let db = require("../database/models");
 let fs = require("fs");
 let path = require("path");
 
 const productsController = {
   products: (req, res) => {
-    let products = Product.getProducts();
-    res.render("product/product", { products });
+    db.Product.findAll().then(function (products) {
+      res.render("product/product", { products });
+    });
   },
 
   productDetail: (req, res) => {
-    let products = Product.getProductById(req.params.id);
-    res.render("product/productDetail", { product: products });
+    //let products = Product.getProductById(req.params.id);
+    db.Product.findByPk(req.params.id).then((product) => {
+      if (product) {
+        return res.render("product/productDetail", { product: product });
+      }
+      return res.render("product/productDetail", {});
+    });
   },
 
   productEdition: (req, res) => {
-    let productToEdit = Product.getProductById(req.params.id);
-    res.render("product/productEdit", { product: productToEdit });
+    //let productToEdit = Product.getProductById(req.params.id);
+    db.Product.findByPk(req.params.id).then((product) => {
+      if (product) {
+        db.Category.findAll().then((categories) => {
+          if (categories) {
+            res.render("product/productEdit", { product, categories });
+          }
+        });
+      }
+    });
   },
 
   create: (req, res) => {
-    res.render("product/create");
+    db.Category.findAll().then((categories) => {
+      res.render("product/create", { categories });
+    });
   },
 
   store: (req, res) => {
-    let productos = Product.getProducts();
-    productos.push({
-      ...req.body,
+    db.Product.create({
+      name: req.body.name,
+      price: req.body.price,
+      category_id: 1,
+      detail: req.body.detail,
       image: req.files[0].filename,
-      id: productos[productos.length - 1].id + 1,
     });
-    Product.updateJsonProducts(productos);
     res.redirect("/product");
   },
   update: (req, res) => {

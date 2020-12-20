@@ -13,23 +13,27 @@
                 <div class="datos dp-flex">
 
                     <div class="dp-flex espacio-botones">
-                        <input type="text" name="name" placeholder="Nombre" class="margen-tres"
+                        <input type="text" name="name" placeholder="Nombre" class="form-control margen-tres"
                             value="<%= product.name %> ">
                     </div>
                     <div class="dp-flex">
-                        <input type="number" name="price" placeholder="Precio" class="margen-tres"
+                        <input type="number" name="price" placeholder="Precio" class="form-control margen-tres"
                             value="<%= product.price %>">
                     </div>
                     <div class=" dp-flex">
-                        <input type="text" name="detail" placeholder="Descripción" class="margen-tres"
+                        <input type="text" name="detail" placeholder="Descripción" class="form-control margen-tres"
                             value="<%= product.detail %>">
                     </div>
                     <div>
-                        <input type="text" name="category" placeholder="Categoria" class="margen-tres"
-                            value="<%= product.category %>">
+                        <select class="form-control margen-tres" id="sel1">
+                            <% categories.forEach(category => { %>
+                            <% var selected =(product.category_id == category.id)?"selected":""%>
+                            <option value=<%= category.id %> <%= selected  %>><%= category.name  %> </option>
+                            <% }); %>
+                        </select>
                     </div>
                     <div class=" dp-flex">
-                        <input type="file" name="image">
+                        <input type="file" name="image form-control margen-tres">
                     </div>
 
                 </div>

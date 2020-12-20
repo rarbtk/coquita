@@ -28,6 +28,9 @@ router.post(
     check("password")
       .isLength({ min: 5 })
       .withMessage("La contraseña debe tener al menos 5 caracteres"),
+    check("password2")
+      .isLength({ min: 5 })
+      .withMessage("Debe completar el campo 'Repite contraseña'"),
   ],
   userControllers.storeUser
 );
