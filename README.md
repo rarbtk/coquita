@@ -40,6 +40,7 @@ Una vez que se registra te deja en sesion + cookie y de deja logueado redireccio
 Alta de productos -> agregar Combo que lea las categorias de la DB(Ejemplo la categoria ID 1 "Tortas", 2 - Eventos/Catering......) 
 - Login usa el JSON, agregar que utilice la DB
 - Edicion de Producto debe obtener de la DB la categoria ID y dejarla seleccionada dependiendo la categoria
+- se agrega vista error para en caso de fallas renderizar a esa vista(ej: update de un producto que fue eliminado, redirige a esa vista)
 </pre>
 
 # TO-DO
