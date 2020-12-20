@@ -91,14 +91,16 @@
                 <p>promociones</p>
                 <img class="torta3" src="/images/sweets.svg" alt="">
             </div>
+
+            <% bestSellers.forEach(promo => {%>
             <div class="nuestra-promo-2">
-                <img class="torta2" src="/images/promo1.png" alt="">
-                <p>Cajita dia del amigo 1</p>
-                <p>Incluye letter cupcake,</p>
-                <p>4 brownies y 4 cupcakes</p>
-                <p class="precio-promo">$ 1.500</p>
+                <img class="torta2" src="/images/products/promo/<%= promo.image %>" alt="<%= promo.name %>">
+                <p><%= promo.detail %> </p>
+                <p class="precio-promo">$ <%=promo.price %> </p>
             </div>
-            <div class="nuestra-promo-2">
+            <% }); %>
+
+            <!-- <div class="nuestra-promo-2">
                 <img class="torta2" src="/images/promo2.png" alt="">
                 <p>Cajita dia del amigo 2</p>
                 <p>Incluye letter cupcake,</p>
@@ -118,7 +120,7 @@
                 <p>Incluye letter cupcake,</p>
                 <p>4 brownies y 4 cupcakes</p>
                 <p class="precio-promo">$ 1.500</p>
-            </div>
+            </div> -->
         </div>
 
         <div class="aboutme d-flex">
