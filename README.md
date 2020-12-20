@@ -34,6 +34,9 @@ Se realizara un e-commerce para un emprendimiento de reposteria para eventos. El
 <pre>
 Fix x Lucho
 Se agregó sequelize
+script de carga inicial + creacion de DB 
+  - /database/init/1_create_db.sql (corresponde a la creacion de la DB)
+  - /database/init/2_init_db.sql (corresponde a la carga inicial de los datos)
 Agregue el modelo de datos dentro del proyecto en la carpeta database/arquitectura-db/modelo-de-datos.mwb
 Se agrego el registro de usuarios y registra en la DB
 Una vez que se registra te deja en sesion + cookie y de deja logueado redireccionando al Login
@@ -47,7 +50,6 @@ Alta de productos -> agregar Combo que lea las categorias de la DB(Ejemplo la ca
 
 <pre>
 - Los listados se deben realizar con un limit para limitar por pagina
-- No existe una carga inicial de Mysql(yo la cargué a Mano).
 - Validar en register "Password" y "confirm Password" que sean iguales(Front JS)
 - Agregar modelo de datos dentro de sequelize para:
   - Carts
