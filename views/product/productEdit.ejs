@@ -25,7 +25,7 @@
                             value="<%= product.detail %>">
                     </div>
                     <div>
-                        <select class="form-control margen-tres" id="sel1">
+                        <select class="form-control margen-tres" id="sel1" name="category">
                             <% categories.forEach(category => { %>
                             <% var selected =(product.category_id == category.id)?"selected":""%>
                             <option value=<%= category.id %> <%= selected  %>><%= category.name  %> </option>
