@@ -5,38 +5,54 @@ let path = require("path");
 
 const productsController = {
   products: (req, res) => {
-    db.Product.findAll().then(function (products) {
-      res.render("product/product", { products });
-    });
+    db.Product.findAll()
+      .then(function (products) {
+        res.render("product/product", { products });
+      })
+      .catch((error) => {
+        res.render("error.ejs", { error });
+      });
   },
 
   productDetail: (req, res) => {
     //let products = Product.getProductById(req.params.id);
-    db.Product.findByPk(req.params.id).then((product) => {
-      if (product) {
-        return res.render("product/productDetail", { product: product });
-      }
-      return res.render("product/productDetail", {});
-    });
+    db.Product.findByPk(req.params.id)
+      .then((product) => {
+        if (product) {
+          return res.render("product/productDetail", { product: product });
+        }
+        return res.render("product/productDetail", {});
+      })
+      .catch((error) => {
+        res.render("error.ejs", { error });
+      });
   },
 
   productEdition: (req, res) => {
     //let productToEdit = Product.getProductById(req.params.id);
-    db.Product.findByPk(req.params.id).then((product) => {
-      if (product) {
-        db.Category.findAll().then((categories) => {
-          if (categories) {
-            res.render("product/productEdit", { product, categories });
-          }
-        });
-      }
-    });
+    db.Product.findByPk(req.params.id)
+      .then((product) => {
+        if (product) {
+          db.Category.findAll().then((categories) => {
+            if (categories) {
+              res.render("product/productEdit", { product, categories });
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        res.render("error.ejs", { error });
+      });
   },
 
   create: (req, res) => {
-    db.Category.findAll().then((categories) => {
-      res.render("product/create", { categories });
-    });
+    db.Category.findAll()
+      .then((categories) => {
+        res.render("product/create", { categories });
+      })
+      .catch((error) => {
+        res.render("error.ejs", { error });
+      });
   },
 
   store: (req, res) => {
@@ -77,10 +93,7 @@ const productsController = {
         }
       })
       .catch((error) => {
-        console.log(error);
-        res.send(
-          "Error intentando actualizar el producto, intente nuevamente mas tarde"
-        );
+        res.render("error.ejs", { error });
       });
 
     //let productos = Product.getProducts();
@@ -100,9 +113,17 @@ const productsController = {
     //Product.updateJsonProducts(productos);
   },
   delete: (req, res) => {
-    let productos = Product.getProducts();
-    Product.removeProductAndUpdate(req.params.id);
-    res.render("product/product.ejs", { products: productos });
+    db.Product.destroy({
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then(() => {
+        res.redirect("/product");
+      })
+      .catch((error) => {
+        res.render("error.ejs", { error });
+      });
   },
 };
 
