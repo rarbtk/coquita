@@ -50,21 +50,54 @@ const productsController = {
     res.redirect("/product");
   },
   update: (req, res) => {
-    let productos = Product.getProducts();
-
-    for (let x = 0; x < productos.length; x++) {
-      if (productos[x].id == req.params.id) {
-        console.log("**************************************");
-        console.log(req.body.name, req.body.price);
-        productos[x].name = req.body.name;
-        productos[x].price = req.body.price;
-        productos[x].category = req.body.category;
-        productos[x].detail = req.body.detail;
-        productos[x].image = req.files[0].filename;
+    console;
+    db.Product.update(
+      {
+        name: req.body.name,
+        price: req.body.price,
+        category_id: req.body.category,
+        detail: req.body.detail,
+      },
+      {
+        where: {
+          id: 99,
+        },
       }
-    }
-    Product.updateJsonProducts(productos);
-    res.render("product/product.ejs", { products: productos });
+    )
+      .then((edited) => {
+        console.log(edited);
+        if (edited[0] > 0) {
+          db.Product.findAll().then((products) => {
+            //console.log(products);
+            res.redirect("/product");
+          });
+        } else {
+          let error = "No se encontro el dato para actualizar";
+          res.render("error.ejs", { error });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send(
+          "Error intentando actualizar el producto, intente nuevamente mas tarde"
+        );
+      });
+
+    //let productos = Product.getProducts();
+
+    // for (let x = 0; x < productos.length; x++) {
+    //   if (productos[x].id == req.params.id) {
+    //     console.log("**************************************");
+    //     console.log(req.body.name, req.body.price);
+    //     productos[x].name = req.body.name;
+    //     productos[x].price = req.body.price;
+    //     productos[x].category = req.body.category;
+    //     productos[x].detail = req.body.detail;
+    //     productos[x].image = req.files[0].filename;
+    //   }
+    // }
+
+    //Product.updateJsonProducts(productos);
   },
   delete: (req, res) => {
     let productos = Product.getProducts();
