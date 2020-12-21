@@ -14,6 +14,24 @@ const productsController = {
       });
   },
 
+  productByCategory: (req, res) => {
+    db.Product.findAll({ 
+    where: {
+      category_id: req.params.category
+     }
+  })
+      .then((product) => {
+        if (product) {
+          return res.render("product/category", { product: product });
+        }
+        return res.render("product/category", {});
+      })
+      .catch((error) => {
+        res.render("error.ejs", { error });
+      });
+  },
+
+
   productDetail: (req, res) => {
     //let products = Product.getProductById(req.params.id);
     db.Product.findByPk(req.params.id)

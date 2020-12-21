@@ -3,6 +3,7 @@ var router = express.Router();
 const productsController = require("../controllers/productsControllers.js");
 //const products = require("../data/products.json");
 const authMiddleware = require("../middleware/authMiddleware");
+const adminMiddleware = require("../middleware/adminMiddleware");
 let multer = require("multer");
 let path = require("path");
 
@@ -24,7 +25,7 @@ var config = multer.diskStorage({
 var upload = multer({ storage: config });
 
 // Create product routes
-router.get("/create", productsController.create);
+router.get("/create", adminMiddleware, productsController.create);
 router.post("/create", upload.any(), productsController.store);
 
 /* GET all peoducts */
@@ -32,6 +33,10 @@ router.get("/", productsController.products);
 
 //get product detail by id
 router.get("/:id", productsController.productDetail);
+
+//get product detail by id
+router.get("/category/:category", productsController.productByCategory);
+
 
 //Edit producto
 //se tiene que escribir en el url product/productEdit/y cualquier id

@@ -3,7 +3,7 @@
 
 <%- include('../partials/head',{title:'Productos Pasteleria Coquita'}) %>
 
-<link rel="stylesheet" href="/stylesheets/product.css">
+<link rel="stylesheet" href="/stylesheets/category.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <link
     href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Pacifico&family=Roboto&display=swap"
@@ -55,28 +55,18 @@
 
         <section class="detalle-productos">
 
-            <% products.forEach(product => { %>
-            <% if (product.category == "Eventos"){ %>
-            <article class="producto">
-                <a href="/product/<%= product.id %> ">
-                    <img src="/images/<%= product.image %> " class="foto-torta">
-                    <p class="texto-torta">
-                        <%= product.name %>
-                    </p>
-                    <p class="precio-torta">
-                        $ <%= product.price %>
-                    </p>
-                    <div class="boton-comprar">
-                        <a href="/product/<%= product.id %> ">
-                            <p class="texto-comprar">
-                                Comprar
-                            </p>
-                        </a>
-                    </div>
+            <% product.forEach(producto => {%>
+                <div class="nuestra-promo-2">
+                <a href="/product/productDetail/<% producto.id %> ">
+                    <img class="torta2" src="/images/<%= producto.image %>" alt="<%= producto.name %>">
+                    <p><%= producto.detail %> </p>
+                    <p class="precio-promo">$ <%=producto.price %> </p>
                 </a>
-            </article>
-            <% } %>
-            <% }); %>
+                </div>
+                <% }); %>
+
+
+
         </section>
 
         <div class="paginas">
