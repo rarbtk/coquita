@@ -99,10 +99,11 @@
     font-family: montserrat;
     text-align: left;
     padding-left: 12px;
+    border-style: none;
 }
 
 .input-buscador:focus {
-    border: none;
+    outline: none;
 }
 
 .buscador-torta .button-search {

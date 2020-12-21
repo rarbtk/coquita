@@ -36,7 +36,7 @@ router.get("/:id", productsController.productDetail);
 
 //get product detail by id
 router.get("/category/:category", productsController.productByCategory);
-
+router.get("/list", productsController.productByQuery);
 
 //Edit producto
 //se tiene que escribir en el url product/productEdit/y cualquier id

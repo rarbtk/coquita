@@ -134,7 +134,7 @@ a p{
 }
 
 .input-buscador:focus {
-    border: none;
+    outline: none;
 }
 
 .buscador-torta .button-search {

@@ -5,6 +5,26 @@ let path = require("path");
 
 const productsController = {
   products: (req, res) => {
+    if(req.query.name){
+      let query = req.query.name.toLowerCase()
+      console.log("QUERY****", query);
+    db.Product.findAll()
+      .then((product) => {
+        product = product.filter(function(item){
+          let busqueda = item.name.toLowerCase()
+          console.log("QUERY BASE DE DATOS****", busqueda);
+          if(busqueda.indexOf(query) !== -1)
+          return product
+        })
+        if (product) {
+          return res.render("product/product", { products: product });
+        }
+        return res.render("product/product", {});
+      })
+      .catch((error) => {
+        res.render("error.ejs", { error });
+      });
+    }
     db.Product.findAll()
       .then(function (products) {
         res.render("product/product", { products });
@@ -13,6 +33,14 @@ const productsController = {
         res.render("error.ejs", { error });
       });
   },
+
+  productByQuery: (req, res) => {
+
+    
+  },
+
+
+
 
   productByCategory: (req, res) => {
     db.Product.findAll({ 
