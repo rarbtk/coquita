@@ -13,9 +13,11 @@
     <div id="main">
         <%- include('../partials/header') %>
         <h1> ADMINISTRACIÓN DE PRODUCTOS</h1>
+        <div class= "boton-nuevo">
+            <a href="/product/create" >Subir nuevo producto</a> 
+        </div>
+        
         <section class="detalle-productos">
-
-            <a href="/product/create">Subir nuevo producto</a> 
 
             <% products.forEach(product => { %>
             <article class="producto">
@@ -37,11 +39,11 @@
                     </a>
                 </div>
                 <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
-                    <div class="margen-de-boton boton-comprar">
-                        <button type="submit">
+
+                        <button class="boton-borrar" type="submit">
                             Borrar Producto
                         </button>
-                    </div>
+
                 </form>
 
             </article>
