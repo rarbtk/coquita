@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const db = require("../database/models");
-const products = require("../data/products.json");
+//const products = require("../data/products.json");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -15,7 +15,6 @@ router.get("/", function (req, res, next) {
       currentUser: req.session.user,
     });
   });
-  //console.log("locals", res.locals);
 });
 
 router.get("/contact", function (req, res, next) {
