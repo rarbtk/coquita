@@ -102,10 +102,11 @@ const productsController = {
   },
 
   store: (req, res) => {
+    console.log(req.body.category);
     db.Product.create({
       name: req.body.name,
       price: req.body.price,
-      category_id: 1,
+      category_id: req.body.category,
       detail: req.body.detail,
       image: req.files[0].filename,
     });

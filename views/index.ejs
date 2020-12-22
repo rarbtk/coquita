@@ -94,9 +94,11 @@
 
             <% bestSellers.forEach(promo => {%>
             <div class="nuestra-promo-2">
-                <img class="torta2" src="/images/products/promo/<%= promo.image %>" alt="<%= promo.name %>">
+                <a href="/product/<%= promo.id %> ">
+                <img class="torta2" src="/images/<%= promo.image %>" alt="<%= promo.name %>">
                 <p><%= promo.detail %> </p>
                 <p class="precio-promo">$ <%=promo.price %> </p>
+            </a>
             </div>
             <% }); %>
 

@@ -1,8 +1,8 @@
 module.exports = {
   development: {
-    username: "coquita",
-    password: "coquita12345",
-    database: "coquitaDB",
+    username: "root",
+    password: "root",
+    database: "coquitadb",
     host: "127.0.0.1",
     dialect: "mysql",
   },

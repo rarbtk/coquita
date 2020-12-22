@@ -25,7 +25,6 @@ app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(methodOverride("_method"));
 app.use(session({ secret: "coquita" }));
-app.use(rememberMeMiddleware);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -40,7 +39,7 @@ app.use(function (req, res, next) {
   }
   return next();
 });
-
+app.use(rememberMeMiddleware);
 app.use("/", indexRouter);
 app.use("/product", productRouter);
 app.use("/user", userRouter);
