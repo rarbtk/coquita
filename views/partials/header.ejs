@@ -27,7 +27,9 @@
       </ul>
     </nav>
     <% if(locals.usuario){ %>
-    <p><%= locals.usuario %></p>
+    <p>
+      <a href='/user/profile'> <%=locals.usuario %></a>
+    </p>
     <% } %>
 
   </div>

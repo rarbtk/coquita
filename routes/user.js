@@ -4,6 +4,7 @@ const userControllers = require("../controllers/userControllers");
 let { check, validationResult, body } = require("express-validator");
 const authMiddleware = require("../middleware/authMiddleware");
 const guestMiddleware = require("../middleware/guestMiddleware");
+const db = require("../database/models");
 
 /* USER LOGIN. */
 router.get("/login", guestMiddleware, function (req, res, next) {
@@ -38,6 +39,24 @@ router.post(
 // USER REGISTER FORM
 router.get("/register", guestMiddleware, function (req, res, next) {
   res.render("user/register");
+});
+
+//USER PROFILE
+router.get("/profile", function (req, res) {
+  console.log(req.session);
+  db.User.findOne({
+    where: {
+      email: req.session.user,
+    },
+  })
+    .then((user) => {
+      console.log("user found: ", user.firstName);
+      res.render("user/profile", { user: user });
+    })
+    .catch((error) => {
+      res.render("error", error);
+    });
+  //
 });
 
 //show session
