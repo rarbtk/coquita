@@ -1,0 +1,19 @@
+.avatar-container {
+    text-align: center;
+    border-bottom: 0.1px solid rgb(223, 221, 221);
+}
+
+.avatar {
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -40px;
+}
+
+.avatar:hover {
+    opacity: 50%;
+}
+
+.avatarInputFile {
+    display: none;
+}

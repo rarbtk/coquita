@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 const productsController = require("../controllers/productsControllers.js");
-//const products = require("../data/products.json");
 const authMiddleware = require("../middleware/authMiddleware");
 const adminMiddleware = require("../middleware/adminMiddleware");
 let multer = require("multer");

@@ -7,45 +7,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-
+<script defer src="/js/profile.js"></script>
 
 <body>
   <%- include('../partials/header') %>
+
   <div class="container pt-2">
-    <form action="/user/profile" method="POST">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="firstName">Nombre</label>
-          <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Nombre"
-            value="<%= user.firstName %> ">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="lastName">Apellido</label>
-          <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Apellido"
-            value="<%= user.lastName %>">
-        </div>
-        <div class=" form-group col-md-6">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" name="email" id="email" placeholder="Email"
-            value="<%= user.email %>">
-        </div>
-        <div class=" form-group col-md-6">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" name="password" id="password" placeholder="Password"
-            value="<%= user.password %>">
-        </div>
-        <div class="custom-file col-md-6">
-          <input type="file" class="custom-file-input" name="avatar" id="validatedCustomFile" required>
-          <label class="custom-file-label" for="validatedCustomFile">Selecciona tu avatar</label>
-          <div class="invalid-feedback">Example invalid custom file feedback</div>
-        </div>
+    <form action="/user/avatar" id="newAvatar" method="post" enctype="multipart/form-data">
+      <div class=" avatar-container">
+        <img src="/images/avatars/<%=user.image  %>" class="avatar" alt="editar avatar"
+          onclick="javascript:callInputFile()">
+        <input type="file" name="image" id="avatarInputFile" class="avatarInputFile" accept=".png,.jpg,gif">
       </div>
-      <div class="pt-2 pb-2">
-        <button type="submit" class="btn btn-primary">Guardar</button>
+      <div class="align-items-center">
+        <button type="button" class="btn btn-danger align-items-end" onclick="javascript:callInputFile()">Change
+          Avatar</button>
+        <button type="submit" class="btn btn-success align-items-end">Upload avatar</button>
       </div>
     </form>
+
+    <div class="pt-5">
+      <form action="/user/profile" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="firstName">Nombre</label>
+            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Nombre"
+              value="<%= user.firstName %> ">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lastName">Apellido</label>
+            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Apellido"
+              value="<%= user.lastName %>">
+          </div>
+          <div class=" form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+              value="<%= user.email %>">
+          </div>
+          <div class=" form-group col-md-6">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" name="password" id="password" placeholder="Password"
+              value="<%= user.password %>">
+          </div>
+        </div>
+        <div class="pt-2 pb-2">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </div>
+
   </div>
   <%- include('../partials/footer') %>
 </body>
+
 
 </html>
