@@ -29,7 +29,7 @@ const userControllers = {
             profile_id: 2,
             email: req.body.email,
             password: hash,
-            image: "/images/avatar/default-avatar-male.png", //default avatar
+            image: "default-avatar-male.png", //default avatar
           });
           req.session.user = req.body.email;
           req.session.profile = "customer";
