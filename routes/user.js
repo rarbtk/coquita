@@ -78,4 +78,6 @@ router.get("/sessions", function (req, res) {
   }
 });
 
+router.post("/changePassword", userControllers.changePassword);
+
 module.exports = router;

@@ -16,7 +16,7 @@ const userControllers = {
         res.render("user/profile", { user: user });
       })
       .catch((error) => {
-        res.render("error", error);
+        res.render("error", { error: error });
       });
     //
   },
@@ -178,6 +178,9 @@ const userControllers = {
     //     errors: [{ msg: "La cuenta/email es inexistente " }],
     //   });
     // }
+  },
+  changePassword: (req, res) => {
+    res.send("Password modificada con exito");
   },
 };
 

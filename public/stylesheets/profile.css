@@ -4,10 +4,11 @@
 }
 
 .avatar {
-    width: 100px;
+    width: 200px;
     border-radius: 50%;
     position: relative;
-    bottom: -40px;
+    bottom: -70px;
+    z-index: 1;
 }
 
 .avatar:hover {
@@ -15,5 +16,13 @@
 }
 
 .avatarInputFile {
+    display: none;
+}
+
+.btn-action-container {
+    margin-top: 80px;
+}
+
+.btn-upload-avatar {
     display: none;
 }
