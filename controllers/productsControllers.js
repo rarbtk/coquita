@@ -5,25 +5,24 @@ let path = require("path");
 
 const productsController = {
   products: (req, res) => {
-    if(req.query.name){
-      let query = req.query.name.toLowerCase()
+    if (req.query.name) {
+      let query = req.query.name.toLowerCase();
       console.log("QUERY****", query);
-    db.Product.findAll()
-      .then((product) => {
-        product = product.filter(function(item){
-          let busqueda = item.name.toLowerCase()
-          console.log("QUERY BASE DE DATOS****", busqueda);
-          if(busqueda.indexOf(query) !== -1)
-          return product
+      db.Product.findAll()
+        .then((product) => {
+          product = product.filter(function (item) {
+            let busqueda = item.name.toLowerCase();
+            console.log("QUERY BASE DE DATOS****", busqueda);
+            if (busqueda.indexOf(query) !== -1) return product;
+          });
+          if (product) {
+            return res.render("product/product", { products: product });
+          }
+          return res.render("product/product", {});
         })
-        if (product) {
-          return res.render("product/product", { products: product });
-        }
-        return res.render("product/product", {});
-      })
-      .catch((error) => {
-        res.render("error.ejs", { error });
-      });
+        .catch((error) => {
+          res.render("error.ejs", { error });
+        });
     }
     db.Product.findAll()
       .then(function (products) {
@@ -34,20 +33,14 @@ const productsController = {
       });
   },
 
-  productByQuery: (req, res) => {
-
-    
-  },
-
-
-
+  productByQuery: (req, res) => {},
 
   productByCategory: (req, res) => {
-    db.Product.findAll({ 
-    where: {
-      category_id: req.params.category
-     }
-  })
+    db.Product.findAll({
+      where: {
+        category_id: req.params.category,
+      },
+    })
       .then((product) => {
         if (product) {
           return res.render("product/category", { product: product });
@@ -58,7 +51,6 @@ const productsController = {
         res.render("error.ejs", { error });
       });
   },
-
 
   productDetail: (req, res) => {
     //let products = Product.getProductById(req.params.id);
@@ -103,6 +95,7 @@ const productsController = {
 
   store: (req, res) => {
     console.log(req.body.category);
+    console.log("HICISTE EL CREATE?????");
     db.Product.create({
       name: req.body.name,
       price: req.body.price,
@@ -123,7 +116,7 @@ const productsController = {
       },
       {
         where: {
-          id: 99,
+          id: req.params.id,
         },
       }
     )
