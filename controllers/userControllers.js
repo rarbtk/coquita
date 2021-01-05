@@ -149,38 +149,32 @@ const userControllers = {
         });
       }
     });
-
-    // const user_found = User.getUserByEmail(email);
-    // if (user_found) {
-    //   console.log("USUARIO ENCONTRADO: ", user_found);
-    //   // Check password
-    //   if (bcrypt.compareSync(password, user_found.password)) {
-    //     //password OK
-    //     req.session.user = user_found.email;
-    //     req.session.category = user_found.category;
-    //     console.log("rememberCoquita");
-    //     if (req.body.rememberMe != undefined) {
-    //       res.cookie("userMail", user_found.email, { maxAge: 1800000 }); // cookies 30 minutos
-    //       res.cookie("userCategory", user_found.category, { maxAge: 1800000 });
-    //     }
-    //     console.log("***********************");
-    //     console.log("Session: ", req.session.user, req.session.category);
-    //     res.redirect("/");
-    //   } else {
-    //     //Incorrect password
-    //     return res.render("user/login", {
-    //       errors: [{ msg: "Verifica la password y intenta nuevamente" }],
-    //     });
-    //   }
-    // } else {
-    //   // retornar error
-    //   return res.render("user/login", {
-    //     errors: [{ msg: "La cuenta/email es inexistente " }],
-    //   });
-    // }
   },
   changePassword: (req, res) => {
-    res.send("Password modificada con exito");
+    console.log("REQ: ", req);
+    const password = req.body.password;
+    console.log("password: ", req.body.password);
+    //const hash = bcrypt.hashSync(req.body.password, 10);
+    let hash = bcrypt.hashSync(req.body.password, 10);
+    const id = req.session.id;
+    console.log(id);
+
+    db.User.update(
+      {
+        password: hash,
+      },
+      {
+        where: {
+          id: req.session.userId,
+        },
+      }
+    )
+      .then(() => {
+        res.send("Password modificada con exito");
+      })
+      .catch((error) => {
+        res.render("error", { error: error });
+      });
   },
 };
 

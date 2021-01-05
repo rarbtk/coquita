@@ -1,6 +1,5 @@
 window.addEventListener("load", function () {
   var inputAvatar = document.getElementById("avatarInputFile");
-  var savePassword = document.getElementById("btnSavePassword");
   var changePasswordForm = document.getElementById("changePasswordForm");
 
   inputAvatar.addEventListener("change", function (e) {
