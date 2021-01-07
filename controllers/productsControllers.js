@@ -95,7 +95,6 @@ const productsController = {
 
   store: (req, res) => {
     console.log(req.body.category);
-    console.log("HICISTE EL CREATE?????");
     db.Product.create({
       name: req.body.name,
       price: req.body.price,
@@ -135,22 +134,6 @@ const productsController = {
       .catch((error) => {
         res.render("error.ejs", { error });
       });
-
-    //let productos = Product.getProducts();
-
-    // for (let x = 0; x < productos.length; x++) {
-    //   if (productos[x].id == req.params.id) {
-    //     console.log("**************************************");
-    //     console.log(req.body.name, req.body.price);
-    //     productos[x].name = req.body.name;
-    //     productos[x].price = req.body.price;
-    //     productos[x].category = req.body.category;
-    //     productos[x].detail = req.body.detail;
-    //     productos[x].image = req.files[0].filename;
-    //   }
-    // }
-
-    //Product.updateJsonProducts(productos);
   },
   delete: (req, res) => {
     db.Product.destroy({

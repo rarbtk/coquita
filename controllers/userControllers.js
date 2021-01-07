@@ -151,13 +151,11 @@ const userControllers = {
     });
   },
   changePassword: (req, res) => {
-    console.log("REQ: ", req);
+    const email = req.body.email;
     const password = req.body.password;
-    console.log("password: ", req.body.password);
-    //const hash = bcrypt.hashSync(req.body.password, 10);
-    let hash = bcrypt.hashSync(req.body.password, 10);
-    const id = req.session.id;
-    console.log(id);
+    console.log("email: ", email);
+    console.log("password: ", password);
+    let hash = bcrypt.hashSync(password, 10);
 
     db.User.update(
       {
@@ -165,15 +163,30 @@ const userControllers = {
       },
       {
         where: {
-          id: req.session.userId,
+          email: email,
         },
       }
     )
-      .then(() => {
-        res.send("Password modificada con exito");
+      .then((data) => {
+        if (data[0] > 0) {
+          res.status(200).send({
+            status: "ok",
+            message: "password modified",
+            data: data[0],
+          });
+        } else {
+          res.status(404).send({
+            status: "not-found",
+            message: "User not found",
+            data: data[0],
+          });
+        }
       })
       .catch((error) => {
-        res.render("error", { error: error });
+        res.status(500).send({
+          status: "error",
+          message: error,
+        });
       });
   },
 };
