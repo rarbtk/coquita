@@ -112,6 +112,7 @@ const productsController = {
         price: req.body.price,
         category_id: req.body.category,
         detail: req.body.detail,
+        updateAt: Date.now(),
       },
       {
         where: {
