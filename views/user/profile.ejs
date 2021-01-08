@@ -58,27 +58,34 @@
       </form>
 
 
-      <div class="form-group col-md-6 mt-2">
-        <form action="/user/changePassword" method="POST" id="changePasswordForm">
+      <div class="form-group mt-2">
+        <h1>Cambio de Password</h1>
+        <form method="POST" id="changePasswordForm">
           <div class="form-row">
-            <h1>Cambio de Password</h1>
-            <div class="form-group">
+            <div class="form-group col-md-6">
               <label for="password">Password</label>
               <input type="password" class="form-control" name="password" id="password" value="<%= user.password %>"
                 disabled>
-              <div class="actions mt-1">
-                <button type="button" value="" id="btChangePassword" class="btn btn-danger"
-                  onclick="javascript:changePassword()">
-                  Cambiar</button>
-                <button type="submit" value="" id="btnSavePassword" class="btn btn-success" disabled>
-                  Guardar</button>
-              </div>
             </div>
           </div>
+          <div class="form-row actions mt-1">
+            <button type="button" value="" id="btChangePassword" class="btn btn-danger"
+              onclick="javascript:changePassword()">
+              Cambiar</button>
+            <button type="submit" value="" id="btnSavePassword" class="btn btn-success" disabled>
+              Guardar</button>
+          </div>
         </form>
+        <div class="messages">
+          <% if(typeof messages !='undefined'){ %>
+          <% messages %>
+          <% } %>
+
+        </div>
       </div>
     </div>
-    <%- include('../partials/footer') %>
+  </div>
+  <%- include('../partials/footer') %>
 </body>
 
 

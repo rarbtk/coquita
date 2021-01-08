@@ -149,38 +149,45 @@ const userControllers = {
         });
       }
     });
-
-    // const user_found = User.getUserByEmail(email);
-    // if (user_found) {
-    //   console.log("USUARIO ENCONTRADO: ", user_found);
-    //   // Check password
-    //   if (bcrypt.compareSync(password, user_found.password)) {
-    //     //password OK
-    //     req.session.user = user_found.email;
-    //     req.session.category = user_found.category;
-    //     console.log("rememberCoquita");
-    //     if (req.body.rememberMe != undefined) {
-    //       res.cookie("userMail", user_found.email, { maxAge: 1800000 }); // cookies 30 minutos
-    //       res.cookie("userCategory", user_found.category, { maxAge: 1800000 });
-    //     }
-    //     console.log("***********************");
-    //     console.log("Session: ", req.session.user, req.session.category);
-    //     res.redirect("/");
-    //   } else {
-    //     //Incorrect password
-    //     return res.render("user/login", {
-    //       errors: [{ msg: "Verifica la password y intenta nuevamente" }],
-    //     });
-    //   }
-    // } else {
-    //   // retornar error
-    //   return res.render("user/login", {
-    //     errors: [{ msg: "La cuenta/email es inexistente " }],
-    //   });
-    // }
   },
   changePassword: (req, res) => {
-    res.send("Password modificada con exito");
+    const email = req.body.email;
+    const password = req.body.password;
+    console.log("email: ", email);
+    console.log("password: ", password);
+    let hash = bcrypt.hashSync(password, 10);
+
+    db.User.update(
+      {
+        password: hash,
+      },
+      {
+        where: {
+          email: email,
+        },
+      }
+    )
+      .then((data) => {
+        if (data[0] > 0) {
+          res.status(200).send({
+            status: "ok",
+            message: "password modified",
+            data: data[0],
+          });
+        } else {
+          res.status(404).send({
+            status: "not-found",
+            message: "User not found",
+            data: data[0],
+          });
+        }
+      })
+      .catch((error) => {
+        res.status(500).send({
+          status: "error",
+          message: error,
+        });
+      });
   },
 };
 
