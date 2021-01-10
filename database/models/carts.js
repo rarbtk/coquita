@@ -12,8 +12,8 @@ module.exports = function (sequelize, dataTypes){
     };
 
     let config = {
-        tableName = "carts",
-        timestamps = false,
+        tableName : "carts",
+        timestamps : false,
     }
 
     let carts = sequelize.define(alias,cols,config);
