@@ -7,6 +7,17 @@ module.exports = function (sequelize, dataTypes) {
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: dataTypes.INTEGER,
+    },
+    createdAt: {
+      type: dataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()"),
+    },
+    updatedAt: {
+      type: dataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()"),
+    },
   };
 
   let config = {
