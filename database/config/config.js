@@ -1,8 +1,10 @@
+require("dotenv").config();
+
 module.exports = {
   development: {
-    username: "root",
-    password: "root",
-    database: "coquitadb",
+    username: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
     host: "127.0.0.1",
     dialect: "mysql",
   },
