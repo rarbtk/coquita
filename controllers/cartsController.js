@@ -5,7 +5,13 @@ let path = require("path");
 const cartsController = {
 
     productosEnCarrito : function (req, res, next) {
-        res.render("cart/cart");
+      db.Product.findAll()
+      .then(function(compras){
+       return res.render("cart/cart",{compras});
+       console.log(compras)
+      });
+
+    
       }
 
 }

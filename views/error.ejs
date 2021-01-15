@@ -2,20 +2,25 @@
 <html lang="en">
 
 <%- include('partials/head', {title: 'Coquita - unexpected error :('}) %>
-<link rel="stylesheet" href="/stylesheets/not-found.css">
+<link rel="stylesheet" href="/stylesheets/error.css">
 
 <body>
 
     <%- include('partials/header') %>
 
     <div class="container">
-        <div class="row">
-            <img src="/images/general/this-is-fine.png" alt="fire!!!!" class="src" width="500px">
+        <div class="row text pt-2">
+            <div class="center align-items-center">
+                <%= error %><i class="fas fa-exclamation-triangle"></i>
+            </div>
         </div>
         <div class="row">
-            <%= error %>
+            <div class="center pb-2">
+                <img class="image" src="/images/general/this-is-fine.png" alt="">
+            </div>
         </div>
     </div>
+
 
     <%- include('partials/footer') %>
 </body>

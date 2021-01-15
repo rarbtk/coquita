@@ -5,6 +5,24 @@
 
 .dp-flex{display: flex;}
 
+#start i{color: #8C4B3C;}
+#start{
+    color: #8C4B3C;
+    border-color: #8C4B3C;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.total{
+    height: 450px;
+}
+
+.eliminar-producto{
+   margin-left: 100%;
+    background-color:pink;
+    color: white;
+}
+
 
 @media(min-width:768px){
     /*carrito */ 
@@ -42,6 +60,7 @@
 }
 
 .nombre-items{
+    width: 13%;
     margin-top:auto;
     margin-bottom: auto;
     margin-left: 5%;
@@ -74,7 +93,7 @@
 
 .total{
     width: 50%;
-    height: auto;
+    height: 450px;
     background-color: white;
     margin-top: 1%;
     margin-bottom: 1%;

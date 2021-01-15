@@ -2,7 +2,7 @@ function authMiddleware(req, res, next) {
   if (req.session.user != undefined) {
     next();
   } else {
-    res.send("Unauthorized");
+    res.render("error.ejs", { error: "Unauthorized" });
   }
 }
 

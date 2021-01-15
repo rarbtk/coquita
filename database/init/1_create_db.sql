@@ -8,6 +8,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE
 , SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
 -- Schema coquitaDB
 -- -----------------------------------------------------
 
@@ -15,8 +18,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE
 -- Schema coquitaDB
 -- -----------------------------------------------------
 CREATE SCHEMA
-IF NOT EXISTS `coquitaDB` DEFAULT CHARACTER
-SET utf8 ;
+IF NOT EXISTS `coquitaDB` ;
 USE `coquitaDB`
 ;
 
@@ -67,7 +69,7 @@ NOT NULL,
     REFERENCES `coquitaDB`.`profiles`
 (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 17;
+AUTO_INCREMENT = 19;
 
 
 -- -----------------------------------------------------
@@ -102,7 +104,7 @@ IF NOT EXISTS `coquitaDB`.`categories`
   PRIMARY KEY
 (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3;
+AUTO_INCREMENT = 7;
 
 
 -- -----------------------------------------------------
@@ -120,6 +122,8 @@ IF NOT EXISTS `coquitaDB`.`products`
 (100) NULL DEFAULT NULL,
   `image` VARCHAR
 (100) NULL DEFAULT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NOT NULL,
   PRIMARY KEY
 (`id`),
   INDEX `fk_products_1_idx`
@@ -130,7 +134,7 @@ IF NOT EXISTS `coquitaDB`.`products`
     REFERENCES `coquitaDB`.`categories`
 (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 6;
+AUTO_INCREMENT = 17;
 
 
 -- -----------------------------------------------------
@@ -168,5 +172,3 @@ SET FOREIGN_KEY_CHECKS
 =@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS
 =@OLD_UNIQUE_CHECKS;
-
-

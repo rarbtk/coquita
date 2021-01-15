@@ -1,0 +1,14 @@
+.center{
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.text {
+    font-size: 30px;
+    color: red;
+}
+
+.image {
+    width: 400px;
+}
