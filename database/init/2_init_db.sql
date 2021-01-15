@@ -10,11 +10,16 @@ values(2, "customer");
 /* USERS*/
 
 insert into users
+<<<<<<< HEAD
   (firstName,lastName,profile_id,email,password,image)
 values("Lucho", "Batalla", 1, "admin@coquita.com", "$2b$10$YignpRmWDpm2TUp2X8VYXO6U.oxJVFlQPEYSMOMK2XEmc8pYfWmPG", "perfil.png");
+=======
+  (firstName,lastName,profile_id,email,password,image,createdAt,updatedAt)
+values("Lucho", "Batalla", 1, "admin@coquita.com", "$2b$10$YignpRmWDpm2TUp2X8VYXO6U.oxJVFlQPEYSMOMK2XEmc8pYfWmPG", "perfil.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
+>>>>>>> f3537e59f5e6fc1282c2e53898bb8e145e9057ef
 insert into users
-  (firstName,lastName,profile_id,email,password,image)
-values(" ", " " , 2, "customer@coquita.com", "$2b$10$ph4nzghqutMI4./r8BtUJupJSBRSaJQNVn/V/p2oCE/2azL7Opq5m", "default-avatar-male.png");
+  (firstName,lastName,profile_id,email,password,image,createdAt,updatedAt)
+values(" ", " " , 2, "customer@coquita.com", "$2b$10$ph4nzghqutMI4./r8BtUJupJSBRSaJQNVn/V/p2oCE/2azL7Opq5m", "default-avatar-male.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
 /* CATEGORIES */
 insert into categories
   (id,name)

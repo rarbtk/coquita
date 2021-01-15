@@ -19,6 +19,17 @@ module.exports = function (sequelize, dataTypes) {
     cart_id: {
       type: dataTypes.INTEGER,
     },
+<<<<<<< HEAD
+=======
+    createdAt: {
+      type: dataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()"),
+    },
+    updatedAt: {
+      type: dataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()"),
+    },
+>>>>>>> f3537e59f5e6fc1282c2e53898bb8e145e9057ef
   };
   let config = {
     tableName: "cart_items",
