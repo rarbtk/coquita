@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', {title: 'Home'}) %>
+<link rel="stylesheet" href="../stylesheets/login.css" />
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+<!-- Fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+<script defer src="/js/reset.js"></script>
+
+<body>
+  <%- include('../partials/header') %>
+
+  <section class="container">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h1>Recuperar contraseña</h1>
+      </div>
+    </div>
+
+    <form action="/account/reset" method="POST" id="formID">
+      <div class="col-md-6 margin">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" class="form-control">
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-primary" id="btn-change-password">Recuperar contraseña</button>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- MOSTRAR ERRORES DEL FORM -->
+      <% if(typeof errors!='undefined'){ %>
+      <ul>
+        <% for (let i=0; i < errors.length; i++) { %>
+        <li style="color: red;">
+          <i class="fas fa-exclamation-circle"></i><%= errors[i].msg %>
+        </li>
+        <% } %>
+      </ul>
+      <% } %>
+    </form>
+
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+
+</html>

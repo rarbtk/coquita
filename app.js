@@ -16,6 +16,10 @@ var userRouter = require("./routes/user");
 var productRouter = require("./routes/product");
 var cartRouter = require("./routes/cart");
 var adminRouter = require("./routes/admin");
+var accountRouter = require("./routes/account");
+
+//apis
+const paymentRouter = require("./routes/api/payments");
 
 var app = express();
 
@@ -43,8 +47,11 @@ app.use(rememberMeMiddleware);
 app.use("/", indexRouter);
 app.use("/product", productRouter);
 app.use("/user", userRouter);
+app.use("/account", accountRouter);
 app.use("/cart", cartRouter);
 app.use("/administracion", adminRouter);
+//apis
+app.use("/api/payments", paymentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
