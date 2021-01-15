@@ -1,11 +1,11 @@
 
 /* PROFILES*/
 insert into profiles
-  (id,name)
-values(1, "admin");
+  (id,name,createdAt,updatedAt)
+values(1, "admin", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
 insert into profiles
-  (id,name)
-values(2, "customer");
+  (id,name,createdAt,updatedAt)
+values(2, "customer", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
 
 /* USERS*/
 
