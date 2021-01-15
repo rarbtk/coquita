@@ -14,8 +14,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema coquitaDB
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `coquitaDB` ;
-USE `coquitaDB` ;
+CREATE SCHEMA
+IF NOT EXISTS `coquitaDB` ;
+USE `coquitaDB`;
 
 -- -----------------------------------------------------
 -- Table `coquitaDB`.`profiles`
@@ -48,7 +49,15 @@ CREATE TABLE IF NOT EXISTS `coquitaDB`.`users` (
     FOREIGN KEY (`profile_id`)
     REFERENCES `coquitaDB`.`profiles` (`id`))
 ENGINE = InnoDB
+<<<<<<< HEAD
 AUTO_INCREMENT = 24;
+=======
+<<<<<<< HEAD
+AUTO_INCREMENT = 19;
+=======
+AUTO_INCREMENT = 22;
+>>>>>>> f3537e59f5e6fc1282c2e53898bb8e145e9057ef
+>>>>>>> bf473fb72850d809c3a87695991a40021ae14534
 
 
 -- -----------------------------------------------------
@@ -86,17 +95,34 @@ CREATE TABLE IF NOT EXISTS `coquitaDB`.`products` (
   `name` VARCHAR(100) NOT NULL,
   `price` FLOAT NOT NULL,
   `category_id` INT NOT NULL,
+<<<<<<< HEAD
+  `detail` VARCHAR
+(100) NULL DEFAULT NULL,
+  `image` VARCHAR
+(100) NULL DEFAULT NULL,
+  `createdAt` DATETIME NOT NULL,
+  `updatedAt` DATETIME NOT NULL,
+  PRIMARY KEY
+(`id`),
+  INDEX `fk_products_1_idx`
+(`category_id` ASC),
+=======
   `detail` VARCHAR(100) NULL DEFAULT NULL,
   `image` VARCHAR(100) NULL DEFAULT NULL,
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_products_1_idx` (`category_id` ASC),
+>>>>>>> f3537e59f5e6fc1282c2e53898bb8e145e9057ef
   CONSTRAINT `fk_products_1`
     FOREIGN KEY (`category_id`)
     REFERENCES `coquitaDB`.`categories` (`id`))
 ENGINE = InnoDB
+<<<<<<< HEAD
+AUTO_INCREMENT = 17;
+=======
 AUTO_INCREMENT = 28;
+>>>>>>> f3537e59f5e6fc1282c2e53898bb8e145e9057ef
 
 
 -- -----------------------------------------------------
@@ -121,6 +147,7 @@ CREATE TABLE IF NOT EXISTS `coquitaDB`.`cart_items` (
 ENGINE = InnoDB;
 
 
+<<<<<<< HEAD
 -- -----------------------------------------------------
 -- Table `coquitaDB`.`password_change_requests`
 -- -----------------------------------------------------
@@ -138,3 +165,17 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+=======
+<<<<<<< HEAD
+SET SQL_MODE
+=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS
+=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS
+=@OLD_UNIQUE_CHECKS;
+=======
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+>>>>>>> f3537e59f5e6fc1282c2e53898bb8e145e9057ef
+>>>>>>> bf473fb72850d809c3a87695991a40021ae14534

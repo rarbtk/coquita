@@ -10,115 +10,47 @@
     <div id="main">
     <%- include('../partials/header') %>
     <div class="carrito dp-flex borde-marron">
+
+        
         <div class="productos-comprados dp-flex">
+            <% compras.forEach(compra => { %>
             <div class="items dp-flex borde-marron">
-                <img src="../images/torta-mariobros.png" alt="" class="imagenes-carrito">
-
-
+                
+                <img src="../images/<%= compra.image %>" alt="" class="imagenes-carrito">
+                
                 <div class="nombre-items color-marron">
-                    <p><b>Nombre items</b></p>
+                    <p><b><%= compra.name %></b></p>
+                    
                 </div>
-
+                 
                 <div class="lista-caracteristicas color-marron">
-                    <li> Cantidad Personas <p><select name="cantidad" id="">
-                        <option value="5">5 o menos</option>
-                        <option value="10">5 a 10</option>
-                        <option value="15">10 o más</option>
-                    </select></p></li>
-                    <li>Pisos <p><select name="pisos" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select></p></li>
+                             
                     <li>Bizcochuelos <p><select name="bizcochuelos" id="">
                         <option value="vainilla">Vainilla</option>
                         <option value="choco">Chocolate</option>
                     </select></p></li>
                     <li>Relleno <p><select name="relleno" id="">
-                        <option value="dulce-crema">Dulce de leche y crema</option>
-                        <option value="crema-durazno">Durazno y crema</option>
-                        <option value="crema-frutilla">Crema y frutillas</option>
+                        <option value="dulce-crema">Dulce de leche</option>
+                        <option value="crema-durazno">Chocolate</option>
+                        <option value="crema-frutilla">Crema</option>
                     </select></p></li>
+                    
                 </div>
-
+               
                 <div class="coste-final dp-flex color-marron">
-                    <p><b> Costo total</b></p>
-                    <p><b>$1500</b></p>
+                    <p><b>Total</b></p>
+                    <p><b><%= compra.price %> $</b></p>
+                   
                 </div>
+                <form action="/product/delete/?_method=DELETE" method="POST">
+                    <div class="margen-de-boton">
+                        <button class="eliminar-producto"><i class="fas fa-times"></i></button>
+                    </div>
+                </form>
             </div>
 
-            <div class="items dp-flex borde-marron">
-                <img src="../images/torta-dragon-ball.png" alt="" class="imagenes-carrito">
 
-
-                <div class="nombre-items color-marron">
-                    <p><b>Nombre items</b></p>
-                </div>
-
-                <div class="lista-caracteristicas color-marron">
-                    <li> Cantidad Personas <p><select name="cantidad" id="">
-                        <option value="5">5 o menos</option>
-                        <option value="10">5 a 10</option>
-                        <option value="15">10 o más</option>
-                    </select></p></li>
-                    <li>Pisos <p><select name="pisos" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select></p></li>
-                    <li>Bizcochuelos <p><select name="bizcochuelos" id="">
-                        <option value="vainilla">Vainilla</option>
-                        <option value="choco">Chocolate</option>
-                    </select></p></li>
-                    <li>Relleno <p><select name="relleno" id="">
-                        <option value="dulce-crema">Dulce de leche y crema</option>
-                        <option value="crema-durazno">Durazno y crema</option>
-                        <option value="crema-frutilla">Crema y frutillas</option>
-                    </select></p></li>
-                </div>
-
-                <div class="coste-final dp-flex color-marron">
-                    <p><b> Costo total</b></p>
-                    <p><b>$1500</b></p>
-                </div>
-            </div>
-
-            <div class="items dp-flex borde-marron">
-                <img src="../images/torta-3-osos.png" alt="" class="imagenes-carrito">
-
-
-                <div class="nombre-items color-marron">
-                    <p><b>Nombre items</b></p>
-                </div>
-
-                <div class="lista-caracteristicas color-marron">
-                    <li> Cantidad Personas <p><select name="cantidad" id="">
-                        <option value="5">5 o menos</option>
-                        <option value="10">5 a 10</option>
-                        <option value="15">10 o más</option>
-                    </select></p></li>
-                    <li>Pisos <p><select name="pisos" id="">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select></p></li>
-                    <li>Bizcochuelos <p><select name="bizcochuelos" id="">
-                        <option value="vainilla">Vainilla</option>
-                        <option value="choco">Chocolate</option>
-                    </select></p></li>
-                    <li>Relleno <p><select name="relleno" id="">
-                        <option value="dulce-crema">Dulce de leche y crema</option>
-                        <option value="crema-durazno">Durazno y crema</option>
-                        <option value="crema-frutilla">Crema y frutillas</option>
-                    </select></p></li>
-                </div>
-
-                <div class="coste-final dp-flex color-marron">
-                    <p><b> Costo total</b></p>
-                    <p><b>$1500</b></p>
-                </div>
-            </div>
-
+            <% }) %>     
         </div>
 
         <div class="total dp-flex borde-marron">
@@ -126,10 +58,11 @@
                 <p><b>Elegi la fecha de entrega</b></p>
             </div>
 
-            <div class="icono-calendario borde-marron color-marron">
-                <i class="far fa-calendar-alt"></i>
+           
 
-            </div>
+    <input type="date" id="start" name="trip-start"
+       value=""
+       min="date" max="2021-12-31" >
 
             <div class="checkbos color-marron">
                 <label><input type="radio" id="local" value="local" name="retiro"> Retirar por local</label><br>
