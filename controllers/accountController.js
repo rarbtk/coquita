@@ -1,4 +1,5 @@
 const db = require("../database/models");
+
 const accountController = {
   reset: (req, res) => {
     const TokenGenerator = require("uuid-token-generator");
@@ -36,6 +37,38 @@ const accountController = {
         console.log("ERROR, ", error);
         res.render("error", { error: error });
       });
+  },
+  resetConfirmation: (req, res) => {
+    const idConfirmation = req.query.idConfirmation;
+
+    db.PasswordChangeRequest.findOne({
+      where: {
+        hash: idConfirmation,
+      },
+    }).then((confirmation) => {
+      if (confirmation) {
+        console.log(
+          "La confirmacion es valida , renderiar vista changePassword ",
+          confirmation.user_id
+        );
+        // Buscar datos del de usuario
+        db.User.findOne({
+          where: {
+            id: confirmation.user_id,
+          },
+        })
+          .then((user) => {
+            if (user) {
+              res.render("account/resetPassword", { user: user });
+            }
+          })
+          .catch((error) => {
+            res.render(error, { error });
+          });
+      } else {
+        console.log("Id de confirmacion invalida");
+      }
+    });
   },
 };
 
