@@ -14,7 +14,7 @@ const avatarControllers = {
     const email = req.query.email;
 
     const hash = md5(email);
-    const url = `http://www.avatar.com/avatar/${hash}?d=identicon&s=200`;
+    const url = `http://www.gravatar.com/avatar/${hash}?d=identicon&s=200`;
     //const url = `http://www.avatar.com/avatar/${hash}?d=identicon&s=200`;
 
     console.log(url);
