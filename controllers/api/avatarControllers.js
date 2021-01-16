@@ -14,7 +14,8 @@ const avatarControllers = {
     const email = req.query.email;
 
     const hash = md5(email);
-    const url = `http://www.gravatar.com/avatar/${hash}?d=identicon&s=200`;
+    const url = `http://www.avatar.com/avatar/${hash}?d=identicon&s=200`;
+    //const url = `http://www.avatar.com/avatar/${hash}?d=identicon&s=200`;
 
     console.log(url);
 
@@ -22,10 +23,44 @@ const avatarControllers = {
 
     async function download() {
       const response = await fetch(url);
-      const buffer = await response.buffer();
-      fs.writeFile(`./public/images/avatars/${hash}.png`, buffer, () =>
-        res.json({ hash: hash })
-      );
+      console.log("fetch response from avatar: ", response.status);
+
+      if (response.status == 200) {
+        // get headers from response
+        const headers = await response.headers;
+
+        // check if a response is an image(avatar)
+        function checkHeader(headers) {
+          var image = false;
+          headers.forEach(function (val, key) {
+            console.log(key + " - " + val);
+            if (key == "content-type" && val == "image/png") {
+              image = true;
+            }
+          });
+          return image;
+        }
+
+        if (checkHeader(headers)) {
+          const buffer = await response.buffer();
+          fs.writeFile(`./public/images/avatars/${hash}.png`, buffer, () =>
+            res.status(201).json({
+              hash: hash,
+              message: "avatar saved sucessfully ;)",
+            })
+          );
+        } else {
+          res.status(500).json({
+            message: "error getting image from gravatar.",
+            url: url,
+          });
+        }
+      } else {
+        res.status(500).json({
+          message: "error getting image from gravatar.",
+          url: url,
+        });
+      }
     }
   },
 };
