@@ -1,9 +1,7 @@
 const mercadopago = require("mercadopago");
-
+require("dotenv").config();
 //REPLACE WITH YOUR ACCESS TOKEN AVAILABLE IN: https://developers.mercadopago.com/panel/credentials
-mercadopago.configurations.setAccessToken(
-  "TEST-4743186077626789-010801-d639b3e1f9b794f2017e5e02a1cb565c-201332717"
-);
+mercadopago.configurations.setAccessToken(process.env.MP_ACCESS_TOKEN);
 
 const paymentControllers = {
   processPayment: (req, res) => {

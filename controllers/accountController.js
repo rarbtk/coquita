@@ -1,12 +1,13 @@
 const db = require("../database/models");
 const nodemailer = require("nodemailer");
+const { Op } = require("sequelize");
+const moment = require("moment");
 require("dotenv").config();
 
 const accountController = {
   reset: (req, res) => {
-    const TokenGenerator = require("uuid-token-generator");
+    const md5 = require("md5");
     const email = req.body.email;
-    const tokgen = new TokenGenerator(); // Default is a 128-bit token encoded in base58
 
     db.User.findOne({
       where: {
@@ -17,18 +18,20 @@ const accountController = {
         if (user) {
           //USER ENCONTRADO
           console.log("USER FOUND, ", user);
-          //genero el token
-          tokgen.generate();
-          console.log("TOKEN: ", tokgen);
+          //genero el hash
+          const hash = md5(email + Date.now());
+
+          console.log("HASH: ", hash);
 
           db.PasswordChangeRequest.create({
-            hash: tokgen.baseEncoding,
+            hash: hash,
             user_id: user.id,
             createdAt: Date.now(),
             updatedAt: Date.now(),
+            valid: "true",
           }).then(() => {
             console.log("sending Email to, ", user.email);
-            sendEmail(user.email, tokgen.baseEncoding);
+            sendEmail(user.email, hash);
             res.render("account/reset-email-confirmation", {
               email: user.email,
             });
@@ -44,12 +47,18 @@ const accountController = {
   },
   resetConfirmation: (req, res) => {
     const idConfirmation = req.query.idConfirmation;
+    console.log("DATE - 24 hours: ", moment().subtract(24, "hours").toDate());
 
     db.PasswordChangeRequest.findOne({
       where: {
         hash: idConfirmation,
+        valid: "true",
+        createdAt: {
+          [Op.gte]: moment().subtract(24, "hours").toDate(), // check if token less than 24 hours
+        },
       },
     }).then((confirmation) => {
+      console.log(confirmation);
       if (confirmation) {
         console.log(
           "La confirmacion es valida , renderiar vista changePassword ",
@@ -63,6 +72,18 @@ const accountController = {
         })
           .then((user) => {
             if (user) {
+              //Invalidar hash para que no se pueda accededer nuevamente
+              db.PasswordChangeRequest.update(
+                {
+                  valid: "false",
+                },
+                {
+                  where: {
+                    hash: idConfirmation,
+                  },
+                }
+              );
+
               res.render("account/resetPassword", { user: user });
             }
           })

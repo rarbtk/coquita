@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `coquitaDB`.`users` (
     FOREIGN KEY (`profile_id`)
     REFERENCES `coquitaDB`.`profiles` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 22;
+AUTO_INCREMENT = 30;
 
 
 -- -----------------------------------------------------
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `coquitaDB`.`products` (
     FOREIGN KEY (`category_id`)
     REFERENCES `coquitaDB`.`categories` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 28;
+AUTO_INCREMENT = 39;
 
 
 -- -----------------------------------------------------
@@ -120,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `coquitaDB`.`cart_items` (
     REFERENCES `coquitaDB`.`products` (`id`))
 ENGINE = InnoDB;
 
+
 -- -----------------------------------------------------
 -- Table `coquitaDB`.`password_change_requests`
 -- -----------------------------------------------------
@@ -129,9 +130,10 @@ CREATE TABLE IF NOT EXISTS `coquitaDB`.`password_change_requests` (
   `user_id` INT NOT NULL,
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `hash_UNIQUE` (`hash` ASC))
-ENGINE = InnoDB;
+  `valid` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 18;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
