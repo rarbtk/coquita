@@ -4,31 +4,29 @@ body {
   background-color: #EEE0C9;
 }
 
+
 .compra-producto {
   display: flex;
   background-color: #F1F0E8;
   border: 1px solid #40241B;
   width: 70%;
-  margin: 5% 15%;
-  margin-bottom: 10px;
+  margin: 1% 15%;
+  margin-bottom: 6%
 }
 
 .precio {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  height: 150px;
-
-  font-family: pacifico;
-  font-size: 50px;
-  color: #DA8D95;
-  width: 200px;
-  margin-top: 50px;
-  margin-left: 25px;
-
-
+  height: 40px;
+  font-family: rotobo;
+  font-size: 30px;
+  color: black;
 }
 
+.cantidad{
+  justify-content: left;
+}
 .boton-comprar {
 
   width: 60%;
@@ -39,14 +37,13 @@ body {
   padding: 8px 58px;
   box-shadow: 2px 5px 7px #CBA3A2;
   height: 50px;
-  
   margin-top: 15px;
 
   
 }
 
 .opciones {
-  height: 300px;
+  height: 400px;
 
   display: flex;
   flex-direction: column;
@@ -60,7 +57,6 @@ body {
 .texto-precio {
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
 
 }
 
@@ -71,95 +67,40 @@ body {
 }
 
 .titulo-producto {
-  font-family: Fredoka One;
+  font-family: roboto;
   font-size: 30px;
-  color: #4F9EC4;
-
+  color: #A06F4E;
+  margin-top: 20px;
 }
 
-.cant-personas, .pisos, .bizcochuelo, .relleno {
-  display: flex;
-  flex-direction: row;
-  font-family: roboto;
-  color: #F3ECE9;
-  height: 30px;
-  
-  border-radius: 5px;
-  background-color: #A06F4E;
-  padding: 2% 5%;
-  margin-top: 5px;
-}
-
-.preg-personas {
-  background-color: #A06F4E;
-  margin-right: 40px;
-}
-
-.preg-pisos {
-  background-color: #A06F4E;
-  margin-right: 67px;
-}
-
-.preg-relleno {
-  background-color: #A06F4E;
-  margin-right: 90px;
-}
-
-.preg-bizco {
-  background-color: #A06F4E;
-  margin-right: 50px;
-}
-
-.seleccion {
-  color: #DA8D95;
-  font-family: roboto;
-  size: 20px;
-  text-align: center;
+.detalle {
+  font-size: 15px;
   font-weight: bold;
-  margin-bottom: 10px;
-  margin-top: 10px;
-
 }
 
-.fa-arrow-circle-down {
-  color: #F3ECE9;
-  background-color: #A06F4E;
-  align-self: center;
+.hidden {
+  display: none;
 }
-
 .carrito {
   background-color: #E8ABAA;
-  font-family: pacifico;
+  font-family: roboto;
   font-size: 20px;
   color: #F3ECE9;
-  align-self: center;
-  height: 40px;
+  height: 50px;
   width: 220px;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 55px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-.icono-torta {
-  margin-left: -38px;
-  color: #5f260d;
-  font-family: pacifico;
-  font-size: 20px;
-  text-align: center;
+.carrito a{
+  color: white;
+  margin-top: 2px;
 }
 
-.foto-torta {
-  margin: 0px;
-  border: 0px;
-}
-
-.ingredientes {
-
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 70%;
-  margin: 5% 15%;
-  margin-top: 10px;
+.margen-tres{
+  width: 100px;
 }
 
 .titulo {
@@ -172,41 +113,17 @@ body {
     border: 1px solid #6F2D2D;
     width: 20%;
     text-align: center;
-    margin-bottom: 10px;
 }
 
-.caja-ingredientes, .caja-especificaciones {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.detalle-cajon{
+  width: 700px;
 }
-
-
 
 .texto {
   font-family: roboto;
   font-size: 16px;
   color: #40241B;
   text-align: justify;
-}
-
-.icono-link {
-  color: #D37775;
-}
-
-.icono-link:hover {
-  color: #5C3A27;
-  cursor: pointer;
-}
-
-.boton-agregar {
-  color: #F3ECE9;
-}
-
-
-
-.boton-agregar:hover {
-  color: #5C3A27;
-  cursor: pointer;
 }
 
 
@@ -312,8 +229,8 @@ text-align: center;}
 } 
 
 .foto-torta {
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
 }
 
 /* ------ MEDIA QUERY ------*/

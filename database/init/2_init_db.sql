@@ -38,7 +38,7 @@ values(6, "Las de siempre");
 /* PRODUCTS*/
 insert into products
   (name, price,category_id,detail,image,createdAt,updatedAt)
-values("Torta Avengers", 800, 3, "Chocotorta premium 15 Personas", "torta-avengers.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
+values("Torta Avengers", 800, 3, "Torta de dos pisos con temática de Los Vengadores para 15 personas. Primer piso de biscochuelo de vainilla con relleno de dulce de leche y duraznos con crema. Segundo piso relleno de chocotorta ", "torta-avengers.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
 insert into products
   (name, price,category_id,detail,image,createdAt,updatedAt)
 values("Cajita dia del amigo 1,Incluye letter cupcake, 4 brownies y 4 cupcakes", 1500, 2, "Cajita dia del amigo", "promo1.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");

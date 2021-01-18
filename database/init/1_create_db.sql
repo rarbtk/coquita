@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `coquitaDB`.`products` (
   `name` VARCHAR(100) NOT NULL,
   `price` FLOAT NOT NULL,
   `category_id` INT NOT NULL,
-  `detail` VARCHAR(100) NULL DEFAULT NULL,
+  `detail` TEXT NULL DEFAULT NULL,
   `image` VARCHAR(100) NULL DEFAULT NULL,
   `createdAt` DATETIME NOT NULL,
   `updatedAt` DATETIME NOT NULL,
