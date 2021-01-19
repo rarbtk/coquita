@@ -12,44 +12,105 @@
 <body class="cuerpo">
     <div id="main">
         <%- include('../partials/header') %>
-        <h1> ADMINISTRACIÓN DE PRODUCTOS</h1>
-        <div class= "boton-nuevo">
-            <a href="/product/create" >Subir nuevo producto</a> 
-        </div>
-        
-        <section class="detalle-productos">
-
-            <% products.forEach(product => { %>
-            <article class="producto">
-                <a href="/product/<%= product.id %> ">
-                    <img src="/images/<%= product.image %> " class="foto-torta">
-                    <p class="texto-torta">
-                        <%= product.name %>
-                    </p>
-                    <p class="precio-torta">
-                        $ <%= product.price %>
-                    </p>
-                </a>
-
-                <div class="boton-comprar">
-                    <a href="/product/edit/<%= product.id %> ">
-                        <p class="texto-comprar">
-                            Editar producto
-                        </p>
-                    </a>
+        <div class="col-12 col-sm-12">
+        <div class="card card-primary card-outline card-tabs">
+            <div class="card-header p-0 pt-1 border-bottom-0">
+              <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+                <li class="pt-2 px-3"><h6 class="card-title">Panel de administración</h6></li>
+                <li class="nav-item">
+                  <a class="nav-link active" id="custom-tabs-three-home-tab" data-toggle="pill" href="#custom-tabs-three-home" role="tab" aria-controls="custom-tabs-three-home" aria-selected="true">Productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="custom-tabs-three-profile-tab" data-toggle="pill" href="#custom-tabs-three-profile" role="tab" aria-controls="custom-tabs-three-profile" aria-selected="false">Usuarios</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <div class="tab-content" id="custom-tabs-three-tabContent">
+                <div class="tab-pane fade show active" id="custom-tabs-three-home" role="tabpanel" aria-labelledby="custom-tabs-three-home-tab">
+                    <h1> ADMINISTRACIÓN DE PRODUCTOS</h1>
+                    <div class= "boton-nuevo">
+                        <a href="/product/create" >Subir nuevo producto</a> 
+                    </div>
+                    
+                    <section class="detalle-productos">
+            
+                        <% products.forEach(product => { %>
+                        <article class="producto">
+                            <a href="/product/<%= product.id %> ">
+                                <img src="/images/<%= product.image %> " class="foto-torta">
+                                <p class="texto-torta">
+                                    <%= product.name %>
+                                </p>
+                                <p class="precio-torta">
+                                    $ <%= product.price %>
+                                </p>
+                            </a>
+            
+                            <div class="boton-comprar">
+                                <a href="/product/edit/<%= product.id %> ">
+                                    <p class="texto-comprar">
+                                        Editar producto
+                                    </p>
+                                </a>
+                            </div>
+                            <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
+            
+                                    <button class="boton-borrar" type="submit">
+                                        Borrar Producto
+                                    </button>
+            
+                            </form>
+            
+                        </article>
+                        <% }); %>
+                    </section>
                 </div>
-                <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
 
-                        <button class="boton-borrar" type="submit">
-                            Borrar Producto
-                        </button>
+                <div class="tab-pane fade" id="custom-tabs-three-profile" role="tabpanel" aria-labelledby="custom-tabs-three-profile-tab">
+                    
+                    <div class="col-12 col-sm-6 col-md-6 d-flex align-items-stretch">
+                        <div class="card bg-light col-sm-6">
+                          <div class="card-header text-muted border-bottom-0">
+                            Usuario ID: 1
+                          </div>
+                          <div class="card-body pt-0">
+                            <div class="row">
+                              <div class="col-7">
+                                <h2 class="lead"><b>Cliente Cualquiera</b></h2><br>
+                                
+                                <ul class="ml-4 mb-0 fa-ul text-muted">
+                                  <li class="small"><span class="fa-li"><i class="far fa-address-card"></i></span> Tipo de perfil: Usuario</li><br>
+                                  <li class="small"><span class="fa-li"><i class="far fa-envelope"></i></span> Email: customer@coquita.com</li><br>
+                                </ul>
+                              </div>
+                              <div class="col-5 text-center">
+                                <img src="/images/avatars/default-avatar-male.png" alt="" class="img-circle img-fluid">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card-footer">
+                            <div class="text-right">
+                              <a href="#" class="btn btn-sm btn-primary">
+                                <i class="fas fa-user"></i> Eliminar
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
 
-                </form>
+                </div>
+                
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
 
-            </article>
-            <% }); %>
-        </section>
 
+        
+    </div>
 
         <%- include('../partials/footer') %>
     </div>

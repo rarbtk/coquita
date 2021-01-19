@@ -6,7 +6,9 @@
 }
 
 @media(min-width:768px) {
-
+.main{
+    width: 80%;
+}
 
 .boton-nuevo {
     display: flex;

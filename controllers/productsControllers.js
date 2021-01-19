@@ -58,12 +58,13 @@ const productsController = {
       .then((product) => {
         if (product) {
           return res.render("product/productDetail", { product: product });
-        }
+      }
         return res.render("product/productDetail", {});
       })
       .catch((error) => {
         res.render("error.ejs", { error });
       });
+    
   },
 
   productEdition: (req, res) => {
