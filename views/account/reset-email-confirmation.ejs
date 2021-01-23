@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', {title: 'Home'}) %>
+<link rel="stylesheet" href="../stylesheets/login.css" />
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+<!-- Fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+<script defer src="/js/forget-my-password.js"></script>
+
+<body>
+  <%- include('../partials/header') %>
+
+  <section class="container">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h1>Recuperar contraseña</h1>
+      </div>
+      <div>
+        <p>
+          La informacion para la recuperacion de su cuenta ha sido enviada a tu email
+          <strong><%= email %> </strong>.
+          Por favor seguir las intrucciones enviadas para habilitar nuevamente tu cuenta.
+        </p>
+      </div>
+      <div class="text-center pb-2">
+        <button class="btn btn-success" onclick="window.location='/user/login'"> Volver al Login </button>
+      </div>
+
+    </div>
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+
+</html>

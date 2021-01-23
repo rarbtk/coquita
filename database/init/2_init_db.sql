@@ -10,13 +10,8 @@ values(2, "customer");
 /* USERS*/
 
 insert into users
-<<<<<<< HEAD
-  (firstName,lastName,profile_id,email,password,image)
-values("Lucho", "Batalla", 1, "admin@coquita.com", "$2b$10$YignpRmWDpm2TUp2X8VYXO6U.oxJVFlQPEYSMOMK2XEmc8pYfWmPG", "perfil.png");
-=======
   (firstName,lastName,profile_id,email,password,image,createdAt,updatedAt)
-values("Lucho", "Batalla", 1, "admin@coquita.com", "$2b$10$YignpRmWDpm2TUp2X8VYXO6U.oxJVFlQPEYSMOMK2XEmc8pYfWmPG", "perfil.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
->>>>>>> f3537e59f5e6fc1282c2e53898bb8e145e9057ef
+values("Lucho", "Batalla", 1, "admin@coquita.com", "$2b$10$YignpRmWDpm2TUp2X8VYXO6U.oxJVFlQPEYSMOMK2XEmc8pYfWmPG", "perfil.png","2021-01-08 03:22:43", "2021-01-08 03:22:43");
 insert into users
   (firstName,lastName,profile_id,email,password,image,createdAt,updatedAt)
 values(" ", " " , 2, "customer@coquita.com", "$2b$10$ph4nzghqutMI4./r8BtUJupJSBRSaJQNVn/V/p2oCE/2azL7Opq5m", "default-avatar-male.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
@@ -43,7 +38,7 @@ values(6, "Las de siempre");
 /* PRODUCTS*/
 insert into products
   (name, price,category_id,detail,image,createdAt,updatedAt)
-values("Torta Avengers", 800, 3, "Chocotorta premium 15 Personas", "torta-avengers.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
+values("Torta Avengers", 800, 3, "Torta de dos pisos con temática de Los Vengadores para 15 personas. Primer piso de biscochuelo de vainilla con relleno de dulce de leche y duraznos con crema. Segundo piso relleno de chocotorta ", "torta-avengers.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");
 insert into products
   (name, price,category_id,detail,image,createdAt,updatedAt)
 values("Cajita dia del amigo 1,Incluye letter cupcake, 4 brownies y 4 cupcakes", 1500, 2, "Cajita dia del amigo", "promo1.png", "2021-01-08 03:22:43", "2021-01-08 03:22:43");

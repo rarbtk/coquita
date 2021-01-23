@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', {title: 'Home'}) %>
+<link rel="stylesheet" href="../stylesheets/login.css" />
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+<!-- Fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+<script defer src="/js/forget-my-password.js"></script>
+
+<body>
+  <%- include('../partials/header') %>
+
+  <section class="container">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h1>Recuperar contraseña</h1>
+      </div>
+      <div>
+        <p>
+          La cuenta <strong><%= email %> </strong> que intenta recuperar es Inexistente
+        </p>
+        <button class="btn btn-primary" onclick="window.location='/user/login'"> volver al Login </button>
+
+      </div>
+    </div>
+
+
+
+  </section>
+
+  <%- include('../partials/footer') %>
+
+</body>
+
+</html>

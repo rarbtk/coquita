@@ -2,6 +2,7 @@
 let db = require("../database/models");
 let { check, validationResult, body } = require("express-validator");
 const bcrypt = require("bcrypt");
+const axios = require("axios");
 
 const userControllers = {
   profile: (req, res) => {
@@ -60,32 +61,41 @@ const userControllers = {
           console.log("*******************************");
           console.log(hash);
           console.log("*******************************");
-          db.User.create({
-            firstName: "",
-            lastName: "",
-            profile_id: 2,
-            email: req.body.email,
-            password: hash,
-            image: "default-avatar-male.png", //default avatar
-          })
-            .then((user) => {
-              console.log(
-                "*****************************************",
-                user.dataValues.id
-              );
-              req.session.userId = user.dataValues.id;
-              req.session.user = req.body.email;
-              req.session.profile = "customer";
-              req.session.id = res.cookie("userMail", req.body.email, {
-                maxAge: 1800000,
-              }); // cookies 30 minutos
-              res.cookie("userProfile", "customer", { maxAge: 1800000 });
 
-              res.redirect("/user/profile");
-            })
-            .catch((error) => {
-              res.render("error", { error: error });
-            });
+          //request avatar from gravatar(api)
+          const url = `http://127.0.0.1:3000/api/avatar/?email=${req.body.email}`;
+          axios(url).then((response) => {
+            console.log("getting avatar from gravatar", response);
+            if (response) {
+              console.log("avatar ", response.hash);
+              db.User.create({
+                firstName: "",
+                lastName: "",
+                profile_id: 2,
+                email: req.body.email,
+                password: hash,
+                image: `${response.data.hash}.png`, //default avatar
+              })
+                .then((user) => {
+                  console.log(
+                    "*****************************************",
+                    user.dataValues.id
+                  );
+                  req.session.userId = user.dataValues.id;
+                  req.session.user = req.body.email;
+                  req.session.profile = "customer";
+                  req.session.id = res.cookie("userMail", req.body.email, {
+                    maxAge: 1800000,
+                  }); // cookies 30 minutos
+                  res.cookie("userProfile", "customer", { maxAge: 1800000 });
+
+                  res.redirect("/user/profile");
+                })
+                .catch((error) => {
+                  res.render("error", { error: error });
+                });
+            }
+          });
         }
       });
     } else {

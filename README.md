@@ -62,3 +62,12 @@ Alta de productos -> agregar Combo que lea las categorias de la DB(Ejemplo la ca
 product/88" debería decir "PRODUCTO NO ENCONTRADO", hoy dice product is not defined 
 - PRODUCTOS -> Detalle de producto -> "Podes Agregar" de que que tabla y con que criterio populamos esta parte?
 </pre>
+
+## APIS
+
+Externas
+
+<ul>
+  <li>payments</li>
+  <li>gravatar</li>
+</ul>

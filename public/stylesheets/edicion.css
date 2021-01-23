@@ -98,6 +98,15 @@ margin: 0;
 
 .margen-tres{margin: 3%;}
 
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+.formulario__input-error-activo {
+	display: block;
+}
+
 
 @media (max-width: 900px){ /*mobile*/
 body{

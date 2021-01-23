@@ -25,11 +25,19 @@ module.exports = function (sequelize, dataTypes) {
     image: {
       type: dataTypes.STRING,
     },
+    createdAt: {
+      type: dataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()"),
+    },
+    updatedAt: {
+      type: dataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()"),
+    },
   };
 
   let config = {
     tableName: "users",
-    timestamps: false,
+    timestamps: true,
   };
   let User = sequelize.define(alias, cols, config);
 
