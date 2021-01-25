@@ -27,7 +27,7 @@ const productsController = {
     db.Product.findAll()
       .then(function (products) {
         res.render("product/product", { products });
-      })
+        })
       .catch((error) => {
         res.render("error.ejs", { error });
       });

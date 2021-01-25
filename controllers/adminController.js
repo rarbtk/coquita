@@ -6,12 +6,43 @@ const adminController = {
   products: (req, res) => {
     db.Product.findAll()
       .then((products) => {
-        res.render("admin/administracion", { products: products });
+        db.User.findAll()
+        .then(function(users){
+        res.render("admin/administracion", { products: products, users: users });
+      })
       })
       .catch((error) => {
         res.render("error.ejs", { error });
       });
   },
+
+  profilebyID: (req, res) => {
+    db.User.findByPk(req.params.id)
+      .then((user) => {
+        console.log("user found: ", user.firstName);
+        res.render("../user/profile", { user: user });
+      })
+      .catch((error) => {
+        res.render("error", { error: error });
+      });
+    //
+  },
+
+  delete: (req, res) => {
+    db.User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then(() => {
+        res.redirect("/administracion");
+      })
+      .catch((error) => {
+        res.render("error.ejs", { error });
+      });
+
+  },
+
   delete: (req, res) => {
     let productos = Product.getProducts();
     console.log(productos);
