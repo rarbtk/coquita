@@ -21,6 +21,7 @@ const userControllers = {
       });
     //
   },
+
   storeProfile: (req, res) => {
     //console.log(req.session);
     const userId = req.session.userId;
