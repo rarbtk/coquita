@@ -270,3 +270,34 @@ a {
     list-style: none;
   }
 }
+
+
+/* para validaciones */ 
+
+.formulario__grupo-correcto .formulario__label {
+	color: #1ed12d;
+	
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+  color: #bb2929
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+.formulario__grupo-correcto .formulario__input {
+	border: 3px solid #1ed12d;
+}
+
+.formulario__input-error {
+  font-size: 10px;
+  display: none;
+  
+  
+}
+
+.formulario__input-error-activo {
+  display: block;
+}

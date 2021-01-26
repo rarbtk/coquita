@@ -4,31 +4,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
 <link rel="stylesheet" href="../stylesheets/register.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.1.17/validator.min.js"
-  integrity="sha512-p1b+doSyVwyKqVTZeU1+XJtjpBSkhllBca2L6QTxPUjZZ0ELeZIHkAeQdtfNulbXxLdCwN4uKYGPpp78xeqwfQ=="
-  crossorigin="anonymous"></script>
-<script defer src="/js/validator.js"></script>
+
+
 </head>
 
 <body>
   <%- include('../partials/header') %>
-  <section class="section-login-container">
+  <section class="section-login-container" id="formulario">
 
-    <form action="/user/register" method="POST" enctype="application/x-www-form-urlencoded">
+    <form action="/user/register" method="POST" enctype="application/x-www-form-urlencoded" >
       <p class="section-login-title">Crea tu cuenta</p>
-      <div class="inputs">
-        <label for="email">Email</label>
-        <input type="text" name="email" id="email" placeholder="email@aqui" class="form-control" required />
+      
+      <div class="inputs" id="grupo_email" class="formulario__grupo">
+        <label for="email" class="formulario__label" >Email</label>
+        
+        <input type="text" name="email" id="Email" placeholder="email@aqui" class="form-control formulario__input" required />
+        
+        
+          <p class="formulario__input-error">El formato de Email no es valido</p>
+        
+        </div>
+      
+      <div class="inputs" id="grupo_password" class="formulario_grupo">
+        <label for="password" class="formulario__label">Contraseña</label>
+        
+        <input type="password" name="password" id="password" placeholder="" class="section-input form-control formulario__input" />
+        <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
       </div>
-      <div class="inputs">
-        <label for="password">Contraseña</label>
-        <input type="password" name="password" id="password" placeholder="" class="section-input form-control" />
+      
+      
+      
+      <div class="inputs" id="grupo_password2" class="formulario_grupo">
+        <label for="password2" class="formulario__label">Contraseña</label>
+        
+        <input type="password" name="password2" id="password2" placeholder="" class="section-input form-control formulario__input" />
+        <p class="formulario__input-error">Las contraseñas no coinciden.</p>
       </div>
-      <div class="inputs">
-        <label for="password">Repetí la contraseña</label>
-        <input type="password" name="password2" id="confirm-password" placeholder=""
-          class="section-input form-control" />
-      </div>
+     
+     
       <div class="login">
         <!-- <p class="section-btn-login"><a type="submit" class="color-blanco">Crear cuenta</a></p> -->
         <button type="submit" disabled="true">Registrarme</button>
@@ -36,16 +49,7 @@
       <div class="section-links">
         <a href="login">Ya estoy registrado</a>
       </div>
-      <!-- MOSTRAR ERRORES DEL FORM -->
-      <% if(typeof errors!='undefined'){ %>
-      <ul>
-        <% for (let i=0; i < errors.length; i++) { %>
-        <li style="color: red;">
-          <i class="fas fa-exclamation-circle"></i><%= errors[i].msg %>
-        </li>
-        <% } %>
-      </ul>
-      <% } %>
+    
     </form>
 
 
@@ -53,5 +57,81 @@
 
   <%- include('../partials/footer') %>
 </body>
+<script>
 
+const formulario = document.getElementById("formulario");
+const inputs = document.querySelectorAll("#formulario input");
+
+const expresiones = {
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	
+};
+
+const validarFormulario = (e)=>{
+  switch(e.target.name){
+    case "email":
+    if(expresiones.correo.test(e.target.value)){
+      document.getElementById("grupo_email").classList.remove("formulario__grupo-incorrecto");
+      document.getElementById("grupo_email").classList.add("formulario__grupo-correcto");
+      document.querySelector("#grupo_email .formulario__input-error").classList.add("formulario__input-error-activo")
+      document.querySelector("#grupo_email .formulario__input-error").classList.remove("formulario__input-error-activo")
+
+    }else{
+      document.getElementById("grupo_email").classList.add("formulario__grupo-incorrecto");
+      document.getElementById("grupo_email").classList.remove("formulario__grupo-correcto");
+      document.querySelector("#grupo_email .formulario__input-error").classList.add("formulario__input-error-activo")
+    };
+    break;
+    
+    case "password":
+    if(expresiones.password.test(e.target.value)){
+      document.getElementById("grupo_password").classList.remove("formulario__grupo-incorrecto");
+      document.getElementById("grupo_password").classList.add("formulario__grupo-correcto");
+      document.querySelector("#grupo_password .formulario__input-error").classList.add("formulario__input-error-activo")
+      document.querySelector("#grupo_password .formulario__input-error").classList.remove("formulario__input-error-activo")
+
+    }else{
+      document.getElementById("grupo_password").classList.add("formulario__grupo-incorrecto");
+      document.getElementById("grupo_password").classList.remove("formulario__grupo-correcto");
+      document.querySelector("#grupo_password .formulario__input-error").classList.add("formulario__input-error-activo")
+    };
+    break;
+
+    case "password2":
+    validarPassword2();
+    break;
+  }
+}
+
+let validarPassword2 = ()=>{
+  const inputPassword1= document.getElementById("password");
+  const inputPassword2= document.getElementById("password2");
+
+  if(inputPassword1.value !== inputPassword2.value){
+      document.getElementById("grupo_password2").classList.add("formulario__grupo-incorrecto");
+      document.getElementById("grupo_password2").classList.remove("formulario__grupo-correcto");
+      document.querySelector("#grupo_password2 .formulario__input-error").classList.add("formulario__input-error-activo")
+  }else{
+    document.getElementById("grupo_password2").classList.remove("formulario__grupo-incorrecto");
+    document.getElementById("grupo_password2").classList.add("formulario__grupo-correcto");
+    document.querySelector("#grupo_password2 .formulario__input-error").classList.remove("formulario__input-error-activo")
+      
+  }
+};
+
+inputs.forEach((input)=>{
+  input.addEventListener("keyup",validarFormulario )
+  input.addEventListener("blur",validarFormulario )
+
+});
+
+formulario.addEventListener("submit",(e)=>{ 
+  e.preventDefault();
+})
+
+
+
+
+</script>
 </html>
