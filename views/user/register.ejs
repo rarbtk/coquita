@@ -10,9 +10,9 @@
 
 <body>
   <%- include('../partials/header') %>
-  <section class="section-login-container" id="formulario">
+  <section class="section-login-container" >
 
-    <form action="/user/register" method="POST" enctype="application/x-www-form-urlencoded" >
+    <form action="/user/register" method="POST" enctype="application/x-www-form-urlencoded" id="formulario">
       <p class="section-login-title">Crea tu cuenta</p>
       
       <div class="inputs" id="grupo_email" class="formulario__grupo">
@@ -44,7 +44,7 @@
      
       <div class="login">
         <!-- <p class="section-btn-login"><a type="submit" class="color-blanco">Crear cuenta</a></p> -->
-        <button type="submit" disabled="true">Registrarme</button>
+        <button type="submit" disabled="true" class="formulario">Registrarme</button>
       </div>
       <div class="section-links">
         <a href="login">Ya estoy registrado</a>
@@ -73,73 +73,58 @@ const inputs = document.querySelectorAll("#formulario input");
 
 const expresiones = {
 	password: /^.{4,12}$/, // 4 a 12 digitos.
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	
 };
 
 const campos = {
   password: false,
-  correo: false
+  email: false
 }
+
+
 
 const validarFormulario = (e)=>{
   switch(e.target.name){
     case "email":
-    if(expresiones.correo.test(e.target.value)){
-      document.getElementById("grupo_email").classList.remove("formulario__grupo-incorrecto");
-      document.getElementById("grupo_email").classList.add("formulario__grupo-correcto");
-      document.querySelector("#grupo_email .formulario__input-error").classList.add("formulario__input-error-activo")
-      document.querySelector("#grupo_email .formulario__input-error").classList.remove("formulario__input-error-activo")
-      campos["correo"] = true;
-    }else{
-      document.getElementById("grupo_email").classList.add("formulario__grupo-incorrecto");
-      document.getElementById("grupo_email").classList.remove("formulario__grupo-correcto");
-      document.querySelector("#grupo_email .formulario__input-error").classList.add("formulario__input-error-activo")
-      campos["correo"] = false;
-    };
+    validarCampo(expresiones.email, e.target, "email");
     break;
-    
     case "password":
-    if(expresiones.password.test(e.target.value)){
-      document.getElementById("grupo_password").classList.remove("formulario__grupo-incorrecto");
-      document.getElementById("grupo_password").classList.add("formulario__grupo-correcto");
-      document.querySelector("#grupo_password .formulario__input-error").classList.add("formulario__input-error-activo")
-      
-      document.querySelector("#grupo_password .formulario__input-error").classList.remove("formulario__input-error-activo")
-      campos["password"] = true;
-    }else{
-      document.getElementById("grupo_password").classList.add("formulario__grupo-incorrecto");
-      document.getElementById("grupo_password").classList.remove("formulario__grupo-correcto");
-      document.querySelector("#grupo_password .formulario__input-error").classList.add("formulario__input-error-activo")
-      campos["password"] = true;
-    };
-
-
-
+    validarCampo(expresiones.password, e.target, "password");
     validarPassword2();
-    
     break;
-
     case "password2":
     validarPassword2();
     break;
   }
 }
 
+/*validaciones para los inputs*/
+let validarCampo = (expresion, input, campo)=>{
+  if(expresion.test(input.value)){
+      document.getElementById(`grupo_${campo}`).classList.remove("formulario__grupo-incorrecto");
+      document.getElementById(`grupo_${campo}`).classList.add("formulario__grupo-correcto");
+      document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add("formulario__input-error-activo")
+      document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo")
+     campos[campo]=true
+     console.log(campos)
+    }else{
+      document.getElementById(`grupo_${campo}`).classList.add("formulario__grupo-incorrecto");
+      document.getElementById(`grupo_${campo}`).classList.remove("formulario__grupo-correcto");
+      document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add("formulario__input-error-activo")
+      campos[campo]=false;
+      console.log(campos)
 
+    };
+}
 
-
+/*validacion para confirmar la contrasena*/
 let validarPassword2 = ()=>{
   const inputPassword1= document.getElementById("password");
   const inputPassword2= document.getElementById("password2");
-
-
-
-
-  if(inputPassword1.value !== inputPassword2.value){
+if(inputPassword1.value !== inputPassword2.value){
       document.getElementById("grupo_password2").classList.add("formulario__grupo-incorrecto");
       document.getElementById("grupo_password2").classList.remove("formulario__grupo-correcto");
-      
       document.querySelector("#grupo_password2 .formulario__input-error").classList.add("formulario__input-error-activo")
       campos["password"] = false;
     }else{
@@ -147,8 +132,11 @@ let validarPassword2 = ()=>{
     document.getElementById("grupo_password2").classList.add("formulario__grupo-correcto");
     document.querySelector("#grupo_password2 .formulario__input-error").classList.remove("formulario__input-error-activo")
     campos["password"] = true;
+    
   }
 };
+
+
 
 inputs.forEach((input)=>{
   input.addEventListener("keyup",validarFormulario )
@@ -156,11 +144,15 @@ inputs.forEach((input)=>{
 
 });
 
+
+/*evento de botton para poder enviar la informacion*/
 formulario.addEventListener("submit",(e)=>{ 
   e.preventDefault();
 
-  if (campos.correo && campos.password){
+  if (campos.email){
+    
     formulario.reset();
+
 
   }
 })
