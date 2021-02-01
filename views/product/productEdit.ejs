@@ -3,6 +3,7 @@
 <%- include('../partials/head', {title:"Edicion de Productos"})%>
 <link rel="stylesheet" href="/stylesheets/edicion.css">
 
+
 <body>
     <%- include('../partials/header')%>
     <h1>Edición de producto: Product ID # <%= product.id %> </h1>
@@ -13,16 +14,19 @@
                 <div class="datos dp-flex">
 
                     <div class="dp-flex espacio-botones">
-                        <input type="text" name="name" placeholder="Nombre" class="form-control margen-tres"
+                        <input type="text" name="name" id="name" placeholder="Nombre" class="form-control margen-tres"
                             value="<%= product.name %> ">
+                        <p id="formulario__input-error" class="formulario__input-error">Debe colocar un nombre de producto.</p>
                     </div>
                     <div class="dp-flex">
-                        <input type="number" name="price" placeholder="Precio" class="form-control margen-tres"
+                        <input type="number" name="price" id="price" placeholder="Precio" class="form-control margen-tres"
                             value="<%= product.price %>">
+                        <p class="formulario__input-error">Debe colocar un precio.</p>
                     </div>
                     <div class=" dp-flex">
-                        <input type="text" name="detail" placeholder="Descripción" class="form-control margen-tres"
+                        <input type="text" name="detail" id="detail" placeholder="Descripción" class="form-control margen-tres"
                             value="<%= product.detail %>">
+                        <p class="formulario__input-error">Debe colocar una descripcion.</p>
                     </div>
                     <div>
                         <select class="form-control margen-tres" id="sel1" name="category">
@@ -31,6 +35,7 @@
                             <option value=<%= category.id %> <%= selected  %>><%= category.name  %> </option>
                             <% }); %>
                         </select>
+                        <p class="formulario__input-error">Debe seleccionar una categoria.</p>
                     </div>
                     <div class=" dp-flex">
                         <input type="file" name="image form-control margen-tres">
@@ -50,6 +55,8 @@
         </div>
     </div>
     <%- include('../partials/footer') %>
+    <script src="../../js/product-edit-validator.js"></script>
+    
 
 </body>
 

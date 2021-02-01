@@ -10,6 +10,10 @@
     width: 80%;
 }
 
+.altura{
+    height: 600px;
+}
+
 .boton-nuevo {
     display: flex;
     width: 30%;
@@ -133,6 +137,11 @@ h1{
     font-family: roboto;
     margin-bottom: 15px;
 
+}
+
+.img-size-32{
+    width: 32px;
+    align-self: center;
 }
 
 .m-5px {
