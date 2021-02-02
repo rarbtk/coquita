@@ -44,7 +44,7 @@
      
       <div class="login">
         <!-- <p class="section-btn-login"><a type="submit" class="color-blanco">Crear cuenta</a></p> -->
-        <button type="submit" disabled="true" class="formulario">Registrarme</button>
+        <button type="submit"  class="formulario">Registrarme</button>
       </div>
       <div class="section-links">
         <a href="login">Ya estoy registrado</a>
@@ -77,6 +77,8 @@ const expresiones = {
 	
 };
 
+let submit = document.querySelector("button[type=submit]");
+
 const campos = {
   password: false,
   email: false
@@ -94,6 +96,7 @@ const validarFormulario = (e)=>{
     validarPassword2();
     break;
     case "password2":
+    
     validarPassword2();
     break;
   }
@@ -122,6 +125,9 @@ let validarCampo = (expresion, input, campo)=>{
 let validarPassword2 = ()=>{
   const inputPassword1= document.getElementById("password");
   const inputPassword2= document.getElementById("password2");
+
+
+
 if(inputPassword1.value !== inputPassword2.value){
       document.getElementById("grupo_password2").classList.add("formulario__grupo-incorrecto");
       document.getElementById("grupo_password2").classList.remove("formulario__grupo-correcto");
@@ -149,11 +155,9 @@ inputs.forEach((input)=>{
 formulario.addEventListener("submit",(e)=>{ 
   e.preventDefault();
 
-  if (campos.email){
+  if (campos.email && campos.password){
     
     formulario.reset();
-
-
   }
 })
 
