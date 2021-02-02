@@ -29,18 +29,7 @@
     </nav>
     <% if(locals.usuario){ %>
     <p>
-      <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <%=locals.usuario %>
-        </a>
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href='/user/profile'> Mi perfil</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/user/logout"> Logout</a>
-        </div>
-      </div>
+      
 
     </p>
     <% } %>
@@ -63,7 +52,18 @@
     <ul>
       <% if (locals.usuario){ %>
       <li>
-        <a href="/user/logout" class="color-marron"><i class="fas fa-sign-in-alt color-marron"></i>
+        <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <%=locals.usuario %>
+          </a>
+  
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href='/user/profile'> Mi perfil</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/user/logout"> Logout</a>
+          </div>
+        </div>
         </a>
       </li>
       <% } %>
@@ -74,7 +74,7 @@
       <% } %>
       <% if(locals.usuario == undefined){ %>
       <li>
-        <a href="/user/login"><i class="fas fa-user color-marron"></i></a>
+        <a class="btn btn-secondary btn-block" href="/user/login">INGRESÁ  <i class="fas fa-user"></i></a>
       </li>
       <% } %>
     </ul>

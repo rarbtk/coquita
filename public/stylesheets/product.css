@@ -9,10 +9,12 @@
 }
 
 .cuerpo {
-    background-color: #F0F0F0;
+    background-color: white;
 }
 
-
+#main {
+    background-color: white;
+}
 
 .products-menu {
     display: flex;
@@ -23,7 +25,10 @@
     box-shadow: 2px 5px 7px #CBA3A2;
     height: 200px;
     align-items: center;
+}
 
+.products-menu p{
+    color: black;
 }
 
 .products-icons {
@@ -116,6 +121,19 @@
     margin-right: 13px;
 }
 
+.productos{
+    margin-top: 20px;
+}
+
+.productos .img-product{
+    max-height: 300px;
+}
+
+.productos .titulo a{
+    color: black;
+}
+
+
 .detalle-productos {
     max-width: 90%;
     margin: 0 auto;
@@ -139,100 +157,6 @@ a:visited {
 
 /*  */
 
-
-.producto {
-
-    margin: 10px 1em;
-    background-color: #F3ECE9;
-    flex: 0 1 20%;
-    border: 1px solid #642206;
-    padding: 1.5%;
-    box-shadow: 2px 5px 7px #5C3A27;
-
-}
-
-.texto-torta {
-    font-family: roboto;
-    font-size: 20px;
-    text-align: center;
-    color: #5C3A27;
-    margin-top: 10px;
-}
-
-.precio-torta {
-    font-family: pacifico;
-    font-size: 26px;
-    color: #D37775;
-    text-align: center;
-}
-
-.cont-torta {
-    border: 1px solid #642206;
-    padding: 2%;
-
-}
-
-.boton-comprar {
-    display: flex;
-    width: 70%;
-    justify-content: center;
-    margin: 2% 15%;
-    background-color: #E8ABAA;
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 2px 5px 7px #CBA3A2;
-
-}
-
-.texto-comprar {
-    font-family: pacifico;
-    font-size: 25px;
-    color: #F3ECE9
-}
-
-.lista-paginas {
-    font-family: roboto;
-    font-size: 16px;
-
-    display: flex;
-
-
-    list-style-type: none;
-    justify-content: center;
-}
-
-.paginas {
-    font-family: roboto;
-    margin-bottom: 15px;
-
-}
-
-.m-5px {
-    margin-left: 15px;
-}
-
-.foto-torta {
-    width: 250px;
-    height: 250px;
-}
-
-.color-link {
-    color: #F3ECE9;
-}
-
-.color-link:hover {
-    color: #5C3A27;
-    cursor: pointer;
-}
-
-.color-link2 {
-    color: #5C3A27;
-}
-
-.color-link2:hover {
-    color: #D37775;
-    cursor: pointer;
-}
 
 
 

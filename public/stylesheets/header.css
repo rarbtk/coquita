@@ -1,8 +1,7 @@
 
 
 
-/* aaaaaaaaaaaaaa */ 
-@media(min-width:760px){ /*desktop*/
+@media(min-width:760px){
 
 #burger{
     display: none;
@@ -18,11 +17,13 @@
 
 header{
     background-color:#f2eded ;
-    justify-content:space-around;}
+    justify-content:space-around;
+    height: 95px;
+     }
 
 .logo img{
-    width: 55%;
-    height: 90%;
+    width: 40%;
+    height: 95%;
     margin-left: 90%;
     border-radius: 50%;
     position: relative;}
@@ -43,7 +44,9 @@ header{
 .barra ul {
     list-style: none;
     display: flex;
-    flex-direction: row;}
+    flex-direction: row;
+
+}
 
 .barra a:nth-child(1){
     margin-left: 30px;}
@@ -56,17 +59,20 @@ header{
     display: none;}
 
 .barra ul li {
-    margin-left: 70px;}
+    margin-left: 10px;
+}
 
-
+.barra ul li a{
+    text-decoration: none;
+}
 
 a{text-decoration: none;}
 
 
-.color-marron{color:  #8C4B3C;}
+.color-marron{color:  black;}
 
 .iconos{
-    color: brown;
+    color: black;
     margin-top: 20px;
     font-size: 24px;
     margin-right: 10%;
@@ -79,7 +85,7 @@ a{text-decoration: none;}
 
 .iconos li{
     float: right;
-    color:#5f260d;
+    color:black;
     margin-top: 70px;
     list-style: none;
     margin-left: 20px;
@@ -88,7 +94,7 @@ a{text-decoration: none;}
 }
 
 }
-@media(max-width:768px){ /*mobile*/
+@media(max-width:768px){ 
 
 
 nav.barra{
@@ -112,19 +118,18 @@ nav.barra{
 }
 
     .sidenav {
-        height: 100%; /* 100% Full-height */
-        width: 0; /* 0 width - change this with JavaScript */
-        position: fixed; /* Stay in place */
-        z-index: 25; /* Stay on top */
-        top: 0; /* Stay at the top */
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 25; 
+        top: 0; 
         left: 0;
-        background-color: #111; /* Black*/
-        overflow-x: hidden; /* Disable horizontal scroll */
-        padding-top: 60px; /* Place content 60px from the top */
-        transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+        background-color: #111; 
+        overflow-x: hidden; 
+        padding-top: 60px; 
+        transition: 0.5s; 
       }
       
-      /* The navigation menu links */
       .sidenav a {
         padding: 8px 8px 8px 32px;
         text-decoration: none;
@@ -133,13 +138,11 @@ nav.barra{
         display: block;
         transition: 0.3s;
       }
-      
-      /* When you mouse over the navigation links, change their color */
+
       .sidenav a:hover {
         color: #f1f1f1;
       }
-      
-      /* Position and style the close button (top right corner) */
+
       .sidenav .closebtn {
         position: absolute;
         top: 0;
@@ -148,12 +151,10 @@ nav.barra{
         margin-left: 50px;
       }
       
-      /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
       #main {
         transition: margin-left .5s;
       }
       
-      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
       @media screen and (max-height: 450px) {
         .sidenav {padding-top: 15px;}
         .sidenav a {font-size: 18px;}

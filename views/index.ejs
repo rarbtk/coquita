@@ -9,9 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
 <body>
-    <div id="main">
+    <div id="main container-fluid">
         <%- include('partials/header') %>
-        <div class="banner">
+        <div class="banner container-fluid">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -51,6 +51,62 @@
                 </a>
             </div>
         </div>
+
+<!-- Sección Sobre Nosotros -->
+	<div class="sobremi dp-flex container-fluid">
+		<div class="col-xs-12 center dp-flex secciones">
+            <div class="col-xs-6 center ">
+                <img class="photoab" src="/images/nosotros.jpg" alt="">
+            </div>
+
+            <div class="col-xs-6 center parrafo">
+                <h3 class="col-md-6 aboutme">SOBRE NOSOTROS</h3><br>
+            <div class="">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fugiat magni id tenetur enim culpa nobis, distinctio alias, ad odit perferendis! Mollitia voluptates error, beatae eaque similiqueducimusquas? Harum?.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fugiat magni id tenetur enim culpa nobis, distinctio alias, ad odit  similique ducimus quas? Harum?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fugiat magni id tenetur enim culpa nobis, distinctio alias, ad odit perferendis! Mollitia voluptates error, beatae eaque similiqueducimusquas? Harum?.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fugiat magni id tenetur enim culpa nobis, distinctio alias, ad odit  similique ducimus quas? Harum?</p>
+            </div>
+            </div>
+        </div>
+	</div>
+
+<!-- Sección de tortas -->
+<div id="tortas container-fluid">
+    <div class="col-md-12 center dp-flex secciones1">
+            <div class="col-md-6 center parrafoTorta">
+                <h3 class="col-md-6 aboutme">NUESTRAS TORTAS</h3><br>
+            <div class="">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fugiat magni id tenetur enim culpa nobis, distinctio alias, ad odit perferendis! Mollitia voluptates error, beatae eaque similiqueducimusquas? Harum?.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fugiat magni id tenetur enim culpa nobis, distinctio alias, ad odit  similique ducimus quas? Harum?</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fugiat magni id tenetur enim culpa nobis, distinctio alias, ad odit perferendis! Mollitia voluptates error, beatae eaque similiqueducimusquas? Harum?.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima fugiat magni id tenetur enim culpa nobis, distinctio alias, ad odit  similique ducimus quas? Harum?</p>
+            </div>
+            </div>
+            <div class="col-md-6 center ">
+                <img class="photoProduct" src="/images/tortas.png" alt="">
+            </div>
+    </div>
+</div>
+
+<!-- Sección Nuestras promos -->
+<div class="promociones container-fluid">
+    <div class="col-md-12 center dp-flex secciones">
+		<div class="col-md-12 center">
+                <h3 class="col-md-6 aboutme">NUESTRAS PROMOCIONES</h3>
+                <h4 class="col-md-6 aboutme">Mirá nuestros productos más vendidos</h4>
+            <div class="col-md-12 center dp-flex justify-content-center">
+                <% bestSellers.forEach(promo => {%>
+                <div class="bestSellers col-md-3">
+                    <a href="/product/<%= promo.id %> ">
+                        <img class="torta2" src="/images/<%= promo.image %>" alt="<%= promo.name %>">
+                        <p><%= promo.name %></p>
+                        <p class="precio-promo">Precio: $ <%=promo.price %> </p>
+                    </a>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+	</div>
+
+<!-- 
         <div class="contenedor-marron dp-flex">
 
             <section class="barra-eventos dp-flex">
@@ -123,7 +179,7 @@
                 <p>4 brownies y 4 cupcakes</p>
                 <p class="precio-promo">$ 1.500</p>
             </div> -->
-        </div>
+        <!-- </div>
 
         <div class="aboutme d-flex">
 
@@ -140,7 +196,7 @@
                     similique ducimus quas? Harum?</p>
             </div>
 
-        </div>
+        </div> -->
 
         <%- include('partials/footer') %>
     </div>

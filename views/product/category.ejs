@@ -47,21 +47,28 @@
 
         <% include ../partials/buscador.ejs %>
 
-        <section class="detalle-productos">
 
-            <% product.forEach(producto => {%>
-                <div class="nuestra-promo-2">
-                <a href="/product/productDetail/<% producto.id %> ">
-                    <img class="torta2" src="/images/<%= producto.image %>" alt="<%= producto.name %>">
-                    <p><%= producto.detail %> </p>
-                    <p class="precio-promo">$ <%=producto.price %> </p>
-                </a>
+        <div class="col-lg-9 container productos">
+            <div class="row ">
+                <% product.forEach(producto => { %>
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="card h-100">
+                    <a href="/product/<%= producto.id %> "><img class="card-img-top img-product" src="/images/<%= producto.image %> " alt="producto"></a>
+                    <div class="card-body">
+                      <h4 class="card-title titulo">
+                        <a href="/product/<%= producto.id %> "><%= producto.name %></a>
+                      </h4>
+                      <h5>$ <%= producto.price %></h5>
+                      <p class="card-text"><%= producto.detail %></p>
+                    </div>
+                  </div>
+    
                 </div>
                 <% }); %>
+      
+              </div>
+            </div>
 
-
-
-        </section>
 
         <%- include('../partials/footer') %>
     </div>

@@ -8,15 +8,22 @@
 .jc-space-bet {
     justify-content: space-between;
 }
+a{text-decoration: none;}
 
-
+a:hover{
+    color: black;
+    text-decoration: black;
+}
+p{
+    color: black;
+}
 
 
 @media(min-width:768px){ /*desktop*/
 
-a{text-decoration: none;}
 
-.color-marron{color:  #8C4B3C;}
+
+.color-marron{color: black;}
 
 .padding-7{ padding: 7%;}
 .padding-5{padding: 5%;}
@@ -34,159 +41,85 @@ a{text-decoration: none;}
     image-rendering: crisp-edges;
     }
 
-.contenedor-marron{
-    background-color:#E8ABAA ;
-    width: 90%;
-    height: 150px;
+
+
+.secciones{
+
+    flex-direction: row;
+}
+
+.secciones1{
+
+    flex-direction: row;
     margin-top: 20px;
-    margin: auto;
-    border-radius: 10px;
-    bottom:10px;
-    object-fit: cover;
-    justify-content: space-between;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 2px 5px 7px #CBA3A2;  
-    }
-
-
-.barra-eventos p{
-    color: #F3ECE9;
-    padding: 10px 25px;
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 4px;
-    font-family: 'Pacifico', cursive;
-    
 }
-
-.barra-eventos{
-    margin: auto;
-    font-family: 'Pacifico', cursive;
-    padding-bottom: 4px;
-    width: 100%;
-    justify-content: space-around;
-    margin-top: 20px;
-
-}
-
-.barra-eventos .img-prod{
-    width: 60px;
-    height: 55px;
-
-}
-
-.torta1 {
-    width: 80px;
-    height: 80px;
-}
-
-.torta2 {
-    width: 180px;
-    height: 180px;
-    margin: 5px;
-}
-
-.torta3 {
-    width: 150px;
-    height: 150px;
-    padding: 5px;
-    }
-
-.ancho-33 {
-    width: 33%;
-}
- /* Promociones */
-
-.promociones {
-    background-color: #f5deb3;
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 90%;
-    align-content: center;
-    border: 1px solid lightgrey;
-    padding: 20px 10px; 
-    position: relative; 
-    }
-
-.nuestra-promo {
-    font-size: 25px;
-    color: #8C4B3C;
-    text-align: center;
-    font-weight: bold;
-    flex-direction: column;
-    margin-left: 40px;
-    width: 33%;
-    font-family: 'Fredoka One', cursive;
-          
-}
-.nuestra-promo-2 {
-    font-size: 16px;
-    color: #8C4B3C;
-    text-align: center;
-    font-weight: bold;
-    flex-direction: column;
-    font-family: 'Roboto';
-    margin: 10px;     
-    box-shadow: 10px 12px 5px #8C4B3C;
-    border: 1px solid grey;
-    box-sizing: border-box;
-    width: 33%;
-        
-}
-
-.nuestra-promo-2 p{
-    margin-bottom: -5px;
-}
-
-.precio-promo {
-    font-family: 'Pacifico', cursive;
-    color: lightcoral;
-    font-size: 24px;
-
-}
-
-/* #### sobre mi */
-
 
 .aboutme {
-    align-content: flex-start;
     justify-content: center;
     text-align: center;
-    background-color: #f5deb3;
-    margin: 0 auto;
-    margin-top: 1px;
-    width: 90%;
-    height: 350px;
-    align-content: center;
-    border: 1px solid lightgrey;
-    padding: 20px 10px;    
-    font-family: 'Pacifico', cursive;
-    position: relative;
-    z-index: 1;    
+    margin-left: 25%;   
+    font-family: 'Rotobo', cursive;
+    margin-bottom: 5px;
 }
 
-.aboutme h2{
-    margin-top: 40px;
-    color: #8C4B3C;
-    text-align: center;
-    align-items: center;
-    padding: 20px;
+.sobremi{
+    margin-bottom: -100px;
 }
 
 .photoab {
     padding: 10px;
-    height: 280px;
-    margin-left: 50px;
+    width: 100%;
+    height: 80%;
+    margin-left: 20px;
     border-radius: 100px;
+    border: lightgray 2px solid;
     
 }
-.parrafoab {
-    margin-top: 40px;
-    color: #8C4B3C;
+.parrafo {
+    margin-top: 20px;
+    color: black;
     text-align: center;
     align-items: center;
-    padding: 20px;
+    padding: 40px;
+    width: 100%;
+}
+
+.photoProduct{
+    padding: 10px;
+    width: 100%;
+    height: 90%;
+    margin-left: 20px;
+    border-radius: 100px;
+    border: lightgray 2px solid;
+}
+
+.bestSellers {
+    height: 400px;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Roboto';
+    margin: 10px;     
+    box-sizing: border-box;
+    align-content: center;
+    border: lightgray 2px solid;
+    border-radius: 50px;
+    flex-direction: row;
+}
+
+.bestSellers .torta2 {
+    width: 90%;
+    height: 70%;
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.precio-promo {
+    font-family: 'roboto';
+    color: black;
+    font-size: 16px;
 }
 
 }
@@ -194,160 +127,101 @@ a{text-decoration: none;}
 
 @media(max-width:768px){ /*mobile*/
 
-/* Banner */
-.banner img{
+.carousel-inner img{
     display: block;
     margin: auto;
-    margin-top: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
-    height: 110px;
+    height: 150px;
     align-content: center;
     image-rendering: crisp-edges;
     }
 
-.contenedor-marron{
-    background-color:#E8ABAA ;
+/* Banner */
+.secciones{
+
+    flex-direction: column;
+}
+.secciones1{
+
+    flex-direction: column-reverse;
+    margin-top: 50px;
+}
+
+.aboutme {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Rotobo', cursive;
+    margin-bottom: 1px;
+}
+
+.sobremi{
+    margin-bottom: -100px;
+}
+
+.photoab {
+    padding: 10px;
     width: 100%;
     height: 100%;
-    margin-top: 10px;
-    position: relative;
-    bottom:5px;
-    object-fit: cover;
+    border-radius: 100px;
+    border: lightgray 2px solid;
+    margin-top: 15px;
+}
+.parrafo {
+    margin-top: 5px;
+    color: black;
     text-align: center;
-    padding: 5px;
+    align-items: center;
+    padding: 40px;
 }
 
-.barra-eventos{
-    font-family: 'Pacifico', cursive;
+.photoProduct{
+    padding: 10px;
     width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    height: 90%;
+    margin-left: 20px;
+    border-radius: 100px;
+    border: lightgray 2px solid;
 }
 
-.barra-eventos article{
-    width: 45%;
-    padding: 2%;
-}
-
-.barra-eventos article p{
-    color: #F3ECE9;
-    font-size: 20px;
+.parrafoTorta {
+    margin-top: 5px;
+    color: black;
     text-align: center;
-    padding-bottom: 4px;
-    font-family: 'Pacifico', cursive;
+    align-items: center;
+    padding: 40px;
 }
 
-.barra-eventos article a{
-    text-decoration: none;
-}
-
-.img-prod{
-    width: 60px;
-    height: 55px;
-    justify-content: center;
-    
-}
-
-/* Promociones */
-
-.promociones {
-    background-color: #f5deb3;
-    width: 100%;
-    align-content: center;
-    border: 1px solid lightgrey;
-    padding: 10px 50px; 
-    position: relative; 
-    flex-direction: column;
-    }
-
-.nuestra-promo {
-    font-size: 25px;
-    color: #8C4B3C;
-    text-align: center;
-    font-weight: bold;
-    flex-direction: column;
-    width: 100%;
-    font-family: 'Fredoka One', cursive;
-}
-
-.promociones .nuestra-promo img{
-    width: 30%;
-}
-
-.nuestra-promo-2 {
+.bestSellers {
+    height: 200px;
+    height: 100%;
     font-size: 16px;
-    color: #8C4B3C;
+    color: black;
     text-align: center;
     font-weight: bold;
-    flex-direction: column;
     font-family: 'Roboto';
-    margin-bottom: 20px; 
-    box-shadow: 10px 12px 5px #8C4B3C;
-    border: 1px solid lightgrey;
+    margin: 10px;     
     box-sizing: border-box;
-    width: 100%;    
+    align-content: center;
+    border: lightgray 2px solid;
+    border-radius: 50px;
+    flex-direction: column;
 }
 
-.promociones .nuestra-promo-2 img{
-    width: 80%;
-    margin: 15px;
-}
-
-.nuestra-promo-2 p{
-    margin-bottom: -5px;
-}
-
-.nuestra-promo-2 .precio-promo{
+.bestSellers .torta2 {
+    width: 90%;
+    height: 70%;
+    border-radius: 50px;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
 .precio-promo {
-    font-family: 'Pacifico', cursive;
-    color: lightcoral;
-    font-size: 24px;
-
+    font-family: 'roboto';
+    color: black;
+    font-size: 16px;
 }
-
-/* #### sobre mi */
-
-
-.aboutme {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    background-color: #f5deb3;
-    margin-top: 1px;
-    width: 100%;
-    height: 100%;
-    align-content: center;
-    border: 1px solid lightgrey; 
-    font-family: 'Pacifico', cursive;
-    padding: 5%;
-}
-
-.aboutme h2{
-    order: 1;
-    color: #8C4B3C;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.photoab {
-    height: 60%;
-    width: 60%;
-    order: 5;
-    border-radius: 100px;
-}
-.parrafoab {
-    color: #8C4B3C;
-    order: 9;
-    width: 80%;
-    height: 100%;
-    margin-top: 5px;
-}
-
 
 
 }

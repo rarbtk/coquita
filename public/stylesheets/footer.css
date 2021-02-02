@@ -1,19 +1,12 @@
-a:hover{
-    color: crimson;
-}
-
-i:hover{
-    color: crimson;
-}
 
 .contenedor{
-    background-color: #5f260d;
+    background-color: #d8d8d8;
     height: 200px;
     width: 100%;
     display: flex;
     box-sizing: border-box;
     font-family: 'Roboto';
-    color: #f1ecec;
+    color: black;
     justify-content: space-around;
     flex-direction: row;
     padding: 20px;
@@ -28,7 +21,7 @@ i:hover{
 
 
 .colum1 a{
-    color: #f1ecec;
+    color: black;
     text-decoration: none;
     
 }
@@ -74,7 +67,7 @@ i:hover{
     
 }
 .colum3 a{
-   color: #f1ecec;
+   color: black;
 }
 
 
@@ -82,12 +75,12 @@ i:hover{
     margin-top: 10px;
     margin-right: 8%;
     margin-bottom: auto;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Roboto';
     flex-grow: 2;
 }
 
 .colum4 p{
-    margin-left: 90px;
+    margin-left: 70px;
 }
 
 .search{
@@ -99,7 +92,8 @@ i:hover{
 }
 
 .search input{
-    color: #222;
+    color: black;
+    background-color: cornsilk;
     font-size: 1em;
     padding: 0 30px 0 10px;
     border-radius: 3px;
@@ -107,6 +101,12 @@ i:hover{
     height: 30px;
     border: none;
     vertical-align: middle;
+}
+
+#ok{
+    margin-top: 3px;
+    width: 70%;
+    margin-left: 4px;
 }
 
 @media (max-width:768px){
