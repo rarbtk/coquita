@@ -5,7 +5,7 @@ let { validationResult } = require("express-validator");
 const axios = require("axios");
 
 const userController = {
-  async registerUser(req, res) {
+  async register(req, res) {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       db.User.findOne({
@@ -68,6 +68,29 @@ const userController = {
     } else {
       return res.status(200).send({ errors: errors.errors });
     }
+  },
+  profile: (req, res) => {
+    console.log(req.session);
+    db.User.findOne({
+      where: {
+        email: req.session.user,
+      },
+    })
+      .then((user) => {
+        console.log("user found: ", user.firstName);
+        res.status(200).send({
+          meta: {
+            status: 200,
+            message: "",
+            data: {
+              profile: user,
+            },
+          },
+        });
+      })
+      .catch((error) => {
+        res.status(500).send({ error: error });
+      });
   },
 };
 

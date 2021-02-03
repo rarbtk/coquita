@@ -11,7 +11,9 @@ api.post(
       .isLength({ min: 5 })
       .withMessage("La contraseña debe tener al menos 5 caracteres"),
   ],
-  userController.registerUser
+  userController.register
 );
+
+api.get("/profile", userController.profile);
 
 module.exports = api;
