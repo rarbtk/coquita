@@ -69,6 +69,30 @@ const userController = {
       return res.status(200).send({ errors: errors.errors });
     }
   },
+  login: (req, res) => {
+    db.User.findOne({ where: { email: req.body.email } }).then((user) => {
+      if (user) {
+        if (bcrypt.compareSync(req.body.password, user.password)) {
+          req.session.user = user.email;
+          req.session.userId = user.id;
+          req.session.profile = user.profile_id;
+          return res.status(200).send({
+            message: "login successfully",
+          });
+        } else {
+          //Incorrect password
+          return res.status(403).send({
+            message: "wrong password",
+          });
+        }
+      } else {
+        // user not exist into database
+        return res.status(403).send({
+          message: "wrong password",
+        });
+      }
+    });
+  },
   profile: (req, res) => {
     console.log(req.session);
     db.User.findOne({
@@ -92,6 +116,10 @@ const userController = {
         res.status(500).send({ error: error });
       });
   },
+  // get all users - TO-DO
+  users: (req, res) => {},
+  // get by userId - TO-DO
+  user: (req, res) => {},
 };
 
 module.exports = userController;

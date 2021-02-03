@@ -14,6 +14,8 @@ api.post(
   userController.register
 );
 
+api.post("/login", userController.login);
+
 api.get("/profile", userController.profile);
 
 module.exports = api;
