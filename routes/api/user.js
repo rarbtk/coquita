@@ -6,6 +6,9 @@ let { check } = require("express-validator");
 // get all users
 api.get("/", userController.users);
 
+// get user by id
+api.get("/:id", userController.user);
+
 api.post(
   "/register",
   [

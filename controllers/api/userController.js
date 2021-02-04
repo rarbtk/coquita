@@ -54,7 +54,7 @@ const userController = {
                       message: "user registration successfully",
                     },
                     data: {
-                      user,
+                      user: user,
                     },
                   });
                 })
@@ -116,31 +116,68 @@ const userController = {
         res.status(500).send({ error: error });
       });
   },
-  // get all users - TO-DO
+  // get all users
   users: (req, res) => {
     const limit = Number(req.query.limit) || 10;
     const offset = Number(req.query.offset) || 0;
-    console.log(limit, offset);
     db.User.findAll({
       limit: limit,
       offset: offset,
-    }).then((users) => {
-      return res.status(200).send({
-        meta: {
-          status: 200,
-          count: users.length,
-          limit: limit,
-          offset: offset,
-          url: "/api/users/",
-        },
-        data: {
-          users,
-        },
+    })
+      .then((users) => {
+        return res.status(200).send({
+          meta: {
+            status: 200,
+            count: users.length,
+            limit: limit,
+            offset: offset,
+            url: "/api/users/",
+          },
+          data: {
+            users: users,
+          },
+        });
+      })
+      .catch((error) => {
+        res.status(500).send({
+          error: error,
+          message: "Ups! ocurrió un error al intentar conectarse con la BD.",
+        });
       });
-    });
   },
   // get by userId - TO-DO
-  user: (req, res) => {},
+  user: (req, res) => {
+    db.User.findByPk(req.params.id)
+      .then((user) => {
+        if (user) {
+          return res.status(200).send({
+            meta: {
+              status: 200,
+              //count: user.length || 0,
+              url: `/api/users/${req.params.id}`,
+            },
+            data: {
+              user: user,
+            },
+          });
+        } else {
+          return res.status(404).send({
+            meta: {
+              status: 200,
+              //count: user.length || 0,
+              url: `/api/users/${req.params.id}`,
+            },
+            data: {},
+          });
+        }
+      })
+      .catch((error) => {
+        res.status(500).send({
+          error: error,
+          message: "Ups! ocurrió un error al intentar conectarse con la BD.",
+        });
+      });
+  },
 };
 
 module.exports = userController;
