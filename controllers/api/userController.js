@@ -120,30 +120,37 @@ const userController = {
   users: (req, res) => {
     const limit = Number(req.query.limit) || 10;
     const offset = Number(req.query.offset) || 0;
-    db.User.findAll({
-      limit: limit,
-      offset: offset,
-    })
-      .then((users) => {
-        return res.status(200).send({
-          meta: {
-            status: 200,
-            count: users.length,
-            limit: limit,
-            offset: offset,
-            url: "/api/users/",
-          },
-          data: {
-            users: users,
-          },
-        });
+
+    // count total of users
+    db.User.count().then((count) => {
+      num_of_pages = parseInt(count / limit + 1);
+
+      db.User.findAll({
+        limit: limit,
+        offset: offset,
       })
-      .catch((error) => {
-        res.status(500).send({
-          error: error,
-          message: "Ups! ocurrió un error al intentar conectarse con la BD.",
+        .then((users) => {
+          return res.status(200).send({
+            meta: {
+              status: 200,
+              count: count,
+              limit: limit,
+              offset: offset,
+              pages: num_of_pages,
+              url: "/api/users/",
+            },
+            data: {
+              users: users,
+            },
+          });
+        })
+        .catch((error) => {
+          res.status(500).send({
+            error: error,
+            message: "Ups! ocurrió un error al intentar conectarse con la BD.",
+          });
         });
-      });
+    });
   },
   // get by userId - TO-DO
   user: (req, res) => {
