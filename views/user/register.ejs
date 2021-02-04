@@ -14,6 +14,9 @@
 
     <form action="/user/register" method="POST" enctype="application/x-www-form-urlencoded" id="formulario">
       <p class="section-login-title">Crea tu cuenta</p>
+
+
+
       
       <div class="inputs" id="grupo_email" class="formulario__grupo">
         <label for="email" class="formulario__label" >Email</label>
@@ -24,6 +27,14 @@
           <p class="formulario__input-error">El formato de Email no es valido</p>
         
         </div>
+
+
+
+
+
+
+
+
       
       <div class="inputs" id="grupo_password" class="formulario_grupo">
         <label for="password" class="formulario__label">Contraseña</label>
@@ -63,7 +74,7 @@
 
 
 
-
+ 
 
 
 <script>
@@ -86,7 +97,7 @@ const campos = {
 
 
 
-const validarFormulario = (e)=>{
+const validarFormulario = (e) =>{
   switch(e.target.name){
     case "email":
     validarCampo(expresiones.email, e.target, "email");
@@ -147,19 +158,20 @@ if(inputPassword1.value !== inputPassword2.value){
 inputs.forEach((input)=>{
   input.addEventListener("keyup",validarFormulario )
   input.addEventListener("blur",validarFormulario )
+  
 
 });
 
 
 /*evento de botton para poder enviar la informacion*/
-formulario.addEventListener("submit",(e)=>{ 
-  e.preventDefault();
+
+  
 
   if (campos.email && campos.password){
-    
+    submit.disabled = false;
     formulario.reset();
   }
-})
+
 
 
 

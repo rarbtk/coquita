@@ -7,8 +7,10 @@ const cartsController = {
     productosEnCarrito : function (req, res, next) {
       db.Product.findAll()
       .then(function(compras){
+        console.log(compras)
+        console.log("wwwwwwwwwwww")
        return res.render("cart/cart",{compras});
-       console.log(compras)
+       
       });
 
     
