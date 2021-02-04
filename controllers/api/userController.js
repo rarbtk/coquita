@@ -117,7 +117,28 @@ const userController = {
       });
   },
   // get all users - TO-DO
-  users: (req, res) => {},
+  users: (req, res) => {
+    const limit = Number(req.query.limit) || 10;
+    const offset = Number(req.query.offset) || 0;
+    console.log(limit, offset);
+    db.User.findAll({
+      limit: limit,
+      offset: offset,
+    }).then((users) => {
+      return res.status(200).send({
+        meta: {
+          status: 200,
+          count: users.length,
+          limit: limit,
+          offset: offset,
+          url: "/api/users/",
+        },
+        data: {
+          users,
+        },
+      });
+    });
+  },
   // get by userId - TO-DO
   user: (req, res) => {},
 };

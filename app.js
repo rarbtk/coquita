@@ -55,7 +55,7 @@ app.use("/administracion", adminRouter);
 //apis
 app.use("/api/payments", paymentRouter);
 app.use("/api/avatar", avatarRouter);
-app.use("/api/user", userApiRouter);
+app.use("/api/users", userApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

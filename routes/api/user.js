@@ -3,6 +3,9 @@ const api = express.Router();
 const userController = require("../../controllers/api/userController");
 let { check } = require("express-validator");
 
+// get all users
+api.get("/", userController.users);
+
 api.post(
   "/register",
   [
