@@ -88,8 +88,7 @@ const adminController = {
       }
     }
 
-    Product.updateJsonProducts(productos);
-    res.render("product/product.ejs", { products: productos });
+    res.render("/administracion", { products: productos })
   },
 };
 
