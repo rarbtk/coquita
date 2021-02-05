@@ -139,8 +139,15 @@ h1{
 
 }
 
+.img-size-64{
+    width: 64px;
+    max-height: 64px;
+    align-self: center;
+}
+
 .img-size-32{
     width: 32px;
+    max-height: 32px;
     align-self: center;
 }
 
@@ -172,177 +179,37 @@ h1{
     cursor: pointer;
 }
 
+.acciones{
+    flex-direction: row;
+}
+
 }
 
 
 
 @media(max-width:768px) {
 
-.boton-nuevo {
-    display: flex;
-    width: 50%;
-    justify-content: center;
-    margin: 2% 25%;
-    background-color: #E8ABAA;
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 2px 5px 7px #CBA3A2;
-    color: white;
-
-}
-.boton-nuevo a {
-text-decoration: none;
-color: white;
+.fecha-creacion{
+    display: none;
 }
 
-.boton-borrar {
-    display: flex;
-    width: 70%;
-    justify-content: center;
-    margin: 10% 15%;
-    background-color: #E8ABAA;
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    box-shadow: 2px 5px 7px #CBA3A2;
-    font-family: roboto;
-    font-size: 20px;
-    color: #F3ECE9;
-    border: none;
+.img-size-32{
+    width: 32px;
+    align-self: center;
 }
 
-.detalle-productos {
-    width: 100%;
-    padding: 10px 30px 30px 30px;
-    display: flex;
+.img-size-64{
+    width: 64px;
+    align-self: center;
+}
+
+.acciones{
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-h1{
-    font-size: 20px;
-    color: #8C4B3C;
-    text-align: center;
-    font-weight: bold;
-    margin-left: 00px;
-    width: 100%;
-    font-family: 'Fredoka One', cursive;
-    margin-top: 20px;
-}
-
-
-.producto {
-    width: 100%;
-    background-color: #F3ECE9;
-    border: 1px solid #642206;
-    padding: 1.5%;
-    box-shadow: 2px 5px 7px #5C3A27;
-    margin: 5px;
-    margin-bottom: 20px;
-    align-items: center;
-    justify-items: center;
-}
-
-.producto a{
     align-items: center;
 }
 
-.texto-torta {
-    font-family: roboto;
-    font-size: 20px;
-    text-align: center;
-    color: #5C3A27;
-    margin-top: 10px;
-}
-
-.precio-torta {
-    font-family: "roboto";
-    font-size: 26px;
-    color: #D37775;
-    text-align: center;
-
-}
-
-.cont-torta {
-    border: 1px solid #642206;
-    padding: 2%;
-
-}
-
-.boton-comprar {
-    display: flex;
-    width: 70%;
-    justify-content: center;
-    margin: 4% 15%;
-    background-color: #E8ABAA;
-    border-radius: 10px;
-    padding-top: 10px;
-    box-shadow: 2px 5px 7px #CBA3A2;
-
-}
-
-.texto-comprar {
-    font-family: roboto;
-    font-size: 20px;
-    color: #F3ECE9
-}
-
-.lista-paginas {
-    font-family: roboto;
-    font-size: 16px;
-
-    display: flex;
-
-
-    list-style-type: none;
-    justify-content: center;
-}
-
-.paginas {
-    font-family: roboto;
-    margin-bottom: 15px;
-
-}
-
-.m-5px {
-    margin-left: 15px;
-}
-
-.foto-torta {
-    width: 250px;
-    height: 250px;
-    margin-left: 14%;
-}
-
-.color-link {
-    color: #F3ECE9;
-}
-
-.color-link:hover {
-    color: #5C3A27;
-    cursor: pointer;
-}
-
-.color-link2 {
-    color: #5C3A27;
-}
-
-.color-link2:hover {
-    color: #D37775;
-    cursor: pointer;
+.acciones .btn{
+    margin-top: 5px;
 }
 
 }
-
-
-
-
-/* justify-content: flex-end flex-start center space-around space-between
-align-items: flex-end flex-start center baseline stretch
-flex-direction: row row-reverse column column-reserve
-order: 1, 2, -1, 1 (items individuale)
-align-self: flex-end flex-start center baseline stretch
-flex-wrap: wrap nowrap wrap-reverse
-flex-flow: direction and wrap
-align-content: flex-end flex-start center baseline stretch  */

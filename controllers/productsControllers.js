@@ -107,7 +107,7 @@ const productsController = {
       detail: req.body.detail,
       image: req.files[0].filename,
     });
-    res.redirect("/product");
+    res.redirect("/administracion");
   },
   update: (req, res) => {
     console;
@@ -148,7 +148,7 @@ const productsController = {
       },
     })
       .then(() => {
-        res.redirect("/product");
+        res.redirect("/administracion");
       })
       .catch((error) => {
         res.render("error.ejs", { error });
