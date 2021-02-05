@@ -9,19 +9,33 @@
     <h1>Creacion de producto
     </h1>
     <div class="contenedor-grande">
-        <form action="/product/create" method="POST" enctype="multipart/form-data">
-            <div class="formulario">
+        <form action="/product/create" method="POST" enctype="multipart/form-data" id="formulario" class="formulario">
+            <div >
                 <div class="datos">
 
+                    
+                    
+                    <div class="inputs" id="grupo_nombre" class="formulario_grupo">
+                        
+                        <input type="text" name="nombre" placeholder="Nombre" class="form-control margen-tres formulario__input" id="nombre">
+                        <p class="formulario__input-error">Tiene que tener un nombre</p>
+                    </div>
+
+
+
+
+
+                    <div class="formulario_grupo" id="grupo_precio" class="inputs">
+                        <input type="number" name="precio" placeholder="Precio" class="form-control margen-tres formulario__input" id="precio">
+                        <p class="formulario__input-error">Tiene que tener un precio.</p>
+                    </div>
+
+
+
+
+
+
                     <div>
-                        <input type="text" name="name" placeholder="Nombre" class="form-control margen-tres">
-                    </div>
-
-                    <div class>
-                        <input type="number" name="price" placeholder="Precio" class="form-control margen-tres">
-                    </div>
-
-                    <div class>
                         <input type="text" name="detail" placeholder="Descripcion" class="form-control margen-tres">
                     </div>
 
@@ -49,6 +63,65 @@
 
 
 </body>
+
+<script>
+
+const formulario = document.getElementById("formulario");
+const inputs = document.querySelectorAll("#formulario input");
+
+    const expresiones = {
+        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+        precio: /^\d{1,5}$/ // 1 a 5 numeros.
+    }
+
+    
+const validarFormulario = (e)=>{
+  switch(e.target.name){
+    case "nombre":
+    validarCampo(expresiones.nombre, e.target, "nombre");
+    break;
+
+    case "precio":
+    validarCampo(expresiones.precio, e.target, "precio");
+    break;
+    }
+}
+
+const campos = {
+    nombre: false,
+    precio:false
+}
+
+let validarCampo = (expresion, input, campo) =>{
+    if(expresion.test(input.value)){
+      document.getElementById(`grupo_${campo}`).classList.remove("formulario__grupo-incorrecto");
+      document.getElementById(`grupo_${campo}`).classList.add("formulario__grupo-correcto");
+      document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add("formulario__input-error-activo")
+      document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo")
+     campos[campo]=true
+     console.log(campos)
+    }else{
+      document.getElementById(`grupo_${campo}`).classList.add("formulario__grupo-incorrecto");
+      document.getElementById(`grupo_${campo}`).classList.remove("formulario__grupo-correcto");
+      document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add("formulario__input-error-activo")
+      campos[campo]=false;
+      console.log(campos)
+
+    };
+}
+
+
+inputs.forEach((input)=>{
+  input.addEventListener("keyup",validarFormulario )
+  input.addEventListener("blur",validarFormulario )
+    console.log("hola")
+});   
+
+
+
+
+</script>
+
 <%- include('../partials/footer') %>
 
 </html>
