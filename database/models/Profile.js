@@ -10,14 +10,7 @@ module.exports = function (sequelize, dataTypes) {
     name: {
       type: dataTypes.STRING,
     },
-    createdAt: {
-      type: dataTypes.DATE,
-      defaultValue: sequelize.literal("NOW()"),
-    },
-    updatedAt: {
-      type: dataTypes.DATE,
-      defaultValue: sequelize.literal("NOW()"),
-    },
+    
   };
 
   let config = {

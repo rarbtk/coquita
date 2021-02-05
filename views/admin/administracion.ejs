@@ -68,12 +68,12 @@
                           </td>
                           <td>
                             <div class="acciones dp-flex">
-                              <form action="/product/edit/<%= product.id %> "  method="GET">
+                              <form action="/product/edit/<%= product.id %>"  method="GET">
                                 <div >
                                     <button type="submit" class="btn btn-sm btn-success">Editar</button>
                                 </div>
                             </form>
-                              <form action="/product/delete/<%= product.id %>?_method=DELETE" class="eliminarProduct" method="POST">
+                              <form action="/product/delete/<%= product.id %>?_method=DELETE" id="eliminarProduct" method="POST">
                                   <div class="ml-1">
                                       <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                                   </div>
@@ -122,9 +122,16 @@
                             <td>
                               <%= user.email %>
                             </td>
+                            <% console.log('este es el array categories' + profiles) %>
+                            <% profiles.forEach(profile => { %>
+                              <% if (user.profile_id == profile.id){ %>
                             <td>
-
-                              <%= user.profile %>
+                                  <%= profile.name %>
+                                  
+                                <% } %>
+                                <% console.log('este es el perfil' + profile.name) %>
+                              <% }) %>
+                                
                             </td>
                             <td class="fecha-creacion">
                               <%= user.createdAt %>

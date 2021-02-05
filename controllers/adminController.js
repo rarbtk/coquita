@@ -8,9 +8,13 @@ const adminController = {
       .then((products) => {
         db.User.findAll()
         .then(function(users){
-        res.render("admin/administracion", { products: products, users: users });
+          db.Profile.findAll()
+          .then((profiles) => {
+            console.log('categories en el controller' + profiles);
+        res.render("admin/administracion", { products: products, users: users, profiles: profiles });
+    })
       })
-      })
+        })
       .catch((error) => {
         res.render("error.ejs", { error });
       });
@@ -24,9 +28,12 @@ const adminController = {
       },
     })
       .then((user) => {
+        db.Category.findAll()
+          .then((categories) => {
         console.log("user found: ", user.firstName);
-        res.render("user/profile", { user: user });
+        res.render("user/profile", { user: user, categories: categories });
       })
+    })
       .catch((error) => {
         res.render("error", { error: error });
       });
