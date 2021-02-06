@@ -71,3 +71,24 @@ Externas
   <li>payments</li>
   <li>gravatar</li>
 </ul>
+
+### Email template mjml
+
+<pre>
+Se utiliza mjml para la creación de email templates
+</pre>
+
+Documentacion
+
+<pre>
+https://documentation.mjml.io/#mjml-guides
+</pre>
+
+Instalacion
+
+<pre>
+npm install mjml
+
+mjml input.mjml -o output.html
+
+</pre>
