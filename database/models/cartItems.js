@@ -1,5 +1,5 @@
 module.exports = function (sequelize, dataTypes) {
-  let alias = "CartItems";
+  let alias = "CartItem";
 
   let cols = {
     id: {
@@ -19,24 +19,32 @@ module.exports = function (sequelize, dataTypes) {
     cart_id: {
       type: dataTypes.INTEGER,
     },
+    createdAt: {
+      type: dataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()"),
+    },
+    updatedAt: {
+      type: dataTypes.DATE,
+      defaultValue: sequelize.literal("NOW()"),
+    },
   };
   let config = {
     tableName: "cart_items",
-    timestamps: false,
+    timestamps: true,
   };
 
-  let CartItems = sequelize.define(alias, cols, config);
+  let CartItem = sequelize.define(alias, cols, config);
 
-  CartItems.associate = function (models) {
-    CartItems.belongsTo(models.Product, {
+  CartItem.associate = function (models) {
+    CartItem.belongsTo(models.Product, {
       as: "Product",
       foreignKey: "product_id",
     });
-    CartItems.belongsTo(models.Carts, {
-      as: "Carts",
+    CartItem.belongsTo(models.Cart, {
+      as: "Cart",
       foreignKey: "cart_id",
     });
   };
 
-  return CartItems;
+  return CartItem;
 };

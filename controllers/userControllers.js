@@ -43,7 +43,7 @@ const userControllers = {
       res.redirect("/user/profile");
     });
   },
-  storeUser: (req, res) => {
+  storeUser(req, res) {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       db.User.findOne({
@@ -90,7 +90,18 @@ const userControllers = {
                   }); // cookies 30 minutos
                   res.cookie("userProfile", "customer", { maxAge: 1800000 });
 
-                  res.redirect("/user/profile");
+                  // crear carrito luego de crear el usuario:
+                  const url = "http://127.0.0.1:3000/api/cart/create";
+                  axios
+                    .post(url, { user_id: req.session.userId })
+                    .then((response) => {
+                      console.log(response);
+
+                      res.redirect("/user/profile");
+                    })
+                    .catch((error) => {
+                      res.render("error", { error: error });
+                    });
                 })
                 .catch((error) => {
                   res.render("error", { error: error });

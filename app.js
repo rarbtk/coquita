@@ -22,6 +22,7 @@ var accountRouter = require("./routes/account");
 const paymentRouter = require("./routes/api/payments");
 const avatarRouter = require("./routes/api/avatar");
 const userApiRouter = require("./routes/api/user");
+const cartApiRouter = require("./routes/api/cart");
 
 var app = express();
 
@@ -56,6 +57,7 @@ app.use("/administracion", adminRouter);
 app.use("/api/payments", paymentRouter);
 app.use("/api/avatar", avatarRouter);
 app.use("/api/users", userApiRouter);
+app.use("/api/cart", cartApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

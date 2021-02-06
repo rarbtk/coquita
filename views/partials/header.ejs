@@ -20,7 +20,7 @@
         <li class="liLogout"><a href="/user/logout" class="color-marron">LOGOUT</a></li>
         <% } %>
         <% if(locals.usuario === undefined){ %>
-        <li class="liCart"><a href="/cart/cart">CARRITO</a></li>
+        <li class="liCart"><a href="/cart">CARRITO</a></li>
         <% } %>
         <% if(locals.usuario === undefined){ %>
         <li class="liLogin"><a href="/user/login">LOGIN</a></li>
@@ -29,7 +29,7 @@
     </nav>
     <% if(locals.usuario){ %>
     <p>
-      
+
 
     </p>
     <% } %>
@@ -53,11 +53,11 @@
       <% if (locals.usuario){ %>
       <li>
         <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%=locals.usuario %>
           </a>
-  
+
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <a class="dropdown-item" href='/user/profile'> Mi perfil</a>
             <div class="dropdown-divider"></div>
@@ -69,12 +69,12 @@
       <% } %>
       <% if(locals.profile ==2){ %>
       <li>
-        <a href="/cart/cart"><i class="fas fa-shopping-cart color-marron"></i></a>
+        <a href="/cart"><i class="fas fa-shopping-cart color-marron"></i></a>
       </li>
       <% } %>
       <% if(locals.usuario == undefined){ %>
       <li>
-        <a class="btn btn-secondary btn-block" href="/user/login">INGRESÁ  <i class="fas fa-user"></i></a>
+        <a class="btn btn-secondary btn-block" href="/user/login">INGRESÁ <i class="fas fa-user"></i></a>
       </li>
       <% } %>
     </ul>
