@@ -19,8 +19,10 @@ window.addEventListener("load", function () {
     const productId = document.getElementById("productId").innerHTML;
     const userId = document.getElementById("userId").innerHTML;
     const price = document.getElementById("precio1").innerHTML;
+    const quantity = document.getElementById("sel1").value;
     console.log(productId);
     console.log(userId);
+    console.log(quantity);
 
     config = {
       method: "get",
@@ -37,7 +39,7 @@ window.addEventListener("load", function () {
             url: `${URL}/api/cart/item`,
             data: {
               product_id: productId,
-              quantity: 1,
+              quantity: quantity,
               cart_id: cart.data.data.cart[0].id,
               price: price,
             },
