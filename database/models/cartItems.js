@@ -15,9 +15,14 @@ module.exports = function (sequelize, dataTypes) {
     quantity: {
       type: dataTypes.INTEGER,
     },
-
     cart_id: {
       type: dataTypes.INTEGER,
+    },
+    price: {
+      type: dataTypes.DECIMAL,
+    },
+    subTotal: {
+      type: dataTypes.DECIMAL,
     },
     createdAt: {
       type: dataTypes.DATE,

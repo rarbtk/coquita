@@ -10,4 +10,10 @@ api.post("/item", cartController.createItem);
 //delete item
 api.delete("/item", cartController.deleteItem);
 
+//get cart by cartId
+api.get("/:id", cartController.getCartById);
+
+// get cart by userId
+api.get("/user/:id", cartController.getCartByUserId);
+
 module.exports = api;

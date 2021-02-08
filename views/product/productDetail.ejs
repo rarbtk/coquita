@@ -8,48 +8,48 @@
 <link
   href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Pacifico&family=Roboto&display=swap"
   rel="stylesheet">
-  <script defer src="/js/products.js"></script>
+<script defer src="/js/productDetail.js"></script>
+
 <body>
 
   <%- include('../partials/header') %>
 
   <section class="products-menu dp-flex">
     <article class="margin primer-item p-1">
-        <img src="/images/birthday-cake.svg" class="products-icons">
-        <a href="/product/category/3" class="color-link">
-            <p class="f-pacifico">Cumpleaños</p>
-        </a>
+      <img src="/images/birthday-cake.svg" class="products-icons">
+      <a href="/product/category/3" class="color-link">
+        <p class="f-pacifico">Cumpleaños</p>
+      </a>
     </article>
     <article class="margin p-1">
-        <img src="/images/celebration.svg" class="products-icons">
-        <a href="/product/category/4" class="color-link">
-            <p class="f-pacifico">Eventos</p>
-        </a>
+      <img src="/images/celebration.svg" class="products-icons">
+      <a href="/product/category/4" class="color-link">
+        <p class="f-pacifico">Eventos</p>
+      </a>
     </article>
 
     <article class="margin">
-        <img src="/images/cupcake.svg" class="products-icons">
-        <a href="/product/category/5" class="color-link">
-            <p class="f-pacifico two-lines">Pequeños gustos</p>
-        </a>
+      <img src="/images/cupcake.svg" class="products-icons">
+      <a href="/product/category/5" class="color-link">
+        <p class="f-pacifico two-lines">Pequeños gustos</p>
+      </a>
     </article>
 
     <article class="margin">
 
-        <img src="/images/apple-pie.svg" class="products-icons">
-        <a href="/product/category/6" class="color-link">
-            <p class="f-pacifico one-line">Las de siempre</p>
-        </a>
+      <img src="/images/apple-pie.svg" class="products-icons">
+      <a href="/product/category/6" class="color-link">
+        <p class="f-pacifico one-line">Las de siempre</p>
+      </a>
     </article>
 
-</section>
+  </section>
 
-    <% include ../partials/buscador.ejs %>
+  <% include ../partials/buscador.ejs %>
 
 
   <section>
     <article class="compra-producto">
-
       <div class="contenedor-torta">
         <img src="/images/<%= product.image %> " class="foto-torta">
       </div>
@@ -57,28 +57,30 @@
       <div class="opciones">
         <div class="texto-precio">
           <div class="texto">
+            <!-- Ocultar el product ID en la vista -->
+            <h3 id="productId"><%= product.id %></h3>
             <h3 class="titulo-producto"> <%= product.name %> </h3>
             <p class="precio" id="precio">Precio: $ <%= product.price %> </p>
             <p class="hidden" id="precio1"><%= product.price %></p>
-            
+
           </div>
         </div>
 
-            <div class="detalle-cajon">
-              <p class="detalle">Detalles del producto:</p>
-              <p class="prod"><%= product.detail %></p>
-            </div>
+        <div class="detalle-cajon">
+          <p class="detalle">Detalles del producto:</p>
+          <p class="prod"><%= product.detail %></p>
+        </div>
 
-          <div class="cantidad-cajon">
-              <label for="">Cantidad:</label>
-              <select class="form-control margen-tres" id="sel1">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-              </select>
-          </div>
+        <div class="cantidad-cajon">
+          <label for="">Cantidad:</label>
+          <select class="form-control margen-tres" id="sel1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
 
-        <p class="carrito"><a href="/cart" class="btn btn-secondary">Agregar al carrito</a></p>
+        <p class="carrito"><a class="btn btn-secondary" id="btn-agregar-carrito">Agregar al carrito</a></p>
         </a>
 
 
