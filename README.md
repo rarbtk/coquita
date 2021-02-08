@@ -92,3 +92,28 @@ npm install mjml
 mjml input.mjml -o output.html
 
 </pre>
+
+## ENV EXAMPLE
+
+PORT = 3000
+MYSQL_USER =
+MYSQL_PASSWORD =
+MYSQL_DATABASE =
+API_GRAVATAR = ""
+EMAIL = "panaderia.coquita@gmail.com" ### -> Coquita email sender
+EMAIL_PASSWORD = "PASSWORD_HERE"
+MP_ACCESS_TOKEN = ""
+
+## RUN WITH DOCKER
+
+run mysql DB
+
+<pre>
+docker-compose up -d db
+</pre>
+
+run all project
+
+<pre>
+docker-compose up -d
+</pre>

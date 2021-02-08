@@ -1,0 +1,38 @@
+version: "3.7"
+services:
+  coquita:
+    build:
+      context: .
+    image: coquita
+    container_name: coquita
+    ports:
+      - 3000:3000
+    environment:
+      IP_SERVER: "localhost"
+      PORT: 3000
+    tty: true
+    entrypoint: ["npm", "run", "start"]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "1"
+  db:
+    image: mysql
+    volumes:
+      # Montar si se desea persistir info en volumen
+      #- ./database/db_data:/var/lib/mysql:rw
+      # Si queremos un init(carga inicial) cada vez que se inicie la DB
+      - "./database/init:/docker-entrypoint-initdb.d"
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_USER: coquita
+      MYSQL_PASSWORD: coquita12345
+      MYSQL_ROOT_PASSWORD: coquita12345
+      MYSQL_DATABASE: coquitaDB
+
+networks:
+  default:
+    name: coquita
