@@ -24,6 +24,7 @@ const paymentRouter = require("./routes/api/payments");
 const avatarRouter = require("./routes/api/avatar");
 const userApiRouter = require("./routes/api/user");
 const cartApiRouter = require("./routes/api/cart");
+const productApiRouter = require("./routes/api/product");
 
 var app = express();
 
@@ -60,6 +61,7 @@ app.use("/api/payments", paymentRouter);
 app.use("/api/avatar", avatarRouter);
 app.use("/api/users", userApiRouter);
 app.use("/api/cart", cartApiRouter);
+app.use("/api/product", productApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
