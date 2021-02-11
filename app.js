@@ -1,4 +1,5 @@
 var express = require("express");
+var cors = require("cors");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
@@ -22,6 +23,8 @@ var accountRouter = require("./routes/account");
 const paymentRouter = require("./routes/api/payments");
 const avatarRouter = require("./routes/api/avatar");
 const userApiRouter = require("./routes/api/user");
+const cartApiRouter = require("./routes/api/cart");
+const productApiRouter = require("./routes/api/product");
 
 var app = express();
 
@@ -34,7 +37,7 @@ app.use(session({ secret: "coquita" }));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
 require("dotenv").config();
@@ -42,6 +45,7 @@ app.use(function (req, res, next) {
   if (req.session.user) {
     res.locals.usuario = req.session.user;
     res.locals.profile = req.session.profile;
+    res.locals.userId = req.session.userId;
   }
   return next();
 });
@@ -56,6 +60,8 @@ app.use("/administracion", adminRouter);
 app.use("/api/payments", paymentRouter);
 app.use("/api/avatar", avatarRouter);
 app.use("/api/users", userApiRouter);
+app.use("/api/cart", cartApiRouter);
+app.use("/api/product", productApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

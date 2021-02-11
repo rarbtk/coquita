@@ -1,5 +1,4 @@
 window.addEventListener("load", function () {
-  console.log("TEEEEEEEEEEEEESTTTTTTTTTTTTTT");
   var getPassword = document.getElementById("formID");
   console.log(getPassword);
 

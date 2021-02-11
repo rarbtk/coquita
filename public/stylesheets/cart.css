@@ -1,0 +1,28 @@
+.item{
+    height:50%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border: 1px solid rgb(235, 235, 235);
+}
+.product-image{
+    height: 100px;
+}
+
+.btn-eliminar{
+    margin: 5px 0px;
+    padding: 5px 5px 5px;
+}
+
+.product-details{
+    vertical-align: bottom;
+    padding-left: 20px;
+}
+
+.flexbox{
+    display: flexbox;
+}
+
+.actions-container{
+    display: flex;
+    align-items: center
+}

@@ -3,93 +3,20 @@
 
 <head>
     <%- include('../partials/head', {title:"Carrito de compras"}) %>
-    <link rel="stylesheet" href="../stylesheets/carrito.css">
+    <link rel="stylesheet" href="../stylesheets/cart.css">
+    <script defer src="/js/cart.js"></script>
 </head>
 
 <body>
     <div id="main">
-    <%- include('../partials/header') %>
-    <div class="carrito dp-flex borde-marron">
-
-        
-        <div class="productos-comprados dp-flex">
-            <% compras.forEach(compra => { %>
-            <div class="items dp-flex borde-marron">
-                
-                <img src="../images/<%= compra.image %>" alt="" class="imagenes-carrito">
-                
-                <div class="nombre-items color-marron">
-                    <p><b><%= compra.name %></b></p>
-                    
-                </div>
-                 
-                <div class="lista-caracteristicas color-marron">
-                             
-                    <li>Bizcochuelos <p><select name="bizcochuelos" id="">
-                        <option value="vainilla">Vainilla</option>
-                        <option value="choco">Chocolate</option>
-                    </select></p></li>
-                    <li>Relleno <p><select name="relleno" id="">
-                        <option value="dulce-crema">Dulce de leche</option>
-                        <option value="crema-durazno">Chocolate</option>
-                        <option value="crema-frutilla">Crema</option>
-                    </select></p></li>
-                    
-                </div>
-               
-                <div class="coste-final dp-flex color-marron">
-                    <p><b>Total</b></p>
-                    <p><b><%= compra.price %> $</b></p>
-                   
-                </div>
-                <form action="/product/delete/?_method=DELETE" method="POST">
-                    <div class="margen-de-boton">
-                        <button class="eliminar-producto"><i class="fas fa-times"></i></button>
-                    </div>
-                </form>
+        <%- include('../partials/header') %>
+        <div class="container">
+            <div id="items">
             </div>
-
-
-            <% }) %>     
         </div>
 
-        <div class="total dp-flex borde-marron">
-            <div class="finalizar-compra color-marron">
-                <p><b>Elegi la fecha de entrega</b></p>
-            </div>
-
-           
-
-    <input type="date" id="start" name="trip-start"
-       value=""
-       min="date" max="2021-12-31" >
-
-            <div class="checkbos color-marron">
-                <label><input type="radio" id="local" value="local" name="retiro"> Retirar por local</label><br>
-                <label><input type="radio" id="Domicilio" value="Domicilio" name="retiro"> Domicilio</label><br>
-
-            </div>
-
-            <div class=total-apagar>
-                <p class="color-marron">Subtotal..................$$</p>
-                <p class="color-marron">Costo de envio............$$</p>
-            </div>
-
-            <div class="total-grande color-marron">
-                <P><B>Total $ 9999</B></P>
-
-            </div>
-
-            <div class="boton-comprar">
-                <input type="submit" value="Comprar">
-            </div>
-
-        </div>
-
+        <%- include('../partials/footer') %>
     </div>
-
-    <%- include('../partials/footer') %>
-</div>
 
 </body>
 

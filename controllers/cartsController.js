@@ -3,22 +3,9 @@ let fs = require("fs");
 let path = require("path");
 
 const cartsController = {
-
-    productosEnCarrito : function (req, res, next) {
-      db.Product.findAll()
-      .then(function(compras){
-        console.log(compras)
-        console.log("wwwwwwwwwwww")
-       return res.render("cart/cart",{compras});
-       
-      });
-
-    
-      }
-
-}
-
-
-
+  cart: function (req, res, next) {
+    res.render("cart/cart.ejs");
+  },
+};
 
 module.exports = cartsController;

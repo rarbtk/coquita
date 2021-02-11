@@ -3,7 +3,7 @@ const cartsController = require("../controllers/cartsController");
 var router = express.Router();
 const isAuthenticatedMiddleware = require("../middleware/isAuthenticatedMiddleware");
 /* CART. */
-router.get("/cart", isAuthenticatedMiddleware, cartsController.productosEnCarrito);
+router.get("/", isAuthenticatedMiddleware, cartsController.cart);
 
 // test integracion MP(mercadopago)
 router.get("/payment", function (req, res) {
