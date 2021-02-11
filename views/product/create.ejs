@@ -15,9 +15,9 @@
 
                     
                     
-                    <div class="inputs" id="grupo_nombre" class="formulario_grupo">
+                    <div class="inputs" id="grupo_name" class="formulario_grupo">
                         
-                        <input type="text" name="nombre" placeholder="Nombre" class="form-control margen-tres formulario__input" id="nombre">
+                        <input type="text" name="name" placeholder="Nombre" class="form-control margen-tres formulario__input" id="name">
                         <p class="formulario__input-error">Tiene que tener un nombre</p>
                     </div>
 
@@ -25,8 +25,8 @@
 
 
 
-                    <div class="formulario_grupo" id="grupo_precio" class="inputs">
-                        <input type="number" name="precio" placeholder="Precio" class="form-control margen-tres formulario__input" id="precio">
+                    <div class="formulario_grupo" id="grupo_price" class="inputs">
+                        <input type="number" name="price" placeholder="Precio" class="form-control margen-tres formulario__input" id="price">
                         <p class="formulario__input-error">Tiene que tener un precio.</p>
                     </div>
 
@@ -35,8 +35,8 @@
 
 
 
-                    <div class="formulario_grupo" id="grupo_descripcion" class="inputs">
-                        <input type="text" name="descripcion" placeholder="Descripcion" class="form-control margen-tres formulario__input" id="descripcion">
+                    <div class="formulario_grupo" id="grupo_detail" class="inputs">
+                        <input type="text" name="detail" placeholder="Descripcion" class="form-control margen-tres formulario__input" id="detail">
                         <p class="formulario__input-error">Tiene que tener una descripcion.</p>
                     </div>
 
@@ -72,33 +72,33 @@ const inputs = document.querySelectorAll("#formulario input");
 let submit = document.querySelector("button[type=submit]");
 
     const expresiones = {
-        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        precio: /^\d{1,5}$/, // 1 a 5 numeros.
-        descripcion: /^[a-zA-ZÀ-ÿ\s]{1,60}$/
+        name: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+        price: /^\d{1,5}$/, // 1 a 5 numeros.
+        detail: /^[a-zA-ZÀ-ÿ\s]{1,60}$/
     }
 
     
 const validarFormulario = (e)=>{
   switch(e.target.name){
-    case "nombre":
-    validarCampo(expresiones.nombre, e.target, "nombre");
+    case "name":
+    validarCampo(expresiones.name, e.target, "name");
     break;
 
-    case "precio":
-    validarCampo(expresiones.precio, e.target, "precio");
+    case "price":
+    validarCampo(expresiones.price, e.target, "price");
     break;
 
-    case "descripcion":
-    validarCampo(expresiones.descripcion, e.target, "descripcion");
+    case "detail":
+    validarCampo(expresiones.detail, e.target, "detail");
     break;
 
     }
 }
 
 const campos = {
-    nombre: false,
-    precio:false,
-    descripcion: false
+    name: false,
+    price:false,
+    detail: false
 }
 
 let validarCampo = (expresion, input, campo) =>{
@@ -131,7 +131,7 @@ inputs.forEach((input)=>{
 submit.addEventListener("submit", function(e){
   e.preventDefault()
   if (campos.nombre && campos.precio && campos.descripcion) {
-    alert("Se guardo tu producto")
+    console.log("Se guardo tu producto")
   }
   this.submit;
 })
