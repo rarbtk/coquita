@@ -46,7 +46,7 @@
       
       
       <div class="inputs" id="grupo_password2" class="formulario_grupo">
-        <label for="password2" class="formulario__label">Contraseña</label>
+        <label for="password2" class="formulario__label">Confirmar contraseña</label>
         
         <input type="password" name="password2" id="password2" placeholder="" class="section-input form-control formulario__input" />
         <p class="formulario__input-error">Las contraseñas no coinciden.</p>
@@ -55,7 +55,7 @@
      
       <div class="login">
         <!-- <p class="section-btn-login"><a type="submit" class="color-blanco">Crear cuenta</a></p> -->
-        <button type="submit"  class="formulario">Registrarme</button>
+        <button type="submit"  class="formulario" >Registrarme</button>
       </div>
       <div class="section-links">
         <a href="login">Ya estoy registrado</a>
@@ -166,11 +166,14 @@ inputs.forEach((input)=>{
 /*evento de botton para poder enviar la informacion*/
 
   
+submit.addEventListener("submit", function(e){
+  e.preventDefault()
+  if (campos.email && campos.password && inputPassword1.value == inputPassword2.value ) {
 
-  if (campos.email && campos.password){
-    submit.disabled = false;
-    formulario.reset();
   }
+  this.submit;
+})
+  
 
 
 

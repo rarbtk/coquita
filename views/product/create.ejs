@@ -35,8 +35,9 @@
 
 
 
-                    <div>
-                        <input type="text" name="detail" placeholder="Descripcion" class="form-control margen-tres">
+                    <div class="formulario_grupo" id="grupo_descripcion" class="inputs">
+                        <input type="text" name="descripcion" placeholder="Descripcion" class="form-control margen-tres formulario__input" id="descripcion">
+                        <p class="formulario__input-error">Tiene que tener una descripcion.</p>
                     </div>
 
                     <div>
@@ -53,7 +54,7 @@
 
 
                 <div class="margen-de-boton dp-flex">
-                    <button class="guardar-producto">Guardar</button>
+                    <button class="guardar-producto" type="submit" >Guardar</button>
                     <button class="guardar-producto" type="reset">Limpiar</button>
                 </div>
             </div>
@@ -68,10 +69,12 @@
 
 const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("#formulario input");
+let submit = document.querySelector("button[type=submit]");
 
     const expresiones = {
         nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        precio: /^\d{1,5}$/ // 1 a 5 numeros.
+        precio: /^\d{1,5}$/, // 1 a 5 numeros.
+        descripcion: /^[a-zA-ZÀ-ÿ\s]{1,60}$/
     }
 
     
@@ -84,12 +87,18 @@ const validarFormulario = (e)=>{
     case "precio":
     validarCampo(expresiones.precio, e.target, "precio");
     break;
+
+    case "descripcion":
+    validarCampo(expresiones.descripcion, e.target, "descripcion");
+    break;
+
     }
 }
 
 const campos = {
     nombre: false,
-    precio:false
+    precio:false,
+    descripcion: false
 }
 
 let validarCampo = (expresion, input, campo) =>{
@@ -100,13 +109,15 @@ let validarCampo = (expresion, input, campo) =>{
       document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo")
      campos[campo]=true
      console.log(campos)
+   
+     
     }else{
       document.getElementById(`grupo_${campo}`).classList.add("formulario__grupo-incorrecto");
       document.getElementById(`grupo_${campo}`).classList.remove("formulario__grupo-correcto");
       document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add("formulario__input-error-activo")
       campos[campo]=false;
       console.log(campos)
-
+    
     };
 }
 
@@ -114,11 +125,16 @@ let validarCampo = (expresion, input, campo) =>{
 inputs.forEach((input)=>{
   input.addEventListener("keyup",validarFormulario )
   input.addEventListener("blur",validarFormulario )
-    console.log("hola")
+    
 });   
 
-
-
+submit.addEventListener("submit", function(e){
+  e.preventDefault()
+  if (campos.nombre && campos.precio && campos.descripcion) {
+    alert("Se guardo tu producto")
+  }
+  this.submit;
+})
 
 </script>
 

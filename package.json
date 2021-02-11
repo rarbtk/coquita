@@ -19,11 +19,7 @@
     "md5": "2.3.0",
     "mercadopago": "1.5.3",
     "method-override": "3.0.0",
-<<<<<<< HEAD
-    "mjml": "4.8.1",
-=======
     "mjml": "^4.8.1",
->>>>>>> 26f428fe1c8d51d74b63cc0d3c40cc243f75415c
     "moment": "2.29.1",
     "morgan": "~1.9.1",
     "multer": "^1.4.2",
