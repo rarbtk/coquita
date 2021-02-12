@@ -100,13 +100,17 @@ const productsController = {
 
   store: (req, res) => {
     console.log(req.body.category);
+    console.log("******************************************************")
+    console.log(req.body.name);
     db.Product.create({
       name: req.body.name,
       price: req.body.price,
       category_id: req.body.category,
       detail: req.body.detail,
       image: req.files[0].filename,
+      
     });
+    
     res.redirect("/administracion");
   },
   update: (req, res) => {
