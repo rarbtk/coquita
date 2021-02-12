@@ -1,7 +1,5 @@
 node_modules/
 .env
-docker-compose.yaml
-Dockerfile
 .gitignore
 anotaciones-lucho.md
 carga_inicial.sql

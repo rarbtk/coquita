@@ -31,26 +31,27 @@ window.addEventListener("load", function () {
 
     axios(config)
       .then((cart) => {
-        if (cart.data.data.cart.length > 0) {
-          console.log("mayor a cero");
-          console.log(cart.data.data.cart[0].id);
-          config = {
-            method: "post",
-            url: `${URL}/api/cart/item`,
-            data: {
-              product_id: productId,
-              quantity: quantity,
-              cart_id: cart.data.data.cart[0].id,
-              price: price,
-            },
-          };
-          axios(config).then((response) => {
+        console.log(cart);
+        console.log("cartid: ", cart.data.data.cart[0].id);
+
+        config = {
+          method: "post",
+          url: `${URL}/api/cart/item`,
+          data: {
+            product_id: productId,
+            quantity: quantity,
+            cart_id: cart.data.data.cart[0].id,
+            price: price,
+          },
+        };
+        axios(config)
+          .then((response) => {
             console.log(response);
             window.location.href = "/cart";
+          })
+          .catch((error) => {
+            console.log(error);
           });
-        } else {
-          console.log("carrito not found");
-        }
       })
       .catch((error) => {
         console.log(error);

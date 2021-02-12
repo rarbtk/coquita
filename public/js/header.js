@@ -10,13 +10,8 @@ window.addEventListener("load", function () {
 
   axios(config)
     .then((cart) => {
-      if (cart.data.data.cart.length > 0) {
-        console.log("mayor a cero");
-        console.log(cart.data.meta.items_count);
-        shopQuantity.innerHTML = `(${cart.data.meta.items_count})`;
-      } else {
-        console.log("carrito not found");
-      }
+      console.log(cart.data.meta.items_count);
+      shopQuantity.innerHTML = `(${cart.data.meta.items_count})`;
     })
     .catch((error) => {
       console.log(error);

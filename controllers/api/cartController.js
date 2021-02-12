@@ -1,3 +1,4 @@
+const db = require("../../database/models");
 const { Cart, CartItem, Product } = require("../../database/models");
 const cartController = {
   create: (req, res) => {
@@ -19,6 +20,7 @@ const cartController = {
       if (exist) {
         CartItem.create({
           product_id: req.body.product_id,
+          user_id: req.body.user_id,
           quantity: req.body.quantity,
           cart_id: req.body.cart_id,
           price: Number(req.body.price),
@@ -100,38 +102,26 @@ const cartController = {
   },
   getCartByUserId: (req, res) => {
     userId = req.params.id;
-
+    console.log("************************************************************");
     Cart.findAll({
       where: {
         user_id: userId,
         finished: "false",
       },
-      limit: 1,
+      include: ["products"],
+      // include: ["products"],
     }).then((cart) => {
-      if (cart.length > 0) {
-        CartItem.findAll({
-          where: {
-            cart_id: cart[0].dataValues.id,
-          },
-        }).then((cartItems) => {
-          res.send({
-            meta: {
-              status: 200,
-              items_count: cartItems.length,
-              url: `/api/cart/byUserId/${userId}`,
-            },
-            data: {
-              cart,
-              cartItems,
-            },
-          });
-        });
-      } else {
-        res.status(404).send({
-          status: 404,
-          message: `A cart associated with that user ${userId} was not found`,
-        });
-      }
+      console.log(cart);
+      res.json({
+        meta: {
+          status: 200,
+          items_count: cart.length,
+          url: `/api/cart/byUserId/${userId}`,
+        },
+        data: {
+          cart,
+        },
+      });
     });
   },
 };

@@ -6,35 +6,41 @@ window.addEventListener("load", function () {
 
   // find cartId by userId
   axios.get(`${URL}/api/cart/user/${userId}`).then((cart) => {
-    console.log(cart.data.data.cartItems);
-    carItems = cart.data.data.cartItems;
+    //carItems = cart.data.data.cartItems;
+    console.log(cart);
+    let total = 0;
 
-    cart["data"]["data"]["cartItems"].forEach((data) => {
-      console.log(" count - ", data);
-      items_container.innerHTML += `<div class="row mb-3 mt-3 item" id=${data.id}>
-      <div class="col-md-1">
-          <img src="/images/cupcake.svg" alt="" class="product-image">
-      </div>
-      <div class="col-2 product-details">
-          <p class="product-details-title"><strong>Torta Advengers</strong></p>
-          <p class="product-details-price"><strong>$ ${data.price}</strong></p>
-      </div>
-      <div class="col-md-2 actions-container">
-          <button class="btn-outline-danger btn btn-remove-item" id="removeItem" value=${data.id}>
-              <i class="bi bi-x-circle"> Eliminar</i>
-          </button>
-      </div>
-  </div>`;
+    console.log(cart["data"]["data"]["cart"][0]["products"]);
+
+    cart["data"]["data"]["cart"][0]["products"].forEach((data) => {
+      items_container.innerHTML += `<div class="row mb-3 mt-3 item" id=${data.CartItem.id}>
+        <div class="col-md-1">
+            <img src="/images/cupcake.svg" alt="" class="product-image">
+        </div>
+        <div class="col-2 product-details">
+            <p class="product-details-title"><strong>${data.name}</strong></p>
+            <p class="product-details-price"><strong>Precio Unitario $ ${data.price}</strong></p>
+            <p class="product-details-price"><strong>Cantidad X ${data.CartItem.quantity} </strong></p>
+            <p class="product-details-price"><strong>Subtotal $ ${data.CartItem.subTotal}</strong></p>
+        </div>
+        <div class="col-md-2 actions-container">
+            <button class="btn-outline-danger btn btn-remove-item" id="removeItem" value=${data.CartItem.id}>
+                <i class="bi bi-x-circle"> Eliminar</i>
+            </button>
+        </div>
+    </div>`;
+      // calculate total amount
+      total = Number(total) + Number(data.CartItem.subTotal);
+      document.getElementById("totalAmount").innerHTML = total;
+      console.log("TOTAL: ", total);
     });
 
+    //remove item
     btn_removeItem = document.querySelectorAll("button.btn-remove-item");
-
-    console.log(btn_removeItem);
+    console.log("BOTONES: ", btn_removeItem);
 
     btn_removeItem.forEach(function (button) {
       button.addEventListener("click", function (event) {
-        console.log(this.value);
-        console.log("Elimino item ", this.value);
         const data = JSON.stringify({ id: this.value });
         var config = {
           method: "delete",
@@ -46,7 +52,6 @@ window.addEventListener("load", function () {
         };
         axios(config)
           .then((res) => {
-            console.log("cart Item delete: ", res);
             //remove element into html
             const myItemToDelete = document.getElementById(this.value);
             myItemToDelete.parentNode.removeChild(myItemToDelete);

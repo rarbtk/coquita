@@ -43,6 +43,13 @@ module.exports = function (sequelize, dataTypes) {
       as: "Category",
       foreignKey: "category_id",
     });
+
+    Product.belongsToMany(models.Cart, {
+      as: "carts",
+      through: models.CartItem,
+      foreignKey: "product_id",
+      otherKey: "cart_id",
+    });
   };
 
   return Product;
