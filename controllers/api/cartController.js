@@ -109,7 +109,6 @@ const cartController = {
         finished: "false",
       },
       include: ["products"],
-      // include: ["products"],
     }).then((cart) => {
       console.log(cart);
       res.json({
