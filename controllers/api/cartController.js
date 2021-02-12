@@ -12,6 +12,31 @@ const cartController = {
       });
     });
   },
+  //close cart
+  close: (req, res) => {
+    Cart.update(
+      {
+      finished: "true",
+    },{
+      where:{
+        id:req.body.cart_id
+      }
+    }).then((cart) => {
+      if(cart>0){
+        res.send({
+          status: 200,
+          message: "cart finished",
+        });
+
+      }else{
+        res.status(404).send({
+          status: 404,
+          message: "cart to finish not found :(",
+        });
+      }
+      
+    });
+  },
   createItem: (req, res) => {
     const body = req.body;
     //check if product_id exist
