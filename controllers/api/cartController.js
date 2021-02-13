@@ -43,6 +43,16 @@ const cartController = {
     Product.findByPk(req.body.product_id).then((exist) => {
       //product_ix exist should create cartItem
       if (exist) {
+        // check if item already exist with the same product id and replace with new quantity
+        CartItem.findAll({
+          where:{
+            cart_id:req.body.cart_id,
+            product_id:req.body.product_id
+          }
+        })
+        .then(item_to_delete=>{
+          CartItem.destroy(item_to_delete.id)
+        }).catch(error=> res.json(error))
         CartItem.create({
           product_id: req.body.product_id,
           user_id: req.body.user_id,
@@ -135,11 +145,12 @@ const cartController = {
       },
       include: ["products"],
     }).then((cart) => {
-      console.log(cart);
+      //console.log("cart:controller: ",cart)
+      console.log("cart:controller: ",cart[0].dataValues.products.length);
       res.json({
         meta: {
           status: 200,
-          items_count: cart.length,
+          items_count: cart[0].dataValues.products.length,
           url: `/api/cart/byUserId/${userId}`,
         },
         data: {

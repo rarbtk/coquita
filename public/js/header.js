@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
 
   axios(config)
     .then((cart) => {
-      console.log(cart.data.meta.items_count);
+      console.log("cart header: ",cart);
       shopQuantity.innerHTML = `(${cart.data.meta.items_count})`;
     })
     .catch((error) => {

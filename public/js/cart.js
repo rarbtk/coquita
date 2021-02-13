@@ -9,8 +9,12 @@ window.addEventListener("load", function () {
     //carItems = cart.data.data.cartItems;
     console.log(cart);
     let total = 0;
+    let cartId =cart.data.data.cart[0].id
+    console.log("CART_ID", cartId)
+    let cartIdElement = document.getElementById("cartId").value=cartId
 
-    console.log(cart["data"]["data"]["cart"][0]["products"]);
+    console.log(cart);
+
 
     cart["data"]["data"]["cart"][0]["products"].forEach((data) => {
       items_container.innerHTML += `<div class="row mb-3 mt-3 item" id=${data.CartItem.id}>
@@ -61,5 +65,22 @@ window.addEventListener("load", function () {
           });
       });
     });
+
+    btn_pay = document.getElementById("pay")
+    // close cart
+    btn_pay.addEventListener("click", function(){
+      config = {
+        method: "post",
+        url: `${URL}/api/cart/finish`,
+        data: {
+          "cart_id":document.getElementById("cartId").value,
+          "user_id":userId
+        },
+      }
+      axios(config)
+      .then((response)=>{
+        
+      })
+    })
   });
 });
