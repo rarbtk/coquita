@@ -1,3 +1,5 @@
+
+
 const URL = "http://127.0.0.1:3000";
 
 window.addEventListener("load", function () {
@@ -12,8 +14,7 @@ window.addEventListener("load", function () {
     let cartId =cart.data.data.cart[0].id
     console.log("CART_ID", cartId)
     let cartIdElement = document.getElementById("cartId").value=cartId
-
-    console.log(cart);
+    cartIdElement.disabled = "true"
 
 
     cart["data"]["data"]["cart"][0]["products"].forEach((data) => {
@@ -79,6 +80,19 @@ window.addEventListener("load", function () {
       }
       axios(config)
       .then((response)=>{
+        config = {
+          method: "post",
+          url: `${URL}/api/cart/create`,
+          data: {
+            "user_id":userId
+          },
+        }
+
+        axios(config)
+        .then(()=>{
+          window.location.href='/cart/cart_finished'
+        })
+
         
       })
     })

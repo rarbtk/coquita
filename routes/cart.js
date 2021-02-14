@@ -30,4 +30,9 @@ router.get("/payment", function (req, res) {
     },
   });
 });
+
+// message when cart is finished
+router.get("/cart_finished", function(req,res){
+  res.render("cart/cart_finished")
+})
 module.exports = router;
