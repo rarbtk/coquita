@@ -14,21 +14,12 @@
     height: 600px;
 }
 
-.boton-nuevo {
-    display: flex;
-    width: 30%;
-    justify-content: center;
-    margin: 2% 35%;
-    background-color: #E8ABAA;
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 2px 5px 7px #CBA3A2;
-    color: white;
-
+.card-title{
+    margin-bottom: -10px;
 }
-.boton-nuevo a {
-text-decoration: none;
-color: white;
+
+.boton-nuevo {
+    margin-left: 80%;
 }
 
 .detalle-productos {

@@ -3,6 +3,7 @@
 
 <%- include('../partials/head', {title: 'Profile'}) %>
 <link rel="stylesheet" href="../stylesheets/profile.css" />
+<link rel="stylesheet" href="/stylesheets/profile.css" />
 <!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
 <!-- Fontawesome -->
@@ -13,7 +14,8 @@
   <%- include('../partials/header') %>
 
   <div class="container">
-    <form action="/user/avatar" id="newAvatar" method="post" enctype="multipart/form-data">
+    <div class="col-sm-12">
+    <form  action="/user/avatar" id="newAvatar" method="post" enctype="multipart/form-data">
       <div class=" avatar-container">
         <img src="/images/avatars/<%=user.image  %>" class="avatar" alt="editar avatar"
           onclick="javascript:callInputFile()">
@@ -28,6 +30,7 @@
         </div>
       </div>
     </form>
+   </div>
     <div class="errors">
 
     </div>
