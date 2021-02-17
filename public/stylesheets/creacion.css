@@ -5,16 +5,15 @@
     font-family: 'roboto', sans-serif;}
 
 body{
-    background-color: #EEE0C9;
+    background-color: white;
 }
 
 .dp-flex{display: flex;}
 
 h1{
     margin-top: 10px;
-    margin-left: 43%;
+    margin-left: 38%;
     font-family: "Rotobo";
-    color: #6f2d2d;;
 }
 
 
@@ -28,6 +27,7 @@ h1{
     width: 50%;
     margin-bottom: 15px;
     padding: 20px;
+    height: 570px;
 }
 
 .contenedor-grande img{
@@ -47,12 +47,11 @@ h1{
 
 .datos{
     flex-direction: column;
-    margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-
+margin-top: 3%;
     
 }
 
@@ -67,7 +66,26 @@ margin: 0;
     height: 40px;
     width: 100%;
     padding-left: 10px;
-    font-size: 16px;}
+    font-size: 16px;
+    margin-top: -5px;
+}
+
+.datos textarea{
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-top: -5px;
+}
+
+.datos select{
+    height: 40px;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-top: -5px;
+}
+
 
 .boton-comprar {
     font-family:'roboto', sans-serif;;
@@ -91,11 +109,16 @@ margin: 0;
 }*/
 
 .margen-de-boton{
-
-    margin-left: 21%;
-    margin-right: 17%;
+    margin-top: 5%;
+    margin-left: 30%;
+    
 }
 
+button{
+    margin-left: 5%;
+    width: 160px;
+    height: 40px;
+}
 
 .guardar-producto{
     box-shadow: 2px 5px 7px #CBA3A2;

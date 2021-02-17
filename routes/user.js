@@ -66,6 +66,7 @@ router.get("/register", guestMiddleware, function (req, res, next) {
 
 //USER PROFILE
 router.get("/profile", userControllers.profile);
+router.get("/profile/:id", userControllers.profilebyID);
 router.post("/profile", userControllers.storeProfile);
 router.post("/avatar", upload.any(), userControllers.storeAvatar);
 

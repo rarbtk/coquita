@@ -6,8 +6,7 @@
 
 <body>
     <%- include('../partials/header') %>
-    <h1>Creacion de producto
-    </h1>
+    <h1>Creacion de nuevo producto</h1>
     <div class="contenedor-grande">
         <form action="/product/create" method="POST" enctype="multipart/form-data" id="formulario" class="formulario">
             <div >
@@ -16,7 +15,7 @@
                     
                     
                     <div class="inputs" id="grupo_name" class="formulario_grupo">
-                        
+                        <label for="">Nombre:</label>
                         <input type="text" name="name" placeholder="Nombre" class="form-control margen-tres formulario__input" id="name">
                         <p class="formulario__input-error">Tiene que tener un nombre</p>
                     </div>
@@ -26,6 +25,7 @@
 
 
                     <div class="formulario_grupo" id="grupo_price" class="inputs">
+                        <label for="">Precio:</label>
                         <input type="number" name="price" placeholder="Precio" class="form-control margen-tres formulario__input" id="price">
                         <p class="formulario__input-error">Tiene que tener un precio.</p>
                     </div>
@@ -36,26 +36,29 @@
 
 
                     <div class="formulario_grupo" id="grupo_detail" class="inputs">
-                        <input type="text" name="detail" placeholder="Descripcion" class="form-control margen-tres formulario__input" id="detail">
+                        <label for="">Descripción:</label>
+                        <textarea type="text" name="detail" placeholder="Descripción" class="form-control margen-tres formulario__input" id="detail"></textarea>
                         <p class="formulario__input-error">Tiene que tener una descripcion.</p>
                     </div>
 
-                    <div>
+                    <div class="inputs">
+                        <label for="">Categoría:</label>
                         <select class="form-control margen-tres" id="sel1" name="category">
                             <% categories.forEach(category => { %>
                             <option value=<%= category.id %>><%= category.name  %> </option>
                             <% }); %>
                         </select>
                     </div>
-                    <div>
+                    <div class="inputs">
+                        <label for="">Seleccionar foto:</label>
                         <input type="file" name="image" class="margen-tres form-control">
                     </div>
                 </div>
 
 
                 <div class="margen-de-boton dp-flex">
-                    <button class="guardar-producto" type="submit" >Guardar</button>
-                    <button class="guardar-producto" type="reset">Limpiar</button>
+                    <button class="btn btn-sm btn-success" type="submit" >Guardar</button>
+                    <button class="btn btn-sm btn-danger" type="reset">Limpiar</button>
                 </div>
             </div>
         </form>

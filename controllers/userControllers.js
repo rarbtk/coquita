@@ -22,6 +22,27 @@ const userControllers = {
     //
   },
 
+  profilebyID: (req, res) => {
+    console.log(req.params.id);
+    db.User.findOne({
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then((user) => {
+        db.Category.findAll()
+          .then((categories) => {
+        console.log("user found: ", user.firstName);
+        res.render("user/profile", { user: user, categories: categories });
+      })
+    })
+      .catch((error) => {
+        res.render("error", { error: error });
+      });
+    //
+  },
+
+
   storeProfile: (req, res) => {
     //console.log(req.session);
     const userId = req.session.userId;
