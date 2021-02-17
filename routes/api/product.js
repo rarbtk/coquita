@@ -6,7 +6,9 @@ const productController = require("../../controllers/api/productController");
 //api.get("/", productController.products);
 
 // get user by id
+api.get("/",productController.getAllProducts)
 api.get("/:id", productController.getProductById);
+
 
 // postear un producto ##### TO-DO ########
 

@@ -23,6 +23,21 @@ const productController = {
       }
     });
   },
+  getAllProducts: (req,res)=>{
+    Product.findAll()
+    .then((products)=>{
+      res.json({
+        meta:{
+          url:'/api/products',
+          count:products.length
+        },
+        products:products
+      })
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
+  }
 };
 
 module.exports = productController;
