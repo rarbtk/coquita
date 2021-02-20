@@ -10,26 +10,34 @@
     <div class="contenedor-grande dp-flex">
         <img src="/images/<%= product.image %>" alt="click para cambiar la imagen" onclick="imgUpload">
         <div class="formulario dp-flex">
-            <form action="/product/edit/<%= product.id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/product/edit/<%= product.id  %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formulario">
                 <div class="datos dp-flex">
 
                     <div class="dp-flex f-column espacio-botones">
                         <label for="">Nombre del producto:</label>
+                        
                         <input type="text" name="name" id="name" placeholder="Nombre" class="form-control margen-tres"
-                            value="<%= product.name %> ">
-                        <p id="formulario__input-error" class="formulario__input-error">Debe colocar un nombre de producto.</p>
+                            value="<%= product.name %> " required>
+                            <p id="formulario__input-error" class="formulario__input-error">Debe colocar un nombre de producto.</p>
                     </div>
+                    
+                    
                     <div class="dp-flex f-column">
                         <label for="">Precio:</label>
                         <input type="number" name="price" id="price" placeholder="Precio" class="form-control margen-tres"
-                            value="<%= product.price %>">
+                            value="<%= product.price %>" required>
                         <p class="formulario__input-error">Debe colocar un precio.</p>
                     </div>
+                    
+                    
+                    
                     <div class=" dp-flex f-column">
                         <label for="">Descripción:</label>
-                        <textarea type="text" rows="4" name="detail" id="detail" placeholder="Descripción" class="form-control margen-tres"><%= product.detail %></textarea>
+                        <textarea type="text" rows="4" name="detail" id="detail" placeholder="Descripción" class="form-control margen-tres" required><%= product.detail %></textarea>
                         <p class="formulario__input-error">Debe colocar una descripcion.</p>
                     </div>
+                    
+                    
                     <div class="dp-flex f-column">
                         <label for="">Categoría:</label>
                         <select class="form-control margen-tres" id="sel1" name="category">
@@ -49,6 +57,10 @@
                     <button class="btn btn-sm btn-success" type="submit">Guardar producto</button>
                 </div>
             </form>
+            
+            
+            
+            
             <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST">
                 <div>
                     <button class="btn btn-sm btn-danger">Eliminar producto</button>
