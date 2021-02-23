@@ -84,6 +84,15 @@ p{
     width: 100%;
 }
 
+.parrafoTorta {
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+    align-items: center;
+    padding: 40px;
+    width: 100%;
+}
+
 .photoProduct{
     padding: 10px;
     width: 100%;

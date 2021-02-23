@@ -106,6 +106,14 @@ body {
   height: 30px;
   margin-right: 13px;
 }
+
+.opciones{
+  margin-left: 40px;
+}
+
+.texto{
+  width: 400px;
+}
 .compra-producto {
   display: flex;
   background-color: #F1F0E8;
@@ -160,6 +168,37 @@ body {
 /* ------ MEDIA QUERY ------*/
 
 @media(max-width:768px) {
+
+  .products-menu {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0px;
+}
+
+.products-menu article {
+    width: 50%;
+    margin: 0px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-icons {
+    width: 50px;
+
+}
+
+.buscador-torta .button-search {
+  position: relative;
+  color: grey;
+  font-size: 20px;
+  background-color: white;
+  border: none;
+  height: 30px;
+  margin-right: -13px;
+}
+
   .compra-producto {
     flex-direction: column;
     width: 89%;
@@ -183,7 +222,8 @@ body {
 
   .contenedor-torta {
     box-shadow: 8px 6px 12px #642206;
-    margin: -36px 31px;
+    margin-top: 3%;
+    margin-left: 14%;
     width: 270px;
   }
 
@@ -192,7 +232,7 @@ body {
   }
 
   .titulo-producto {
-    margin-left: 30%;
+    margin-left: 25%;
   }
 
   .texto-precio {
@@ -207,11 +247,11 @@ body {
   }
 
   .texto {
-    width: 45%;
+    width: 100%;
   }
 
   .titulo {
-    width: 26%;
+    width: 100%;
   }
 
 

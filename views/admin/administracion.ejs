@@ -9,7 +9,7 @@
     href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&family=Pacifico&family=Roboto&display=swap"
     rel="stylesheet">
 
-    <script defer src="/js/administracion.js"></script>
+    <!-- <script defer src="/js/administracion.js"></script> -->
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <body class="cuerpo">
@@ -144,9 +144,10 @@
                                       <button type="submit" class="btn btn-sm btn-success">Perfil</button>
                                   </div>
                               </form>
-                                <form action="/administracion/delete/<%= user.id %>" id="eliminarUser" method="POST">
+                                <form action="/administracion/delete/<%= user.id %>"  id="eliminarUser" method="POST">
                                     <div class="ml-1">
-                                        <button type="submit" id="eliminar" class="btn btn-sm btn-danger">Eliminar</button>
+                                      <label id="idUser" style="display: none;"><%= profile.id %></label>
+                                        <button type="submit" id="eliminarButton" class="btn btn-sm btn-danger eliminarUser">Eliminar</button>
                                     </div>
                                 </form>
                             </div>
@@ -171,6 +172,33 @@
     </div>
 
         <%- include('../partials/footer') %>
+
+        <script>
+  let eliminar = document.getElementById('eliminarProduct')
+  let eliminarUser = document.querySelectorAll('.eliminarUser')
+  let idUser = document.getElementById('idUser')
+  console.log("array user" + eliminarUser);
+
+  eliminarUser.forEach(function (button) {
+    button.addEventListener("click", function (e) {
+    e.preventDefault()
+    console.log("ACA HACE EL PREVENT");
+    if (idUser == 1){
+      Swal.fire({
+        title: 'No podes eliminar este usuario',
+        text: "¡El usuario es administrador!",
+        icon: 'warning',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ok!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        }
+      })
+    }
+   })
+  })
+        </script>
 </body>
 
 </html>

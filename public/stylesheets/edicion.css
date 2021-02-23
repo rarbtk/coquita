@@ -15,8 +15,8 @@ h1{
     margin-left: auto;
     margin-right: auto;
     margin-top: 1%;
-    background-color: #F1F0E8;
-    border: 1px solid #40241B;
+    background-color: white;
+    border: 1px solid black;
     width: 50%;
     margin-bottom: 15px;
     padding: 20px;
@@ -116,14 +116,14 @@ button{
 
 @media (max-width: 900px){ /*mobile*/
 body{
-    background-color: #EEE0C9;
+    background-color: white;
 }
 
 .dp-flex{display: flex;}
 
 h1{
     font-size: 20px;
-    color: #8C4B3C;
+    color: black;
     text-align: center;
     font-weight: bold;
     margin-left: 00px;
@@ -214,6 +214,13 @@ margin: 0;
     width: 250px;
     margin-top: 5px;
     align-items: center;
+}
+
+.btn-danger{
+    margin-left: -20px;
+}
+.btn-success{
+    margin-left: 69px;
 }
 
 }
