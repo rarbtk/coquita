@@ -1,21 +1,29 @@
 .item{
-    height:50%;
+    height:60%;
+    width: 80%;
     margin-top: 10px;
     margin-bottom: 5px;
-    border: 1px solid rgb(235, 235, 235);
+    border: 1px solid black
 }
 .product-image{
     height: 100px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
-.btn-eliminar{
-    margin: 5px 0px;
+.btn-remove-item{
+    margin-top: 40px;
+    margin-left: 70%;
     padding: 5px 5px 5px;
+    height: 40px;
+    width: 100px;
 }
 
 .product-details{
     vertical-align: bottom;
     padding-left: 20px;
+    margin-left: 30px;
+    margin-top: 20px;
 }
 
 .flexbox{
@@ -24,9 +32,37 @@
 
 .actions-container{
     display: flex;
-    align-items: center
+    align-items: right;
 }
 
 #cartId{
     display: none;
+}
+
+#items{
+    margin-top: 30px;
+    padding: 20px;
+    height: 400px;
+}
+h1{
+    margin-top: 30px;
+    margin-left: 38%;
+    font-family: "Rotobo";
+    justify-self: center;
+}
+.col-md-2{
+    margin-top: 20px;
+}
+
+.btn-outline-primary{
+    margin-bottom: 40px;
+}
+
+.total{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.container{
+    justify-items: center;
 }

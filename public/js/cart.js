@@ -19,10 +19,10 @@ window.addEventListener("load", function () {
 
     cart["data"]["data"]["cart"][0]["products"].forEach((data) => {
       items_container.innerHTML += `<div class="row mb-3 mt-3 item" id=${data.CartItem.id}>
-        <div class="col-md-1">
+        <div class="col-md-2">
             <img src="/images/cupcake.svg" alt="" class="product-image">
         </div>
-        <div class="col-2 product-details">
+        <div class="col-3 product-details">
             <p class="product-details-title"><strong>${data.name}</strong></p>
             <p class="product-details-price"><strong>Precio Unitario $ ${data.price}</strong></p>
             <p class="product-details-price"><strong>Cantidad X ${data.CartItem.quantity} </strong></p>
