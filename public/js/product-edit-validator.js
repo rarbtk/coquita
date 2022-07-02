@@ -6,8 +6,10 @@ window.addEventListener("load", function () {
     let name_product = document.getElementById("name");
     let price_product = document.getElementById("price");
     let description_product = document.getElementById("detail");
-    // submit
-    let submit = document.querySelector("button[type=submit]");
+
+    //p
+    let textoError = document.querySelectorAll("#formulario p")
+  
     //inputs
     let inputs = document.querySelectorAll("#formulario input");
 
@@ -38,13 +40,13 @@ name_product.addEventListener("keyup", function (e) {
     } else {
         name_product.classList.remove("is-valid");
         name_product.classList.add("is-invalid");
-        p.classList.add('formulario__input-error_active')
+        textoError.style.add('formulario__input-error_active')
         
     }
    
   })
   price_product.addEventListener("keyup", function (e) {
-    if (price_product.value.length > 0) {
+    if (price_product.value.length > 0 && price_product.value >0) {
         price_product.classList.remove("is-invalid");
         price_product.classList.add("is-valid");
      
@@ -52,7 +54,7 @@ name_product.addEventListener("keyup", function (e) {
     } else {
         price.classList.remove("is-valid");
         price_product.classList.add("is-invalid");
-     
+        
    
     }
     
